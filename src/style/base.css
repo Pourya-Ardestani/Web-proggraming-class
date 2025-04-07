@@ -1,0 +1,36 @@
+:root {
+    --color-:
+}
+
+/* @font-face {
+    font-family: 'iransans';
+    src: url('/src/font/IRANSansWeb.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  } */
+
+@font-face {
+    font-family: 'IRANyekan';
+    src: url('/src/font/IRANyekan.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    direction: rtl;
+    margin: 0;
+    font-family: 'IRANyekan', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*   
+body{
+    direction: rtl;
+    margin: 0;
+    font-family: 'iransans', sans-serif;
+} */
