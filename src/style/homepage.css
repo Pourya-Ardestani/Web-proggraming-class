@@ -232,7 +232,59 @@
 
 }
 
+/* por forosh tarin ha /////////////// */
 
+.most-purchased {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.2rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 76.5rem;
+    margin: 0 auto;
+    
+}
+
+.most-purchased-item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    border: 1px solid #D6D6D6;
+    padding: 1rem;
+}
+
+.item-name{
+    display: inline;
+    font-size: 1.2rem;
+}
+.item-name-and-like{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.like-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    align-self: end;
+}
+
+
+ .item-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+ }
+    
+.price {
+    align-self: end;
+    /* color: #A72F3B; */
+}
 
 
 /* footer ///////////////////////////////// */
