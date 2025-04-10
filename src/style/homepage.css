@@ -2,6 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'IRANyekan', sans-serif;
+
 }
 
 /* hr{
@@ -219,7 +221,7 @@
 
 /* por forosh tarin ha /////////////// */
 
-.most-purchased {
+.most-purchased , .most-wanted-designs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -230,7 +232,7 @@
   margin: 0 auto;
 }
 
-.most-purchased-item {
+.most-purchased-item , .designs-item {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -343,6 +345,29 @@
   line-height: 140%;
   letter-spacing: 0px;
   
+}
+
+/* most wanted designs ///////////////////////////////// */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: white;
+  color:  #a72f3b;
+  border: 1px solid #a72f3b;
+  width: 100%;
+  /* text-align: center; */
+  justify-content: center;
 }
 
 /* footer ///////////////////////////////// */
