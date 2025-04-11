@@ -221,7 +221,8 @@
 
 .most-purchased,
 .most-wanted-designs,
-.best-designers {
+.best-designers,
+.newest-designs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -234,7 +235,8 @@
 
 .most-purchased-item,
 .designs-item,
-.best-designers-item {
+.best-designers-item,
+.newest-designs-item {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -247,6 +249,11 @@
 .item-name {
   display: inline;
   font-size: 1.2rem;
+
+  font-weight: 700;
+
+  line-height: 140%;
+  letter-spacing: 0px;
 }
 .item-name-and-like {
   display: flex;
@@ -270,6 +277,7 @@
 
 .price {
   align-self: end;
+  margin-top: 2rem;
   /* color: #A72F3B; */
 }
 
@@ -371,8 +379,6 @@
 
 /* طراحان برتر ///////////////////////////////// */
 
-
-
 .designer-profile {
   display: flex;
   flex-direction: column;
@@ -398,7 +404,7 @@
 
 .designer-info {
   display: flex;
-  flex-direction: row ;
+  flex-direction: row;
   align-items: center;
   color: #898989;
   gap: 1rem;
@@ -412,8 +418,7 @@
   font-size: 0.625rem;
   line-height: 180%;
   letter-spacing: 0px;
-  text-align: right;
-  
+
 }
 
 .vertical-seperator-line {
@@ -421,9 +426,7 @@
   rotate: 90deg;
 
   border: 1px solid #898989;
-
 }
-
 
 .designer-photos-container {
   display: flex;
@@ -439,25 +442,23 @@
 
 body > hr:nth-child(3) {
   width: 100%;
-  color: #D6D6D6;
+  color: #d6d6d6;
 }
 /* banner ///////////////////////////////// */
-
 
 .banner-parent {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 1.2rem;
-  
+
   max-width: 76.5rem;
   /* width: 100%; */
   width: 76.5rem;
   height: 11.75rem;
   border-radius: 1rem;
 
-
-  margin: 1rem ;
+  margin: 1rem;
 }
 
 .banner-item {
@@ -465,19 +466,15 @@ body > hr:nth-child(3) {
   align-items: center;
   justify-content: space-between;
   gap: 1.2rem;
-  background-color: #EDD5D8;
+  background-color: #edd5d8;
   border-radius: 16px;
   width: 37.4375rem;
-
 }
 
 .banner-item > img {
   border-radius: 16px;
   /* align-self: end; */
 }
-
-
-
 
 .banner-text-button {
   display: flex;
@@ -489,7 +486,6 @@ body > hr:nth-child(3) {
   top: 1.5rem;
   left: 20.75rem;
 
-
   /* padding: 1rem; */
   margin-right: 1rem;
   border-radius: 16px;
@@ -500,21 +496,53 @@ body > hr:nth-child(3) {
   font-weight: 700;
   line-height: 140%;
   letter-spacing: 0px;
-
 }
 
 .banner-button {
-  color: #A72F3B;
-  
-  border: 1px solid #A72F3B;
+  color: #a72f3b;
+
+  border: 1px solid #a72f3b;
   border-radius: 8px;
   padding: 0.5rem 1rem;
-  background-color: #EDD5D8;
-  
+  background-color: #edd5d8;
 }
 
+/* جدیدترین طرح های هفته ////////////////////////*/
 
+.first-newest-designs-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 1.2rem; */
+  padding: 2rem 2rem 2rem 1rem;
+}
 
+.bag-images {
+  /* padding-left: 1rem; */
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#newest-design-text {
+  width: 253px;
+  height: 170px;
+  top: 43px;
+  left: 5px;
+
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 140%;
+  letter-spacing: 0px;
+}
+
+#small-bag {
+  width: 100px;
+  height: 100px;
+  align-self: end;
+  margin-left: -1.5rem;
+  z-index: 1;
+}
 
 /* footer ///////////////////////////////// */
 .footer {
