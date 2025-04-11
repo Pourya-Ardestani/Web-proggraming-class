@@ -418,7 +418,6 @@
   font-size: 0.625rem;
   line-height: 180%;
   letter-spacing: 0px;
-
 }
 
 .vertical-seperator-line {
@@ -544,6 +543,61 @@ body > hr:nth-child(3) {
   z-index: 1;
 }
 
+/* wedding card frame ///////////////////////////////// */
+.wedding-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 76.5rem;
+  margin: 0 auto;
+  padding: 1.5rem 0rem;
+
+}
+
+h4{
+font-weight: 700;
+font-size: 1.5rem;
+line-height: 140%;
+letter-spacing: 0px;
+}
+
+.wedding-card-images>img{
+  border-radius: 16px;
+}
+
+.wedding-card-images{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.wedding-card-button{
+  width: 11.5rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.5rem 1.5rem ;
+  border-radius: 0.5rem;
+  background-color: #a72f3b;
+
+}
+
+.wedding-card-button-text{
+  font-weight: 500;
+  font-size: .875rem;
+  line-height: 1.5rem;
+  letter-spacing: 0px;
+  text-align: center;
+  color: white;
+  
+}
 /* footer ///////////////////////////////// */
 .footer {
   position: fixed;
