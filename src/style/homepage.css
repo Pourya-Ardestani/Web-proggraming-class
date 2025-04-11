@@ -222,7 +222,8 @@
 .most-purchased,
 .most-wanted-designs,
 .best-designers,
-.newest-designs {
+.newest-designs,
+.favorites {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -236,7 +237,8 @@
 .most-purchased-item,
 .designs-item,
 .best-designers-item,
-.newest-designs-item {
+.newest-designs-item,
+.favorites-item {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -379,6 +381,9 @@
 
 /* طراحان برتر ///////////////////////////////// */
 
+
+
+
 .designer-profile {
   display: flex;
   flex-direction: column;
@@ -415,7 +420,7 @@
   white-space: nowrap;
 
   font-weight: 400;
-  font-size: 0.625rem;
+  font-size: 0.875rem;
   line-height: 180%;
   letter-spacing: 0px;
 }
@@ -430,7 +435,7 @@
 .designer-photos-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   gap: 0.5rem;
 }
@@ -553,21 +558,20 @@ body > hr:nth-child(3) {
   max-width: 76.5rem;
   margin: 0 auto;
   padding: 1.5rem 0rem;
-
 }
 
-h4{
-font-weight: 700;
-font-size: 1.5rem;
-line-height: 140%;
-letter-spacing: 0px;
+h4 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 140%;
+  letter-spacing: 0px;
 }
 
-.wedding-card-images>img{
+.wedding-card-images > img {
   border-radius: 16px;
 }
 
-.wedding-card-images{
+.wedding-card-images {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -575,7 +579,7 @@ letter-spacing: 0px;
   gap: 1.5rem;
 }
 
-.wedding-card-button{
+.wedding-card-button {
   width: 11.5rem;
   height: 3rem;
   display: flex;
@@ -583,24 +587,65 @@ letter-spacing: 0px;
   justify-content: center;
   align-items: center;
   gap: 0.2rem;
-  padding: 0.5rem 1.5rem ;
+  padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
   background-color: #a72f3b;
-
 }
 
-.wedding-card-button-text{
+.wedding-card-button-text {
   font-weight: 500;
-  font-size: .875rem;
+  font-size: 0.875rem;
   line-height: 1.5rem;
   letter-spacing: 0px;
   text-align: center;
   color: white;
+}
+
+
+/*favorites  ///////////////////////////////// */
+
+.favorites {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 2rem 0rem;
+  width: 100%;
+  max-width: 76.5rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.favorites-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  flex: 1;
+}
+
+.carosel-flash {
+  width: 48px;
+  height: 47px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #a72f3b;
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
   
 }
+#arrow-left {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 /* footer ///////////////////////////////// */
 .footer {
   position: fixed;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
   left: 0;
   bottom: 0;
   width: 100%;
