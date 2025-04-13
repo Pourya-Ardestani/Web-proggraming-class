@@ -171,7 +171,7 @@
   flex-shrink: 1;
 }
 
-.icon-with-text > h3 {
+.icon-with-text>h3 {
   font-size: 1.5rem;
   margin: 0;
 }
@@ -257,6 +257,7 @@
   line-height: 140%;
   letter-spacing: 0px;
 }
+
 .item-name-and-like {
   display: flex;
   flex-direction: row;
@@ -322,12 +323,10 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 1rem;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 65.07%,
-    rgba(0, 0, 0, 0.82026) 84.63%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 65.07%,
+      rgba(0, 0, 0, 0.82026) 84.63%,
+      rgba(0, 0, 0, 0.9) 100%);
   color: white;
 }
 
@@ -401,7 +400,8 @@
   background-color: #f6eaeb;
   z-index: 1;
 }
-.designer-name > h4 {
+
+.designer-name>h4 {
   /* align-items: center; */
   text-align: center;
   margin-top: 1rem;
@@ -444,10 +444,11 @@
   z-index: 2;
 }
 
-body > hr:nth-child(3) {
+body>hr:nth-child(3) {
   width: 100%;
   color: #d6d6d6;
 }
+
 /* banner ///////////////////////////////// */
 
 .banner-parent {
@@ -475,7 +476,7 @@ body > hr:nth-child(3) {
   width: 37.4375rem;
 }
 
-.banner-item > img {
+.banner-item>img {
   border-radius: 16px;
   /* align-self: end; */
 }
@@ -495,7 +496,7 @@ body > hr:nth-child(3) {
   border-radius: 16px;
 }
 
-.banner-text-button > h4 {
+.banner-text-button>h4 {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 140%;
@@ -567,7 +568,7 @@ h4 {
   letter-spacing: 0px;
 }
 
-.wedding-card-images > img {
+.wedding-card-images>img {
   border-radius: 16px;
 }
 
@@ -633,8 +634,9 @@ h4 {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  
+
 }
+
 #arrow-left {
   width: 2.5rem;
   height: 2.5rem;
@@ -642,14 +644,155 @@ h4 {
 
 /* footer ///////////////////////////////// */
 .footer {
-  position: fixed;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
-  left: 0;
-  bottom: 0;
   width: 100%;
-  background-color: #a72f3b;
+  /* max-width: 76.5rem; */
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-upper {
+  background-color: #641C23;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer-texts {
   color: white;
+}
+
+.social-media {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-media img {
+  /* width: 2rem; */
+  width: 100%;
+  ;
+  height: 2rem;
+  filter: brightness(0) invert(1);
+  /* align-items: end; */
+
+}
+
+.social-media-names {
+  color: white;
+}
+
+.submit-opinion {
+  display: flex;
+  align-items: center;
+}
+
+
+.email-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.email-form input {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  /* width: 20rem; */
+  width: 100%;
+  font-family: inherit;
+  background-color: #641C23;
+  border: 1px solid white;
+  color: white;
+  border-radius: 16px;
+}
+
+.email-form button {
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  border: 0px;
+  background-color: #A72F3B;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 16px;
+  height: fit-content;
+  align-self: end;
+}
+
+.email-form button:hover {
+  background-color: white;
+  color: #A72F3B;
+  transition: all 0.3s ease;
+}
+
+
+.footer-lower {
+  background-color: #A72F3B;
+  padding: 2rem 4rem;
+  /* min-height: 200px; */
+  color: white;
+
+}
+
+.caption-container {
+  border-bottom: 1px solid white;
+  width: fit-content;
+  margin-bottom: 1rem;
+}
+
+.text-column-container {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  gap: 3rem;
+}
+
+.text-column {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.nemad-credit {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.call-info-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+
+.footer-lower-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   text-align: center;
+  margin-bottom: 2rem;
+}
+
+.nemad-logos-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.paragraph-5 {
+
+  font-weight: 400;
+  font-size: .75rem;
+  line-height: 180%;
+  letter-spacing: 0px;
+
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 140%;
+  letter-spacing: 0px;
+
 }
