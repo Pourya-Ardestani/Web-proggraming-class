@@ -137,7 +137,251 @@
   height: 1.5rem;
 }
 
-.hero-image {
+/* //////////////////////////// */
+
+.hero {
+  position: relative;
+  width: 1224px;
+  height: 444px;
+  background-color: var(--primarytint-3);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.hero .frame {
+  position: absolute;
+  width: 241px;
+  height: 381px;
+  top: -69px;
+  left: 1188px;
+  background-color: var(--primarytint-2);
+  border-radius: 8px;
+  transform: rotate(12.12deg);
+}
+
+.hero .overlap {
+  position: absolute;
+  width: 1307px;
+  height: 628px;
+  top: 0;
+  left: -155px;
+}
+
+.hero .overlap-group {
+  position: absolute;
+  width: 1307px;
+  height: 628px;
+  top: 0;
+  left: 0;
+}
+
+.hero .div {
+  position: absolute;
+  width: 241px;
+  height: 381px;
+  top: 232px;
+  left: 26px;
+  background-color: var(--primarytint-2);
+  border-radius: 8px;
+  transform: rotate(-8.18deg);
+}
+
+.hero .overlap-group-wrapper {
+  position: absolute;
+  width: 854px;
+  height: 404px;
+  top: 0;
+  left: 213px;
+}
+
+.hero .overlap-group-2 {
+  position: relative;
+  width: 885px;
+  height: 392px;
+  top: 38px;
+}
+
+.hero .rectangle {
+  top: 11px;
+  left: 118px;
+  position: absolute;
+  width: 190px;
+  height: 314px;
+  background-color: var(--primarytint-2);
+  border-radius: 8px;
+  transform: rotate(7.43deg);
+}
+
+.hero .rectangle-2 {
+  top: 33px;
+  left: 469px;
+  position: absolute;
+  width: 190px;
+  height: 314px;
+  background-color: var(--primarytint-2);
+  border-radius: 8px;
+  transform: rotate(7.43deg);
+}
+
+.hero .goll {
+  position: absolute;
+  width: 152px;
+  height: 181px;
+  top: 34px;
+  left: 575px;
+  object-fit: cover;
+}
+
+.hero .element-girls {
+  position: absolute;
+  width: 764px;
+  height: 355px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.hero .img {
+  position: absolute;
+  width: 72px;
+  height: 88px;
+  top: 149px;
+  left: 362px;
+  object-fit: cover;
+}
+
+.hero .goll-2 {
+  position: absolute;
+  width: 72px;
+  height: 88px;
+  top: 146px;
+  left: 255px;
+  object-fit: cover;
+}
+
+.hero .goll-3 {
+  position: absolute;
+  width: 72px;
+  height: 88px;
+  top: 164px;
+  left: 440px;
+  object-fit: cover;
+}
+
+.hero .goll-4 {
+  position: absolute;
+  width: 185px;
+  height: 204px;
+  top: 188px;
+  left: 54px;
+  object-fit: cover;
+}
+
+.hero .button {
+  all: unset;
+  box-sizing: border-box;
+  top: 288px;
+  left: 701px;
+  border: 1px solid;
+  border-color: var(--redp);
+  display: flex;
+  width: 184px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 24px;
+  position: absolute;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hero .text-wrapper {
+  color: var(--redp);
+  position: relative;
+  width: fit-content;
+  font-family: var(--button-02-font-family);
+  font-weight: var(--button-02-font-weight);
+  font-size: var(--button-02-font-size);
+  text-align: center;
+  letter-spacing: var(--button-02-letter-spacing);
+  line-height: var(--button-02-line-height);
+  white-space: nowrap;
+  direction: rtl;
+  font-style: var(--button-02-font-style);
+}
+
+.hero .text-wrapper-2 {
+  top: 111px;
+  left: 1030px;
+  font-family: var(--heading-h3-font-family);
+  font-weight: var(--heading-h3-font-weight);
+  font-size: var(--heading-h3-font-size);
+  line-height: var(--heading-h3-line-height);
+  white-space: nowrap;
+  position: absolute;
+  color: var(--neutralgray-9);
+  letter-spacing: var(--heading-h3-letter-spacing);
+  direction: rtl;
+  font-style: var(--heading-h3-font-style);
+}
+
+.hero .p {
+  width: 384px;
+  top: 172px;
+  left: 923px;
+  font-family: var(--body-02-font-family);
+  font-weight: var(--body-02-font-weight);
+  font-size: var(--body-02-font-size);
+  line-height: var(--body-02-line-height);
+  position: absolute;
+  color: var(--neutralgray-9);
+  letter-spacing: var(--body-02-letter-spacing);
+  direction: rtl;
+  font-style: var(--body-02-font-style);
+}
+
+.hero .button-2 {
+  all: unset;
+  box-sizing: border-box;
+  top: 326px;
+  left: 1122px;
+  background-color: var(--redp);
+  display: flex;
+  width: 184px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 24px;
+  position: absolute;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hero .text-wrapper-3 {
+  color: var(--white);
+  position: relative;
+  width: fit-content;
+  font-family: var(--button-02-font-family);
+  font-weight: var(--button-02-font-weight);
+  font-size: var(--button-02-font-size);
+  text-align: center;
+  letter-spacing: var(--button-02-letter-spacing);
+  line-height: var(--button-02-line-height);
+  white-space: nowrap;
+  direction: rtl;
+  font-style: var(--button-02-font-style);
+}
+
+.hero .vuesax-outline-brush {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+
+/* .hero-image {
   display: flex;
   justify-content: center;
 }
@@ -146,7 +390,7 @@
   margin-top: 3rem;
   max-width: 100%;
   height: auto;
-}
+} */
 
 /* seperat دسته بندی محصولات //////////////////*/
 .seperator {
@@ -420,7 +664,7 @@
   white-space: nowrap;
 
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: 0.625rem;
   line-height: 180%;
   letter-spacing: 0px;
 }
