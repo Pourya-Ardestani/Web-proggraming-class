@@ -906,9 +906,17 @@ h4 {
   color: white;
 }
 
+.social-media-name-and-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
+}
+
 .social-media {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 
 .social-media img {

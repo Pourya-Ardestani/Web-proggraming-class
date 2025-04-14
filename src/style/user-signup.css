@@ -114,11 +114,9 @@
     text-align: end;
 }
 
-.temp-input{
-    
-}
+.temp-input {}
 
-.red-button{
+.red-button {
     background-color: #A72F3B;
     width: 11.5rem;
     height: 3rem;
@@ -131,10 +129,6 @@
     align-items: center;
 }
 
-/* .red-button > img{
-    width:1.5rem ;
-    height:1.5rem ;
-} */
 
 /* .user-info {
     position: relative;
@@ -444,9 +438,18 @@
     color: white;
 }
 
+
+.social-media-name-and-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: white;
+}
+
 .social-media {
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
 .social-media img {
@@ -516,6 +519,7 @@
     color: white;
 
 }
+
 
 .caption-container {
     border-bottom: 1px solid white;
