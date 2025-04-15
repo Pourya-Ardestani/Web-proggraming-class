@@ -73,46 +73,142 @@
     justify-content: center;
     gap: 1.5rem;
     margin: 1.5rem;
-  }
-  
-.line-circle{
+}
+
+.line-circle {
     display: inline-flex;
 }
-.dotted-line{
+
+.dotted-line {
     width: 125px;
     height: 0px;
     align-self: center;
     border: .1rem dashed #EDD5D8;
 }
-.circle{
+
+.circle {
     width: 0.75rem;
     height: 0.75rem;
     background-color: #EDD5D8;
     border-radius: 50%;
 }
-.circle-filled{
+
+.circle-filled {
     width: 0.75rem;
     height: 0.75rem;
     background-color: #A72F3B;
     border-radius: 50%;
 }
-.text-wrapper{
-    color: #B95962 ;
-    white-space: nowrap; /* Prevents text from wrapping */
+
+.text-wrapper {
+    color: #B95962;
+    white-space: nowrap;
+    /* Prevents text from wrapping */
 }
-.text-wrapper-filled{
-    white-space: nowrap; /* Prevents text from wrapping */
-    color:#A72F3B ;
+
+.text-wrapper-filled {
+    white-space: nowrap;
+    /* Prevents text from wrapping */
+    color: #A72F3B;
     font-weight: 600;
 }
 
-.icon-and-name{
+.icon-and-name {
     display: flex;
     flex-direction: column;
 }
-.call-user-icons{
+
+.call-user-icons {
     align-self: center;
 }
+
+/* form ////////////////////////////////////// */
+.photo-form-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    margin: 1rem;
+
+}
+
+.big-image{
+    width:32.5rem ;
+    height: 32rem;
+    align-self: end;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    border: 1px solid;
+    border-radius: 8px;
+    border-color: var(--neutralgray-3);
+    height: 50.75rem;
+    /* width: 18rem; */
+    padding-top: 1rem;
+}
+
+.input-section {
+    height: 4.5rem;
+    width: 18rem;
+}
+
+.text-wrapper {
+    margin: 0px;
+    color: #CBCBCB;
+}
+
+.input-row {
+
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    padding: 0.7rem 1rem 0rem;
+}
+
+.input-field {
+    border-radius: .5rem;
+    border: 1px solid #CBCBCB;
+    width: 100%;
+    height: 2.5rem;
+    padding: .5rem;
+    background: white;
+}
+
+.left-align {
+    text-align: end;
+}
+
+.temp-input {}
+
+.red-button {
+    background-color: #A72F3B;
+    width: 11.5rem;
+    height: 3rem;
+    align-self: end;
+    margin: 2rem 0rem 0.5rem 1rem;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-section-wide {
+    width: 100%;
+}
+
+
+/* ///map .../////////////////////////// */
+
+.map {
+    height: 18.75rem;
+    width: 60%;
+    align-self: center;
+    margin-top: 1rem;
+}
+
 
 /* footer ///////////////////////////////// */
 .footer {

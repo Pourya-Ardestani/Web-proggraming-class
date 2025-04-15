@@ -1,54 +1,86 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="styleguide.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="user-info">
-      <div class="input">
-        <div class="text"><div class="text-wrapper">نام و نام خانوادگی</div></div>
-        <div class="input-field"><div class="div">نگار زمانی</div></div>
-      </div>
-      <div class="input-2">
-        <div class="text"><div class="text-wrapper">تحصیلات (اختیاری)</div></div>
-        <div class="input-field-2">
-          <div class="div">انتخاب کنید</div>
-          <img class="vuesax-bold-arrow" src="img/arrow-down.svg" />
-        </div>
-      </div>
-      <div class="input-3">
-        <div class="text"><div class="text-wrapper">شغل (اختیاری)</div></div>
-        <div class="input-field-2">
-          <div class="div">انتخاب کنید</div>
-          <img class="vuesax-bold-arrow" src="img/arrow-down.svg" />
-        </div>
-      </div>
-      <div class="input-4">
-        <div class="text"><div class="text-wrapper">آدرس ایمیل</div></div>
-        <div class="input-field-3"><input class="div-2" placeholder="n.zamani@gmail.com" type="email" /></div>
-      </div>
-      <div class="input-5">
-        <div class="text"><div class="text-wrapper">کلمه عبور</div></div>
-        <div class="input-field-3"><div class="text-wrapper-2">************</div></div>
-      </div>
-      <div class="input-6">
-        <div class="text"><div class="text-wrapper">کد ملی</div></div>
-        <div class="input-field-3"><div class="text-wrapper-3">۹۹۹۹۹۹۹۹۹۹</div></div>
-      </div>
-      <div class="input-7">
-        <div class="text"><div class="text-wrapper">تاریخ تولد</div></div>
-        <div class="input-field-3">
-          <div class="text-wrapper-3">۱۳۷۰/۰۱/۰۱</div>
-          <img class="vuesax-outline" src="img/calendar.svg" />
-        </div>
-      </div>
-      <button class="button">
-        <img class="vuesax-outline-arrow" src="img/arrow-left.svg" />
-        <div class="text-wrapper-4">مرحله بعدی</div>
-      </button>
-    </div>
-  </body>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>انتخاب موقعیت روی نقشه</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- استایل Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    body {
+      font-family: sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    #map-container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+
+    #location {
+      text-align: center;
+      margin-top: 10px;
+      color: #555;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>روی نقشه کلیک کن تا موقعیتت انتخاب بشه</h2>
+
+  <div id="map-container">
+    <div id="map"></div>
+  </div>
+
+  <!-- <p id="location">موقعیت انتخاب شده: هنوز انتخاب نشده</p> -->
+
+  <!-- اسکریپت Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // نقشه با زوم روی ایران
+    const map = L.map('map').setView([32.4279, 53.6880], 5);
+
+    // بارگذاری نقشه
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    let marker;
+
+    // وقتی روی نقشه کلیک می‌کنی
+    map.on('click', function(e) {
+      const lat = e.latlng.lat.toFixed(5);
+      const lng = e.latlng.lng.toFixed(5);
+      document.getElementById('location').textContent = `موقعیت انتخاب شده: ${lat}, ${lng}`;
+
+      if (marker) {
+        marker.setLatLng(e.latlng);
+      } else {
+        marker = L.marker(e.latlng).addTo(map);
+      }
+    });
+  </script>
+
+</body>
 </html>
