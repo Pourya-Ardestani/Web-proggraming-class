@@ -871,13 +871,11 @@ h4 {
   width: 48px;
   height: 47px;
   border-radius: 50%;
-  background-color: white;
-  border: 1px solid #a72f3b;
-  position: absolute;
-  left: -2rem;
-  top: 50%;
+  background-color: inherit;
+
   transform: translateY(-50%);
   z-index: 1;
+  margin-right: -2.5rem
 
 }
 
