@@ -281,8 +281,21 @@ body {
   height: 3.12rem;
   gap: 0.25rem;
 }
-a{
-  text-decoration: none;
+a {
+  color: inherit; /* or set a specific color like #000 or white */
+  text-decoration: none; /* optional: removes underline */
+}
+
+a:visited {
+  color: inherit; /* same as above */
+}
+
+a:hover {
+  color: #A72F3B; /* blue on hover, or whatever you want */
+}
+
+a:active {
+  color: inherit;
 }
 
 .main-menu {
