@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>selected product</title>
+
+    <link href="../src/style/selected-product.css" rel="stylesheet" />
+    <link href="../src/style/base.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="search-bar">
+      <div class="logo">
+        <img class="logo-image" src="../src/images/landing/LogoFrame.svg" />
+      </div>
+      <div class="search-space">
+        <input type="text" name="q" placeholder="جستجو...." />
+        <button type="submit">
+          <img src="../src/images/landing/search-normal.svg" />
+        </button>
+      </div>
+      <div class="sabad-vorod">
+        <a href="user-signup.html" class="login">
+          <img src="../src/images/landing/Login.svg" />
+          <p>ورود | ثبت نام</p>
+        </a>
+        <a href="../pages/Order-history.html" class="sabad">
+          <img src="../src/images/landing/shopping-cart.svg" />
+          <p>سبد خرید</p>
+        </a>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- ///main menu///////////////////// -->
+    <div class="main-menu">
+      <button class="self-design">
+        <img src="../src/images/landing/magicpen.svg" id="magic-pen" />
+        <p>خودت طراحیش کن !</p>
+      </button>
+      <div class="items">
+        <button class="item">پوشاک</button>
+        <button class="item">لوازم خانه</button>
+        <button class="item">قاب موبایل</button>
+        <button class="item">اکسسوری</button>
+        <button class="item">مدرسه و اداره</button>
+        <button class="item">کارت و پوستر</button>
+        <button class="item">جشن و مهمانی</button>
+      </div>
+    </div>
+
+    <!-- ///Main-content of this page -->
+    <div class="product-container">
+      <div class="product-images">
+        <div class="thumbnail-container">
+          <img
+            src="../src/images/selected-product/back.svg"
+            alt="تیشرت سفید"
+            class="thumbnail active"
+          />
+          <img
+            src="../src/images/selected-product/back.svg"
+            alt="تیشرت سفید"
+            class="thumbnail"
+          />
+          <img
+            src="../src/images/selected-product/back.svg"
+            alt="تیشرت سفید"
+            class="thumbnail"
+          />
+          <img
+            src="../src/images/selected-product/back.svg"
+            alt="تیشرت سفید"
+            class="thumbnail"
+          />
+          <button class="down-arrow-button">
+            <img
+              src="../src/images/selected-product/down-arrow.svg"
+              alt="down arrow"
+            />
+          </button>
+        </div>
+        <div class="main-image-container">
+          <img
+            src="../src/images/selected-product/front-tshirt.svg"
+            alt="تیشرت سفید"
+            class="main-image"
+          />
+          <div class="color-options">
+            <span
+              class="color-option selected"
+              style="background-color: white"
+            ></span>
+            <span class="color-option" style="background-color: black"></span>
+            <span
+              class="color-option selected-color"
+              style="background-color: #a72f3b"
+            ></span>
+            <span class="color-option" style="background-color: #00a76f"></span>
+            <span class="color-option" style="background-color: #ffa500"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-details">
+        <h4 class="product-title">مشخصات محصول</h4>
+
+        <div class="product-info-list">
+          <div class="info-item">
+            <span class="body-1">جنس:</span>
+            <span class="body-1">نخ، پلی استر</span>
+          </div>
+          <div class="info-item">
+            <span class="body-1">شستشو:</span>
+            <span class="body-1">با دست</span>
+          </div>
+          <div class="info-item">
+            <span class="body-1">سایز ها:</span>
+            <span class="body-1">S, M, L, XL, XXL, XXXL</span>
+          </div>
+          <div class="info-item">
+            <span class="body-1">رنگ ها:</span>
+            <span class="body-1"
+              >مشکی، سفید، قرمز، سبز، نارنجی، زرشکی، بنفش</span
+            >
+          </div>
+          <div class="info-item">
+            <span class="body-1">قد:</span>
+            <span class="body-1">۶۰ سانتی متر</span>
+          </div>
+        </div>
+
+        <select class="size-selector">
+          <option value="M">M</option>
+          <option value="S">S</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XXL">XXL</option>
+          <option value="XXXL">XXXL</option>
+        </select>
+
+        <div class="price">۱۲۷,۰۰۰ تومان</div>
+
+        <div class="action-buttons">
+          <button class="add-to-cart">
+            <img
+              src="../src/images/selected-product/shopping-cart.svg"
+              alt="cart"
+            />
+            <p class="button-2">افزودن به سبد</p>
+          </button>
+          <button class="customize-product">
+            <img
+              src="../src/images/selected-product/magicpen.svg"
+              alt="customize"
+            />
+            <p class="button-2">شخصی سازی محصول</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- //downer-body/////////// -->
+    <div class="downer-body">
+      <div class="rating-section">
+        <div class="rating-header">
+          <h2>امتیاز و دیدگاه کاربران</h2>
+          <div class="rating-summary">
+            <div class="rating-number">۴.۱ از ۵</div>
+            <div class="star-sum">
+              <div class="star-rating">
+                <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                <img src="../src/images/selected-product/star-empty.svg" alt="star"/>
+              </div>
+              <div class="rating-count">از مجموع ۱۲۰ امتیاز</div>
+            </div>
+           
+          </div>
+          <p class="body-4">نظر خود را ثبت کنید</p>
+          <button class="submit-review">ثبت دیدگاه</button>
+        </div>
+      </div>
+
+      <div class="reviews-section">
+        <div class="satisfaction-banner">
+          <img src="../src/images/selected-product/like.svg" alt="like-icon"/>
+          <p class="body-2">۷۰٪ (۱۲۰ نفر) از خرید این محصول رضایت داشته اند</p>
+        </div>
+
+        <div class="customer-photos">
+          <div class="photos-grid">
+            <img class="customer-photo" src="../src/images/selected-product/back.svg" alt="تصویر محصول"/>
+            <img class="customer-photo" src="../src/images/selected-product/back.svg" alt="تصویر محصول"/>
+            <img class="customer-photo" src="../src/images/selected-product/back.svg" alt="تصویر محصول"/>
+          </div>
+          <a href="#" class="see-more body-2">مشاهده بیشتر</a>
+        </div>
+
+        <div class="reviews-list">
+          <div class="review-item">
+            <div class="review-header">
+              <div class="reviewer-rating">
+                <span class="review-date">۱۶ آذر ۱۴۰۲</span>
+                <span class="reviewer-name body-2">پوریا اردستانی</span>
+                <span class="reviewer-type green-text button-2">خریدار</span>
+                <div class="star-rating">
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                </div>
+              </div>
+            </div>
+            <p class="review-text">بسیار عالی و با کیفیت</p>
+            <div class="review-attributes">
+              <span class="attribute positive">خنک</span>
+              <span class="attribute negative">گران</span>
+              <span class="attribute positive">با کیفیت</span>
+            </div>
+            <div class="review-feedback">
+              <p class="feedback-question body-2" >آیا این دیدگاه مفید بود؟</p>
+              <div class="feedback-buttons">
+                <button class="feedback-btn"><img src="../src/images/selected-product/like.svg" alt="thumbs up"/></button>
+                <button class="feedback-btn"><img src="../src/images/selected-product/dislike.svg" alt="thumbs down"/></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <div class="review-header">
+              <div class="reviewer-rating">
+                <span class="review-date">۱۶ آذر ۱۴۰۲</span>
+                <span class="reviewer-name body-2">پوریا اردستانی</span>
+                <span class="reviewer-type green-text button-2">خریدار</span>
+                <div class="star-rating">
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                  <img src="../src/images/selected-product/star-empty.svg" alt="star"/>
+                  <img src="../src/images/selected-product/star-empty.svg" alt="star"/>
+                </div>
+              </div>
+            </div>
+            <p class="review-text">بسیار عالی و با کیفیت</p>
+            <div class="review-attributes">
+              <span class="attribute positive">خنک</span>
+              <span class="attribute negative">گران</span>
+              <span class="attribute positive">با کیفیت</span>
+            </div>
+            <div class="review-feedback">
+              <p class="feedback-question body-2" >آیا این دیدگاه مفید بود؟</p>
+              <div class="feedback-buttons">
+                <button class="feedback-btn"><img src="../src/images/selected-product/like.svg" alt="thumbs up"/></button>
+                <button class="feedback-btn"><img src="../src/images/selected-product/dislike.svg" alt="thumbs down"/></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <div class="review-header">
+              <div class="reviewer-rating">
+                <span class="review-date">۱۶ آذر ۱۴۰۲</span>
+                <span class="reviewer-name body-2">پوریا اردستانی</span>
+                <span class="reviewer-type green-text button-2">خریدار</span>
+                <div class="star-rating">
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                  <img src="../src/images/selected-product/star-filled.svg" alt="star"/>
+                </div>
+              </div>
+            </div>
+            <p class="review-text">بسیار عالی و با کیفیت</p>
+            <div class="review-attributes">
+              <span class="attribute positive">خنک</span>
+              <span class="attribute negative">گران</span>
+              <span class="attribute positive">با کیفیت</span>
+            </div>
+            <div class="review-feedback">
+              <p class="feedback-question body-2" >آیا این دیدگاه مفید بود؟</p>
+              <div class="feedback-buttons">
+                <button class="feedback-btn"><img src="../src/images/selected-product/like.svg" alt="thumbs up"/></button>
+                <button class="feedback-btn"><img src="../src/images/selected-product/dislike.svg" alt="thumbs down"/></button>
+              </div>
+            </div>
+          </div>
+          <!-- Additional review items can be added here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- foooter /////////////////////////// -->
+    <div class="footer">
+      <div class="footer-upper">
+        <div class="submit-opinion">
+          <form class="email-form">
+            <div class="email-abovetext">
+              <p class="footer-texts">
+                برای دریافت آخرین اخبار و تخفیف های جدید،ایمیل خود را وارد
+                نمایید
+              </p>
+              <input type="email" placeholder="ایمیل خود را وارد کنید" />
+            </div>
+            <button type="submit">ثبت</button>
+          </form>
+        </div>
+
+        <div class="social-media-name-and-icons">
+          <p class="body-4">ما را در شبکه های اجتماعی دنبال کنید</p>
+
+          <div class="social-media">
+            <a href="#"
+              ><img
+                src="../src/images/landing/YouTube_light_icon_(2017).svg"
+                alt="Youtube"
+            /></a>
+
+            <a href="#"
+              ><img src="../src/images/landing/Pinterest.svg" alt="Pinterest"
+            /></a>
+
+            <a href="#"
+              ><img src="../src/images/landing/facebook.svg" alt="facebook"
+            /></a>
+
+            <div>
+              <a href="#"
+                ><img src="../src/images/landing/Instagram.svg" alt="Instagram"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-lower">
+        <div class="footer-lower-container">
+          <div class="text-column-container">
+            <div class="text-column">
+              <div class="caption-container">
+                <p class="Caption/01">همراه با کاستومی</p>
+              </div>
+              <p class="paragraph-texts">نقشه سایت</p>
+              <p class="paragraph-texts">فرصت همکاری</p>
+              <p class="paragraph-texts">تماس با ما</p>
+              <p class="paragraph-texts">نقشه سایت</p>
+            </div>
+
+            <div class="text-column">
+              <div class="caption-container">
+                <p class="Caption/01">همراه با کاستومی</p>
+              </div>
+              <p class="paragraph-texts">نقشه سایت</p>
+              <p class="paragraph-texts">فرصت همکاری</p>
+              <p class="paragraph-texts">تماس با ما</p>
+              <p class="paragraph-texts">نقشه سایت</p>
+            </div>
+
+            <div class="text-column">
+              <div class="caption-container">
+                <p class="Caption/01">همراه با کاستومی</p>
+              </div>
+              <p class="paragraph-texts">نقشه سایت</p>
+              <p class="paragraph-texts">فرصت همکاری</p>
+              <p class="paragraph-texts">تماس با ما</p>
+              <p class="paragraph-texts">نقشه سایت</p>
+            </div>
+          </div>
+
+          <div class="nemad-credit">
+            <h6>فروشگاه اینترنتی کاستومی</h6>
+            <div class="call-info-container">
+              <p class="paragraph-5">تماس با پشتیبانی :۰۲۱-۳۴۵۶۰۰۰</p>
+              <p class="paragraph-5">پاسخگویی ۲۴ ساعته ، ۷ روز هفته</p>
+            </div>
+            <div class="nemad-logos-container">
+              <img
+                src="../src/images/landing/nemad-image.svg"
+                alt="nemad-image"
+              />
+              <img
+                src="../src/images/landing/nemad-image.svg"
+                alt="nemad-image"
+              />
+              <img
+                src="../src/images/landing/nemad-image.svg"
+                alt="nemad-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
