@@ -1,126 +1,165 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>فیلترها</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f9f9f9;
-      padding: 20px;
-      direction: rtl;
-    }
-    .filter-box {
-      background-color: white;
-      border-radius: 12px;
-      padding: 20px;
-      width: 280px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-    .filter-box h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-    }
-    .remove-filters {
-      color: red;
-      font-size: 12px;
-      margin-bottom: 20px;
-      cursor: pointer;
-    }
-    .dropdown {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background-color: #fff;
-      font-size: 14px;
-    }
-    .toggle-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 10px 0;
-    }
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 38px;
-      height: 20px;
-    }
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      background-color: #ccc;
-      border-radius: 34px;
-      transition: 0.4s;
-    }
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 14px;
-      width: 14px;
-      right: 3px;
-      bottom: 3px;
-      background-color: white;
-      transition: 0.4s;
-      border-radius: 50%;
-    }
-    input:checked + .slider {
-      background-color: #4CAF50;
-    }
-    input:checked + .slider:before {
-      transform: translateX(-18px);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+
+font-family: Arial, sans-serif;
+
+background-color: #222;
+
+color: #fff;
+
+}
+
+
+.main-container {
+
+display: flex;
+
+padding: 20px;
+
+background-color: #333;
+
+}
+
+
+.product-image {
+
+flex: 1;
+
+margin-right: 20px;
+
+}
+
+
+.product-image img {
+
+max-width: 100%;
+
+}
+
+
+.color-options {
+
+display: flex;
+
+margin-top: 10px;
+
+}
+
+
+.color-option {
+
+width: 25px;
+
+height: 25px;
+
+border: 2px solid #fff;
+
+border-radius: 50%;
+
+margin-right: 5px;
+
+cursor: pointer;
+
+}
+
+
+.product-details {
+
+flex: 1;
+
+}
+
+
+.price {
+
+font-size: 20px;
+
+color: #FFD700; /* Gold color for price */
+
+}
+
+
+.add-to-cart {
+
+background-color: #e63946;
+
+color: #fff;
+
+padding: 10px;
+
+border: none;
+
+cursor: pointer;
+
+}
+
+
+.reviews-section {
+
+margin-top: 20px;
+
+background-color: #444;
+
+padding: 10px;
+
+}
+
+
+.review {
+
+margin-top: 10px;
+
+}
+    </style>
 </head>
 <body>
-  <div class="filter-box">
-    <h3>فیلترها</h3>
-    <div class="remove-filters">حذف فیلترها</div>
+    <div class="main-container">
+        <div class="product-image">
+            <img src="path_to_image.jpg" alt="Product Image">
+            <div class="color-options">
+                <div class="color-option" style="background-color: white;"></div>
+                <div class="color-option" style="background-color: black;"></div>
+                <div class="color-option" style="background-color: red;"></div>
+                <div class="color-option" style="background-color: green;"></div>
+            </div>
+        </div>
 
-    <select class="dropdown">
-      <option>برند</option>
-    </select>
+        <div class="product-details">
+            <h1>مشخصات محصول</h1>
+            <p>جنس: نخ عالی استر</p>
+            <p>فصل: تابستانی</p>
+            <p>سایزها: S, M, L, XL, XXL, XXXL</p>
+            <p>رنگ‌ها: سفید، سیاه، سبز، زرشکی، زیتونی</p>
+            <p>قد: ۱۷۷ متر</p>
+            <select class="size-selector">
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <p class="price">قیمت: ۱۷۲۷۰۰ تومان</p>
+            <button class="add-to-cart">افزودن به سبد خرید</button>
+        </div>
 
-    <select class="dropdown">
-      <option>اندازه</option>
-    </select>
-
-    <select class="dropdown">
-      <option>رنگ</option>
-    </select>
-
-    <div class="toggle-container">
-      <label>ارسال امروز</label>
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider"></span>
-      </label>
+        <div class="reviews-section">
+            <h2>امتیاز و دیدگاه کاربران</h2>
+            <p>۵٫۰ / ۵ از ۱۳ امتیاز</p>
+            <div class="review">
+                <h3>نظر ۱</h3>
+                <p>خرید.</p>
+                <span class="rating">⭐⭐⭐⭐</span>
+            </div>
+            <div class="review">
+                <h3>نظر ۲</h3>
+                <p>بسیار خوب است.</p>
+                <span class="rating">⭐⭐⭐⭐⭐</span>
+            </div>
+        </div>
     </div>
-
-    <div class="toggle-container">
-      <label>فقط کالاهای موجود</label>
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider"></span>
-      </label>
-    </div>
-
-    <select class="dropdown">
-      <option>محدوده قیمت</option>
-    </select>
-
-    <select class="dropdown">
-      <option>مدل</option>
-    </select>
+</body>
+</html>

@@ -9,46 +9,47 @@
     <link href="../src/style/base.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- ////search bar -->
-    <div class="search-bar">
-      <div class="logo">
-        <img class="logo-image" src="../src/images/landing/LogoFrame.svg" />
-      </div>
-      <div class="search-space">
-        <p>جستجو</p>
-        <img src="../src/images/landing/search-normal.svg" />
-      </div>
-      <div class="sabad-vorod">
-        <div class="login">
-          <img src="../src/images/landing/Login.svg" />
-          <p>ورود | ثبت نام</p>
+      <!-- ////searchbar -->
+      <div class="search-bar">
+        <div class="logo">
+          <img class="logo-image" src="../src/images/landing/LogoFrame.svg" />
         </div>
-        <div class="sabad">
-          <img src="../src/images/landing/shopping-cart.svg" />
-          <p>سبد خرید</p>
+        <div class="search-space">
+          <input type="text" name="q" placeholder="جستجو....">
+          <button type="submit">
+            <img src="../src/images/landing/search-normal.svg" />
+          </button>
+        </div>
+        <div class="sabad-vorod">
+          <a href=user-signup.html class="login">
+            <img src="../src/images/landing/Login.svg" />
+            <p>ورود | ثبت نام</p>
+          </a>
+          <a class="sabad">
+            <img src="../src/images/landing/shopping-cart.svg" />
+            <p>سبد خرید</p>
+          </a>
         </div>
       </div>
-    </div>
-
-  <hr />
-
-    <!-- main menu/////////////////// -->
-    <div class="main-menu">
-      <div class="self-design">
-        <img src="../src/images/landing/magicpen.svg" id="magic-pen" />
-        <p>خودت طراحیش کن !</p>
+  
+      <hr />
+      
+  <!-- ///main menu///////////////////// -->
+      <div class="main-menu">
+        <button class="self-design">
+          <img src="../src/images/landing/magicpen.svg" id="magic-pen" />
+          <p>خودت طراحیش کن !</p>
+        </button>
+        <div class="items">
+          <button class="item">پوشاک</button>
+          <button class="item">لوازم خانه</button>
+          <button class="item">قاب موبایل</button>
+          <button class="item">اکسسوری</button>
+          <button class="item">مدرسه و اداره</button>
+          <button class="item">کارت و پوستر</button>
+          <button class="item">جشن و مهمانی</button>
+        </div>
       </div>
-      <div class="items">
-        <span class="item">پوشاک</span>
-        <span class="item">لوازم خانه</span>
-        <span class="item">قاب موبایل</span>
-        <span class="item">اکسسوری</span>
-        <span class="item">مدرسه و اداره</span>
-        <span class="item">کارت و پوستر</span>
-        <span class="item">جشن و مهمانی</span>
-      </div>
-    </div>
-
 
     <!-- <پروفایل///////////// -->
     <div class="top-heading-contaier">
@@ -61,7 +62,7 @@
           <div class="img-emil-container">
             <div class="image">
               <img class="rectangle" src="../src/images/user-profile-images/user-profile/profile-img.svg" />
-              <div class="camera"><img src="../src/images/user-profile-images/user-profile/camera.svg"></div>
+              <a href="" class="camera"><img src="../src/images/user-profile-images/user-profile/camera.svg"></a>
             </div>
             <div class="profile-info">
               <p class="body-01">نگار زمانی</h4>
