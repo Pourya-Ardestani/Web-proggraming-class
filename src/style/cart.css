@@ -1,0 +1,59 @@
+/* //// <!-- //selections page from third options/////////// --> */
+.call-user-info-container {
+    display: inline-flex;
+    height: 4.125rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem;
+}
+
+.line-circle {
+    display: inline-flex;
+}
+
+.dotted-line {
+    width: 125px;
+    height: 0px;
+    align-self: center;
+    border: .1rem dashed #EDD5D8;
+}
+
+.circle {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #EDD5D8;
+    border-radius: 50%;
+}
+
+.circle-filled {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #A72F3B;
+    border-radius: 50%;
+}
+
+.text-wrapper {
+    color: #E5C1C4;
+    white-space: nowrap;
+    /* Prevents text from wrapping */
+}
+
+.text-wrapper-filled {
+    white-space: nowrap;
+    /* Prevents text from wrapping */
+    color: #A72F3B;
+    font-weight: 600;
+}
+
+.icon-and-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.call-user-icons {
+    align-self: center;
+}
+
+
+/* ///////////main of this page */
