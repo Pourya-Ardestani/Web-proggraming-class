@@ -1,86 +1,126 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>انتخاب موقعیت روی نقشه</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- استایل Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>فیلترها</title>
   <style>
     body {
       font-family: sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
       direction: rtl;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
     }
-
-    h2 {
-      text-align: center;
-      margin-top: 20px;
-      color: #333;
+    .filter-box {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
-
-    #map-container {
-      width: 90%;
-      max-width: 800px;
-      margin: 20px auto;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    #map {
-      height: 500px;
-      width: 100%;
-    }
-
-    #location {
-      text-align: center;
-      margin-top: 10px;
-      color: #555;
+    .filter-box h3 {
+      margin: 0 0 10px;
       font-size: 18px;
+    }
+    .remove-filters {
+      color: red;
+      font-size: 12px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    .dropdown {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+      font-size: 14px;
+    }
+    .toggle-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 38px;
+      height: 20px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: 0.4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      right: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #4CAF50;
+    }
+    input:checked + .slider:before {
+      transform: translateX(-18px);
     }
   </style>
 </head>
 <body>
+  <div class="filter-box">
+    <h3>فیلترها</h3>
+    <div class="remove-filters">حذف فیلترها</div>
 
-  <h2>روی نقشه کلیک کن تا موقعیتت انتخاب بشه</h2>
+    <select class="dropdown">
+      <option>برند</option>
+    </select>
 
-  <div id="map-container">
-    <div id="map"></div>
-  </div>
+    <select class="dropdown">
+      <option>اندازه</option>
+    </select>
 
-  <!-- <p id="location">موقعیت انتخاب شده: هنوز انتخاب نشده</p> -->
+    <select class="dropdown">
+      <option>رنگ</option>
+    </select>
 
-  <!-- اسکریپت Leaflet -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
-    // نقشه با زوم روی ایران
-    const map = L.map('map').setView([32.4279, 53.6880], 5);
+    <div class="toggle-container">
+      <label>ارسال امروز</label>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
 
-    // بارگذاری نقشه
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
+    <div class="toggle-container">
+      <label>فقط کالاهای موجود</label>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
 
-    let marker;
+    <select class="dropdown">
+      <option>محدوده قیمت</option>
+    </select>
 
-    // وقتی روی نقشه کلیک می‌کنی
-    map.on('click', function(e) {
-      const lat = e.latlng.lat.toFixed(5);
-      const lng = e.latlng.lng.toFixed(5);
-      document.getElementById('location').textContent = `موقعیت انتخاب شده: ${lat}, ${lng}`;
-
-      if (marker) {
-        marker.setLatLng(e.latlng);
-      } else {
-        marker = L.marker(e.latlng).addTo(map);
-      }
-    });
-  </script>
-
-</body>
-</html>
+    <select class="dropdown">
+      <option>مدل</option>
+    </select>
