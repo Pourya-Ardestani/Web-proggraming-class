@@ -39,12 +39,10 @@
 .text-wrapper {
     color: #B95962;
     white-space: nowrap;
-    /* Prevents text from wrapping */
 }
 
 .text-wrapper-filled {
     white-space: nowrap;
-    /* Prevents text from wrapping */
     color: #A72F3B;
     font-weight: 600;
 }
@@ -149,7 +147,6 @@
 /* footer ///////////////////////////////// */
 .footer {
     width: 100%;
-    /* max-width: 76.5rem; */
     display: flex;
     flex-direction: column;
 }
@@ -181,12 +178,10 @@
 }
 
 .social-media img {
-    /* width: 2rem; */
     width: 100%;
     ;
     height: 2rem;
     filter: brightness(0) invert(1);
-    /* align-items: end; */
 
 }
 
