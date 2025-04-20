@@ -1,165 +1,235 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>Product Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-      body {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=750, initial-scale=1.0">
+  <title>سبد خرید</title>
+  <link href="https://fonts.googleapis.com/css?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #fff;
+      font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+    .sidebar {
+      width: 410px;
+      margin: 10px 40px;
+      padding: 32px 24px;
+      background: #fff;
+      border-radius: 18px;
+      border: 1.5px solid #ececec;
+      box-sizing: border-box;
+      top: 0;
+      right: 0;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      margin-top: 0;
+      color: #363636;
+      text-align: right;
+    }
+    .discount-section {
+      margin-bottom: 24px;
+    }
+    .discount-desc {
+      font-size: 11px;
+      color: #7b7b7b;
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .discount-form {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .discount-form input[type="text"] {
+      flex: 1;
+      padding: 7px 10px;
+      border: 1.5px solid #ececec;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+      background: #fff;
+      transition: border 0.2s;
+      font-family: inherit;
+    }
+    .discount-form button {
+      padding: 6px 24px;
+      background: #fff;
+      border: 1.5px solid #be1e2d;
+      color: #be1e2d;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .discount-form button:hover {
+      background: #be1e2d;
+      color: #fff;
+    }
+    .cart-summary {
+      font-size: 15px;
+      color: #363636;
+      margin-bottom: 8px;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 9px;
+    }
+    .summary-row.total {
+      font-weight: 500;
+      font-size: 18px;
+      margin-top: 18px;
+      margin-bottom: 14px;
+    }
+    .summary-row.discount {
+      color: #be1e2d;
+    }
+    .summary-row.discount .value {
+      color: #be1e2d;
+      font-weight: 500;
+      font-size: 15px;
+    }
+    .summary-row .icon {
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+    .divider {
+      border-top: 1.5px solid #ececec;
+      margin: 12px 0;
+    }
+    .checkout-btn {
+      width: 100%;
+      background: #be1e2d;
+      color: #fff;
+      border: none;
+      padding: 13px 0;
+      border-radius: 10px;
+      font-size: 17px;
+      font-family: inherit;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 7px;
+      margin-bottom: 3px;
+      transition: background 0.2s;
+    }
+    .checkout-btn:hover {
+      background: #a31926;
+    }
+    .cart-notes {
+      margin-top: 30px;
+      background: #fff;
+      border: 1.5px solid #ececec;
+      border-radius: 12px;
+      padding: 28px 26px;
+      font-size: 15px;
+      color: #363636;
+      box-sizing: border-box;
+      width: 410px;
+      margin-right: 40px;
+    }
+    .cart-notes .warning {
+      color: #ffa800;
+      font-size: 21px;
+      vertical-align: middle;
+      margin-left: 7px;
+    }
+    .cart-notes ul {
+      margin: 16px 0 0 0;
+      padding: 0 18px 0 0;
+      list-style: none;
+    }
+    .cart-notes ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-right: 18px;
+      line-height: 1.7;
+      font-size: 14px;
+      color: #444;
+    }
+    .cart-notes ul li:before {
+      content: "●";
+      color: #858585;
+      font-size: 11px;
+      position: absolute;
+      right: 0;
+      top: 3px;
+    }
+    @media (max-width: 600px) {
+      .sidebar, .cart-notes {
+        width: 99vw;
+        margin: 8px 0 !important;
+        padding: 18px 5vw;
+      }
+    }
 
-font-family: Arial, sans-serif;
-
-background-color: #222;
-
-color: #fff;
-
-}
-
-
-.main-container {
-
-display: flex;
-
-padding: 20px;
-
-background-color: #333;
-
-}
-
-
-.product-image {
-
-flex: 1;
-
-margin-right: 20px;
-
-}
-
-
-.product-image img {
-
-max-width: 100%;
-
-}
-
-
-.color-options {
-
-display: flex;
-
-margin-top: 10px;
-
-}
-
-
-.color-option {
-
-width: 25px;
-
-height: 25px;
-
-border: 2px solid #fff;
-
-border-radius: 50%;
-
-margin-right: 5px;
-
-cursor: pointer;
-
-}
-
-
-.product-details {
-
-flex: 1;
-
-}
-
-
-.price {
-
-font-size: 20px;
-
-color: #FFD700; /* Gold color for price */
-
-}
-
-
-.add-to-cart {
-
-background-color: #e63946;
-
-color: #fff;
-
-padding: 10px;
-
-border: none;
-
-cursor: pointer;
-
-}
-
-
-.reviews-section {
-
-margin-top: 20px;
-
-background-color: #444;
-
-padding: 10px;
-
-}
-
-
-.review {
-
-margin-top: 10px;
-
-}
-    </style>
+  </style>
 </head>
 <body>
-    <div class="main-container">
-        <div class="product-image">
-            <img src="path_to_image.jpg" alt="Product Image">
-            <div class="color-options">
-                <div class="color-option" style="background-color: white;"></div>
-                <div class="color-option" style="background-color: black;"></div>
-                <div class="color-option" style="background-color: red;"></div>
-                <div class="color-option" style="background-color: green;"></div>
-            </div>
-        </div>
-
-        <div class="product-details">
-            <h1>مشخصات محصول</h1>
-            <p>جنس: نخ عالی استر</p>
-            <p>فصل: تابستانی</p>
-            <p>سایزها: S, M, L, XL, XXL, XXXL</p>
-            <p>رنگ‌ها: سفید، سیاه، سبز، زرشکی، زیتونی</p>
-            <p>قد: ۱۷۷ متر</p>
-            <select class="size-selector">
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-            </select>
-            <p class="price">قیمت: ۱۷۲۷۰۰ تومان</p>
-            <button class="add-to-cart">افزودن به سبد خرید</button>
-        </div>
-
-        <div class="reviews-section">
-            <h2>امتیاز و دیدگاه کاربران</h2>
-            <p>۵٫۰ / ۵ از ۱۳ امتیاز</p>
-            <div class="review">
-                <h3>نظر ۱</h3>
-                <p>خرید.</p>
-                <span class="rating">⭐⭐⭐⭐</span>
-            </div>
-            <div class="review">
-                <h3>نظر ۲</h3>
-                <p>بسیار خوب است.</p>
-                <span class="rating">⭐⭐⭐⭐⭐</span>
-            </div>
-        </div>
+  <div class="sidebar">
+    <div class="discount-section">
+      <div class="section-title">کد تخفیف</div>
+      <div class="discount-desc">
+        کد تخفیف کارت هدیه خود را در زیر وارد کرده و دکمه ثبت رو بزنید تا در صورت داشتن اعتبار به سفارش شما اعمال بشه.
+      </div>
+      <form class="discount-form">
+        <button type="submit">ثبت</button>
+        <input type="text" placeholder="کد تخفیف را وارد کنید">
+      </form>
     </div>
+    <div class="cart-summary">
+      <div class="summary-row">
+        <span>قیمت کالا ها</span>
+        <span>۲۴۰,۰۰۰ تومان</span>
+      </div>
+      <div class="summary-row" style="font-size:12px; color:#888;">
+        <span>تعداد کالا:</span>
+        <span>۲</span>
+      </div>
+      <div class="summary-row discount">
+        <span>
+          <span class="icon">🔖</span>
+          مجموع تخفیف روی کالا ها
+        </span>
+        <span class="value">۲۰,۰۰۰-</span>
+      </div>
+      <div class="summary-row">
+        <span>سود شما از خرید</span>
+        <span>۳۰,۰۰۰ تومان</span>
+      </div>
+      <div class="summary-row">
+        <span>هزینه ارسال</span>
+        <span>۵۰,۰۰۰ تومان</span>
+      </div>
+      <div class="divider"></div>
+      <div class="summary-row total">
+        <span>جمع مبلغ قابل پرداخت</span>
+        <span>۲۹۰,۰۰۰ تومان</span>
+      </div>
+      <button class="checkout-btn">
+        <span style="font-size:21px;">&#8592;</span>
+        ثبت سفارش
+      </button>
+    </div>
+  </div>
+  <!-- <div class="cart-notes">
+    <span class="warning">&#9888;</span>
+    <ul>
+      <li>ارسال رایگان برای سفارش‌های بالای ۷۰۰,۰۰۰ تومان</li>
+      <li>در صورت اتمام موجودی، کالاها از سبد خرید حذف می‌شوند.</li>
+      <li>لطفا در طول مراحل خرید فیلتر شکن خود را خاموش کنید.</li>
+    </ul>
+  </div> -->
 </body>
 </html>
