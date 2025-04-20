@@ -462,7 +462,7 @@ hr {
 .caption-container {
   border-bottom: 1px solid white;
   width: fit-content;
-  margin-bottom: 1rem;
+  margin: 1rem auto;
 }
 
 .text-column-container {
