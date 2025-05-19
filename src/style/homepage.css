@@ -752,3 +752,38 @@ h4 {
   width: 2.5rem;
   height: 2.5rem;
 }
+
+
+/* ////////////////////////////// */
+#overlay-container{
+    display: none;
+    position: relative;
+    left: 18rem;
+    justify-content: space-around;
+    align-items: center;
+    width: 63.5rem;
+    height: 8.5rem;
+    gap: 0.5rem;
+    background-color:white;
+    z-index: 2;
+    border-radius: 1rem ;
+}
+.iphon-card{
+    width: 5.5rem;
+    height: 6.5rem;
+    border-radius:.5rem;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: inherit;
+    padding: 3.3rem 0rem;
+    cursor: pointer;
+    transition: border .3s;
+}
+.iphon-card:hover {
+  border: 1px solid pink;
+}
+.body-5{
+  color: #434343;
+  font-size: .75rem;
+}
