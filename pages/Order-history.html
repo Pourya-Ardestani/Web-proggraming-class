@@ -7,6 +7,7 @@
 
     <link href="../src/style/Order-history.css" rel="stylesheet" />
     <link href="../src/style/base.css" rel="stylesheet" />
+    <script src="../src/js/order-history.js" defer></script>
   </head>
   <body>
     <div class="search-bar">
@@ -50,7 +51,12 @@
       </div>
     </div>
 
+    
+
     <!-- sad -->
+    <div class="top-heading-contaier">
+      <h3 class="top-heading">پروفایل</h3>
+    </div>
     <div class="base-container">
       <div class="profile-container">
         <div class="profile-insider-container">
@@ -126,77 +132,79 @@
       </div>
       
       <div class="orders-tabs">
-        <div class="tab">جاری ۲</div>
-        <div class="tab active">تحویل شده ۲۶</div>
-        <div class="tab">مرجوع شده ۴</div>
-        <div class="tab">لغو شده ۴</div>
+        <button onclick="change(this)" id="jari-button" class="tab-btn">جاری ۲</button >
+        <button onclick="change(this)" class="tab-btn active">تحویل شده ۲۶</button >
+        <button onclick="change(this)" class="tab-btn">مرجوع شده ۴</button >
+        <button onclick="change(this)" class="tab-btn">لغو شده ۴</button >
       </div>
 
-      <div class="order-card">
-        <div class="order-status">
-          <div class="status-icon">
-            <img src="../src/images/user-profile-images/order-history/timer.svg" alt="در حال پردازش"/>
+      <div id="orders-container">
+        <div class="order-card">
+          <div class="order-status">
+            <div class="status-icon">
+              <img src="../src/images/user-profile-images/order-history/timer.svg" alt="در حال پردازش"/>
+            </div>
+            <span>در حال پردازش</span>
           </div>
-          <span>در حال پردازش</span>
-        </div>
 
-        <div class="order-details">
-          <div class="order-info">
-            <div class="info-row">
-              <span>۳ شهریور ۱۴۰۲</span>
-              <span>کد سفارش ۳۸۵۴۳۳۵۸۹۱</span>
-              <span>مبلغ ۵۴۵,۰۰۰ تومان</span>
-              <span>تخفیف ۵۴۵,۰۰۰ تومان</span>
+          <div class="order-details">
+            <div class="order-info">
+              <div class="info-row">
+                <span>۳ شهریور ۱۴۰۲</span>
+                <span>کد سفارش ۳۸۵۴۳۳۵۸۹۱</span>
+                <span>مبلغ ۵۴۵,۰۰۰ تومان</span>
+                <span>تخفیف ۵۴۵,۰۰۰ تومان</span>
+              </div>
+            </div>
+
+            <div class="order-products">
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+            </div>
+
+            <div class="button-container">
+              <button class="view-order"><img src="../src/images/user-profile-images/order-history/bill.svg">مشاهده سفارش </button>
             </div>
           </div>
-
-          <div class="order-products">
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-          </div>
-
-          <div class="button-container">
-            <button class="view-order"><img src="../src/images/user-profile-images/order-history/bill.svg">مشاهده سفارش </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Duplicate order card for the second order -->
-      <div class="order-card">
-        <div class="order-status">
-          <div class="status-icon">
-            <img src="../src/images/user-profile-images/order-history/timer.svg" alt="در حال پردازش"/>
-          </div>
-          <span>در حال پردازش</span>
         </div>
 
-        <div class="order-details">
-          <div class="order-info">
-            <div class="info-row">
-              <span>۳ شهریور ۱۴۰۲</span>
-              <span>کد سفارش ۳۸۵۴۳۳۵۸۹۱</span>
-              <span>مبلغ ۵۴۵,۰۰۰ تومان</span>
-              <span>تخفیف ۵۴۵,۰۰۰ تومان</span>
+        <!-- Duplicate order card for the second order -->
+        <div class="order-card">
+          <div class="order-status">
+            <div class="status-icon">
+              <img src="../src/images/user-profile-images/order-history/timer.svg" alt="در حال پردازش"/>
             </div>
+            <span>در حال پردازش</span>
           </div>
 
-          <div class="order-products">
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-            <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
-          </div>
+          <div class="order-details">
+            <div class="order-info">
+              <div class="info-row">
+                <span>۳ شهریور ۱۴۰۲</span>
+                <span>کد سفارش ۳۸۵۴۳۳۵۸۹۱</span>
+                <span>مبلغ ۵۴۵,۰۰۰ تومان</span>
+                <span>تخفیف ۵۴۵,۰۰۰ تومان</span>
+              </div>
+            </div>
 
-          <div class="button-container">
-            <button class="view-order"><img src="../src/images/user-profile-images/order-history/bill.svg">مشاهده سفارش </button>
+            <div class="order-products">
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+              <img src="../src/images/user-profile-images/order-history/mug.svg" alt="محصول"/>
+            </div>
+
+            <div class="button-container">
+              <button class="view-order"><img src="../src/images/user-profile-images/order-history/bill.svg">مشاهده سفارش </button>
+            </div>
           </div>
         </div>
       </div>
