@@ -122,7 +122,6 @@
     flex-direction: column;
     margin-top: 3rem;
     gap: 1rem;
-
 }
 
 .dashboard-items {
@@ -131,6 +130,9 @@
     gap: 1rem;
     align-items: center;
     border-bottom: 0.1px solid #EDEDED;
+    background-color: inherit;
+    border: 0px;
+    cursor: pointer;
 }
 
 .red-dashboard-items {
