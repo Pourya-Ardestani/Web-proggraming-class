@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>Modal با افکت Blur</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .content {
+      padding: 20px;
+      transition: filter 0.3s ease;
+    }
+
+    .blurred {
+      filter: blur(5px);
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+       backdrop-filter: blur(8px);
+    }
+
+    .modal {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      z-index: 11;
+    }
+  </style>
+</head>
+<body>
+
+<div class="content" id="mainContent">
+  <h1>محتوای صفحه</h1>
+  <p>اینجا متن یا هر محتوای دیگه‌ایه.</p>
+  <button onclick="openModal()">نمایش پنجره</button>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <h2>پنجره!</h2>
+    <p>این یه پنجره‌ی موداله.</p>
+    <button onclick="closeModal()">بستن</button>
+  </div>
+</div>
+
+<script>
+  function openModal() {
+    document.getElementById('modalBackdrop').style.display = 'flex';
+    document.getElementById('mainContent').classList.add('blurred');
+  }
+
+  function closeModal() {
+    document.getElementById('modalBackdrop').style.display = 'none';
+    document.getElementBy('mainContent').classList.remove('blurred');
+  }
+</script>
+
+</body>
+</html>

@@ -7,6 +7,7 @@
 
     <link href="../src/style/selected-product.css" rel="stylesheet" />
     <link href="../src/style/base.css" rel="stylesheet" />
+    <script src="../src/js/selected-prooduct.js" defer></script>
   </head>
   <body>
     <div class="search-bar">
@@ -195,7 +196,7 @@
             </div>
           </div>
           <p class="body-4">نظر خود را ثبت کنید</p>
-          <button class="submit-review">ثبت دیدگاه</button>
+          <button class="submit-review" onclick="openWindow()">ثبت دیدگاه</button>
         </div>
       </div>
 
@@ -395,6 +396,84 @@
         </div>
       </div>
     </div>
+
+    <!-- ////////////////////////////////فاز دو -->
+     <div id="comment-window">
+      <h2>نظر خود را با ما در میان بگذارید</h2>
+      <p class="body-3">در مورد تیشرت ساده سفید</p>
+      <img
+        id="close-icon"
+        src="../src/images/selected-product/close-circle.svg"
+        alt="close-icon"
+        onclick="closeWindow()"
+      />
+      <div class="rate-star">
+        <p class="rate">امتیاز دهید</p>
+        <div class="stars-js" id="starRating">
+          <img
+            id="star1"
+            onclick="changeStar(this)"
+            class="submit-star"
+            src="../src/images/selected-product/star-empty.svg"
+            alt="empty-start"
+          />
+          <img
+            id="star2"
+            onclick="changeStar(this)"
+            class="submit-star"
+            src="../src/images/selected-product/star-empty.svg"
+            alt="empty-start"
+          />
+          <img
+            id="star3"
+            onclick="changeStar(this)"
+            class="submit-star"
+            src="../src/images/selected-product/star-empty.svg"
+            alt="empty-start"
+          />
+          <img
+            id="star4"
+            onclick="changeStar(this)"
+            class="submit-star"
+            src="../src/images/selected-product/star-empty.svg"
+            alt="empty-start"
+          />
+          <img
+            id="star5"
+            onclick="changeStar(this)"
+            class="submit-star"
+            src="../src/images/selected-product/star-empty.svg"
+            alt="empty-start"
+          />
+        </div>
+      </div>
+
+      <form id="reviewForm" method="POST" action="/submit-review">
+        <input type="hidden" name="rating" id="ratingValue" />
+
+        <label class="input-label" for="comment-title">عنوان نظر</label><br />
+        <input type="text" id="comment-title" />
+
+        <label class="input-label" for="positive">نکات مثبت</label><br />
+        <input type="text" id="positive" />
+
+        <label class="input-label" for="negative">نکات منفی</label><br />
+        <input type="text" id="negative" />
+
+        <label class="input-label" for="comment">متن نظر</label><br />
+        <textarea
+          id="comment"
+          placeholder="نظر خود را وارد کنید"
+          required
+        ></textarea>
+
+        <button class="button-js" type="submit">ثبت دیدگاه</button>
+        <small
+          >ثبت دیدگاه به معنی موافقت شما با قوانین انتشار کاستومی است.</small
+        >
+      </form>
+    </div>
+
 
     <!-- foooter /////////////////////////////// -->
     <div class="footer">
