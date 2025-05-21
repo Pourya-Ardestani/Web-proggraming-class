@@ -7,7 +7,6 @@ document.getElementById('dashboard-button').addEventListener('click', () => {
 });
 
 
-
 document.getElementById('account-info-button').addEventListener('click', () => {
   window.location.href = '../../pages/account-info.html';
 });

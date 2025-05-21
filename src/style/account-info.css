@@ -114,6 +114,9 @@
   gap: 1rem;
   align-items: center;
   border-bottom: 0.1px solid #ededed;
+  border: 0px;
+  background-color: inherit;
+
 }
 
 .red-dashboard-items {
