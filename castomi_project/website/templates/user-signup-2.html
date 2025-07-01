@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>user-signup-2</title>
-    <link href="../src/style/user-signup-2.css" rel="stylesheet" />
-    <link href="../src/style/base.css" rel="stylesheet" />
+    <link href="{% static 'style/user-signup-2.css' %}" rel="stylesheet" />
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   </head>
 
@@ -13,21 +14,21 @@
     <!-- ////searchbar -->
     <div class="search-bar">
       <div class="logo">
-        <img class="logo-image" src="../src/images/landing/LogoFrame.svg" />
+        <img class="logo-image" src="{% static 'images/landing/LogoFrame.svg' %}" />
       </div>
       <div class="search-space">
         <input type="text" name="q" placeholder="جستجو...." />
         <button type="submit">
-          <img src="../src/images/landing/search-normal.svg" />
+          <img src="{% static 'images/landing/search-normal.svg' %}" />
         </button>
       </div>
       <div class="sabad-vorod">
         <a href="user-signup.html" class="login">
-          <img src="../src/images/landing/Login.svg" />
+          <img src="{% static 'images/landing/Login.svg' %}" />
           <p>ورود | ثبت نام</p>
         </a>
         <a href="../pages/Order-history.html" class="sabad">
-          <img src="../src/images/landing/shopping-cart.svg" />
+          <img src="{% static 'images/landing/shopping-cart.svg' %}" />
           <p>سبد خرید</p>
         </a>
       </div>
@@ -38,7 +39,7 @@
       <div class="icon-and-name">
         <img
           class="call-user-icons"
-          src="../src/images/user-signup/page2/user.svg"
+          src="{% static 'images/user-signup/page2/user.svg' %}"
           alt="call info icon"
         />
         <p class="text-wrapper">اطلاعات کاربر</p>
@@ -52,7 +53,7 @@
       <div class="icon-and-name">
         <img
           class="call-user-icons"
-          src="../src/images/user-signup/page2/call.svg"
+          src="{% static 'images/user-signup/page2/call.svg' %}"
           alt="user info icon"
         />
         <p class="text-wrapper-filled">اطلاعات تماس</p>
@@ -136,21 +137,21 @@
 
         <img
           class="map"
-          src="../src/images/user-signup/page2/map.svg"
+          src="{% static 'images/user-signup/page2/map.svg' %}"
           alt="map"
         />
 
         <button class="red-button">
           <p class="button-text">ثبت</p>
           <img
-            src="../src/images/user-signup/arrow-left.svg"
+            src="{% static 'images/user-signup/arrow-left.svg' %}"
             alt="left-arrow icon"
           />
         </button>
       </form>
       <img
         class="big-image"
-        src="../src/images/user-signup/page2/Illustration.svg"
+        src="{% static 'images/user-signup/page2/Illustration.svg' %}"
         alt="image of a user fill up a form"
       />
     </div>
@@ -178,21 +179,21 @@
           <div class="social-media">
             <a href="#"
               ><img
-                src="../src/images/landing/YouTube_light_icon_(2017).svg"
+                src="{% static 'images/landing/YouTube_light_icon_(2017).svg' %}"
                 alt="Youtube"
             /></a>
 
             <a href="#"
-              ><img src="../src/images/landing/Pinterest.svg" alt="Pinterest"
+              ><img src="{% static 'images/landing/Pinterest.svg' %}" alt="Pinterest"
             /></a>
 
             <a href="#"
-              ><img src="../src/images/landing/facebook.svg" alt="facebook"
+              ><img src="{% static 'images/landing/facebook.svg' %}" alt="facebook"
             /></a>
 
             <div>
               <a href="#"
-                ><img src="../src/images/landing/Instagram.svg" alt="Instagram"
+                ><img src="{% static 'images/landing/Instagram.svg' %}" alt="Instagram"
               /></a>
             </div>
           </div>
@@ -242,17 +243,17 @@
             <div class="nemad-logos-container">
               <a href="%"
                 ><img
-                  src="../src/images/landing/nemad-image.svg"
+                  src="{% static 'images/landing/nemad-image.svg' %}"
                   alt="nemad-image"
               /></a>
               <a href="%"
                 ><img
-                  src="../src/images/landing/nemad-image.svg"
+                  src="{% static 'images/landing/nemad-image.svg' %}"
                   alt="nemad-image"
               /></a>
               <a href="%"
                 ><img
-                  src="../src/images/landing/nemad-image.svg"
+                  src="{% static 'images/landing/nemad-image.svg' %}"
                   alt="nemad-image"
               /></a>
             </div>

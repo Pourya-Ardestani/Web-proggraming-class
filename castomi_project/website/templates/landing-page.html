@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
   <head>
@@ -10,9 +11,9 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link href="../src/style/homepage.css" rel="stylesheet" />
-    <link href="../src/style/base.css" rel="stylesheet" />
-    <script src="../src/js/landingPage.js" defer></script>
+    <link href="{% static 'style/homepage.css' %}" rel="stylesheet" />
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/landingPage.js' %}" defer></script>
 
   </head>
 
@@ -23,21 +24,21 @@
 
     <div class="search-bar">
       <div class="logo">
-        <img class="logo-image" src="../src/images/landing/LogoFrame.svg" />
+        <img class="logo-image" src="{% static 'images/landing/LogoFrame.svg' %}" />
       </div>
       <div class="search-space">
         <input type="text" name="q" placeholder="جستجو...." />
         <button type="submit">
-          <img src="../src/images/landing/search-normal.svg" />
+          <img src="{% static 'images/landing/search-normal.svg' %}" />
         </button>
       </div>
       <div class="sabad-vorod">
         <a href="user-signup.html" class="login">
-          <img src="../src/images/landing/Login.svg" />
+          <img src="{% static 'images/landing/Login.svg' %}" />
           <p>ورود | ثبت نام</p>
         </a>
         <a href="../pages/Order-history.html" class="sabad">
-          <img src="../src/images/landing/shopping-cart.svg" />
+          <img src="{% static 'images/landing/shopping-cart.svg' %}" />
           <p>سبد خرید</p>
         </a>
       </div>
@@ -48,7 +49,7 @@
     <!-- ///main menu///////////////////// -->
     <div class="main-menu">
       <button class="self-design">
-        <img src="../src/images/landing/magicpen.svg" id="magic-pen" />
+        <img src="{% static 'images/landing/magicpen.svg' %}" id="magic-pen" />
         <p>خودت طراحیش کن !</p>
       </button>
       <div class="items">
@@ -58,39 +59,39 @@
         <button class="item" id="mobile-frame" onclick="openWindow(event)">قاب موبایل
           <div id="overlay-container">
             <div class="iphon-card">
-              <img src="../src/images/landing/iphon-img-phase-2.svg" alt="iphone image">
+              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="../src/images/landing/iphon-img-phase-2.svg" alt="iphone image">
+              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="../src/images/landing/iphon-img-phase-2.svg" alt="iphone image">
+              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="../src/images/landing/iphon-img-phase-2.svg" alt="iphone image">
+              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="../src/images/landing/iphon-img-phase-2.svg" alt="iphone image">
+              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="../src/images/landing/iphon-img-phase-2.svg" alt="iphone image">
+              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="../src/images/landing/iphon-img-phase-2.svg" alt="iphone image">
+              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="../src/images/landing/iphon-img-phase-2.svg" alt="iphone image">
+              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="../src/images/landing/iphon-img-phase-2.svg" alt="iphone image">
+              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
               <p class="body-5">آیفون</p>
             </div>
             
@@ -105,7 +106,7 @@
     </div>
 
     <!-- <div class="hero-image">
-      <img src="../src/images/landing/Hero.svg" alt="image of some people" />
+      <img src="{% static 'images/landing/Hero.svg' %}" alt="image of some people" />
     </div> -->
 
     <div class="hero">
@@ -117,23 +118,23 @@
             <div class="overlap-group-2">
               <div class="rectangle"></div>
               <div class="rectangle-2"></div>
-              <img class="goll" src="../src/images/landing/hero/gol-rast.png" />
+              <img class="goll" src="{% static 'images/landing/hero/gol-rast.png' %}" />
               <img
                 class="element-girls"
-                src="../src/images/landing/hero/3-girls-1.png"
+                src="{% static 'images/landing/hero/3-girls-1.png' %}"
               />
-              <img class="img" src="../src/images/landing/hero/goll4-1.png" />
+              <img class="img" src="{% static 'images/landing/hero/goll4-1.png' %}" />
               <img
                 class="goll-2"
-                src="../src/images/landing/hero/goll4-1.png"
+                src="{% static 'images/landing/hero/goll4-1.png' %}"
               />
               <img
                 class="goll-3"
-                src="../src/images/landing/hero/goll4-1.png"
+                src="{% static 'images/landing/hero/goll4-1.png' %}"
               />
               <img
                 class="goll-4"
-                src="../src/images/landing/hero/gol-chap.png"
+                src="{% static 'images/landing/hero/gol-chap.png' %}"
               />
               <button class="button">
                 <div class="text-wrapper">دیدن محصولات</div>
@@ -148,14 +149,14 @@
         </div>
         <button class="button-2">
           <div class="text-wrapper-3">شروع طراحی</div>
-          <img class="vuesax-outline-brush" src="../src/images/landing/brush.svg" />
+          <img class="vuesax-outline-brush" src="{% static 'images/landing/brush.svg' %}" />
         </button>
       </div>
     </div>
 
     <div class="seperator">
       <div class="icon-with-text">
-        <img src="../src/images/landing/medal-star.svg" alt="medal-star" />
+        <img src="{% static 'images/landing/medal-star.svg' %}" alt="medal-star" />
         <h3>دسته بندی محصولات</h3>
       </div>
       <div class="line"></div>
@@ -164,7 +165,7 @@
     <div class="Categories">
       <div class="categori-frame">
         <img
-          src="../src/images/landing/categori-fame.svg"
+          src="{% static 'images/landing/categori-fame.svg' %}"
           alt="image of cloths"
         />
         <p>قاب موبایل</p>
@@ -172,7 +173,7 @@
 
       <div class="categori-frame">
         <img
-          src="../src/images/landing/categori-fame.svg"
+          src="{% static 'images/landing/categori-fame.svg' %}"
           alt="image of cloths"
         />
         <p>کارت تبریک</p>
@@ -180,7 +181,7 @@
 
       <div class="categori-frame">
         <img
-          src="../src/images/landing/categori-fame.svg"
+          src="{% static 'images/landing/categori-fame.svg' %}"
           alt="image of cloths"
         />
         <p>اکسسوری</p>
@@ -188,7 +189,7 @@
 
       <div class="categori-frame">
         <img
-          src="../src/images/landing/categori-fame.svg"
+          src="{% static 'images/landing/categori-fame.svg' %}"
           alt="image of cloths"
         />
         <p>لوازم تحریر</p>
@@ -196,7 +197,7 @@
 
       <div class="categori-frame">
         <img
-          src="../src/images/landing/categori-fame.svg"
+          src="{% static 'images/landing/categori-fame.svg' %}"
           alt="image of cloths"
         />
         <p>لباس</p>
@@ -204,7 +205,7 @@
 
       <div class="categori-frame">
         <img
-          src="../src/images/landing/categori-fame.svg"
+          src="{% static 'images/landing/categori-fame.svg' %}"
           alt="image of cloths"
         />
         <p>دکور خانه</p>
@@ -213,7 +214,7 @@
 
     <div class="seperator">
       <div class="icon-with-text">
-        <img src="../src/images/landing/medal-star.svg" alt="medal-star" />
+        <img src="{% static 'images/landing/medal-star.svg' %}" alt="medal-star" />
         <h3>پرفروش ترین ها</h3>
       </div>
       <div class="line"></div>
@@ -223,7 +224,7 @@
     <div class="most-purchased">
       <div class="most-purchased-item">
         <img
-          src="../src/images/landing/iphon-img.svg"
+          src="{% static 'images/landing/iphon-img.svg' %}"
           alt="image of most purchased item"
         />
         <div class="item-info">
@@ -231,7 +232,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -241,7 +242,7 @@
       </div>
       <div class="most-purchased-item">
         <img
-          src="../src/images/landing/iphon-img.svg"
+          src="{% static 'images/landing/iphon-img.svg' %}"
           alt="image of most purchased item"
         />
         <div class="item-info">
@@ -249,26 +250,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
-              alt="Like"
-            />
-          </div>
-          <p class="description">دارای رنگ‌‌ بندی، قابل طراحی</p>
-          <h4 class="price">۱۵۰,۰۰۰ تومان</h4>
-        </div>
-      </div>
-
-      <div class="most-purchased-item">
-        <img
-          src="../src/images/landing/iphon-img.svg"
-          alt="image of most purchased item"
-        />
-        <div class="item-info">
-          <div class="item-name-and-like">
-            <h4 class="item-name">قاب موبایل آیفون</h4>
-            <img
-              class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -279,7 +261,7 @@
 
       <div class="most-purchased-item">
         <img
-          src="../src/images/landing/iphon-img.svg"
+          src="{% static 'images/landing/iphon-img.svg' %}"
           alt="image of most purchased item"
         />
         <div class="item-info">
@@ -287,7 +269,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -298,7 +280,7 @@
 
       <div class="most-purchased-item">
         <img
-          src="../src/images/landing/iphon-img.svg"
+          src="{% static 'images/landing/iphon-img.svg' %}"
           alt="image of most purchased item"
         />
         <div class="item-info">
@@ -306,7 +288,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -317,7 +299,7 @@
 
       <div class="most-purchased-item">
         <img
-          src="../src/images/landing/iphon-img.svg"
+          src="{% static 'images/landing/iphon-img.svg' %}"
           alt="image of most purchased item"
         />
         <div class="item-info">
@@ -325,7 +307,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -336,7 +318,7 @@
 
       <div class="most-purchased-item">
         <img
-          src="../src/images/landing/iphon-img.svg"
+          src="{% static 'images/landing/iphon-img.svg' %}"
           alt="image of most purchased item"
         />
         <div class="item-info">
@@ -344,7 +326,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -355,7 +337,7 @@
 
       <div class="most-purchased-item">
         <img
-          src="../src/images/landing/iphon-img.svg"
+          src="{% static 'images/landing/iphon-img.svg' %}"
           alt="image of most purchased item"
         />
         <div class="item-info">
@@ -363,7 +345,26 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
+              alt="Like"
+            />
+          </div>
+          <p class="description">دارای رنگ‌‌ بندی، قابل طراحی</p>
+          <h4 class="price">۱۵۰,۰۰۰ تومان</h4>
+        </div>
+      </div>
+
+      <div class="most-purchased-item">
+        <img
+          src="{% static 'images/landing/iphon-img.svg' %}"
+          alt="image of most purchased item"
+        />
+        <div class="item-info">
+          <div class="item-name-and-like">
+            <h4 class="item-name">قاب موبایل آیفون</h4>
+            <img
+              class="like-icon"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -375,7 +376,7 @@
 
     <div class="seperator">
       <div class="icon-with-text">
-        <img src="../src/images/landing/discount-shape.svg" alt="medal-star" />
+        <img src="{% static 'images/landing/discount-shape.svg' %}" alt="medal-star" />
         <h3>فروش ویژه</h3>
       </div>
       <div class="line"></div>
@@ -384,7 +385,7 @@
     <div class="special-offer">
       <div class="special-offer-grid">
         <!-- <div class="special-offer-item large">
-          <div class="offer-image" style="background-image: url('../src/images/landing/special-offer-big.svg')">
+          <div class="offer-image" style="background-image: url('/static/images/landing/special-offer-big.svg')">
             <div class="offer-flag">20% off</div>
             <h3 class="offer-title">قاب موبایل طرح دار</h3>
           </div>
@@ -392,13 +393,13 @@
         <div
           class="special-offer-item large"
           style="
-            background-image: url('../src/images/landing/special-offer-big.svg');
+            background-image: url('/static/images/landing/special-offer-big.svg');
           "
         >
           <div class="offer-image">
             <img
               class="offer-tag"
-              src="../src/images/landing/offer-tag-2.png"
+              src="{% static 'images/landing/offer-tag-2.png' %}"
               alt="offer-tag-2"
             />
             <h3 class="offer-title">لوازم خانه</h3>
@@ -407,12 +408,12 @@
 
         <div
           class="special-offer-item"
-          style="background-image: url('../src/images/landing/cloth-image.jpg')"
+          style="background-image: url('/static/mages/landing/cloth-image.jpg')"
         >
           <div class="offer-image">
             <img
               class="offer-tag"
-              src="../src/images/landing/offer-tag-2.png"
+              src="{% static 'images/landing/offer-tag-2.png' %}"
               alt="offer-tag-2"
             />
             <h3 class="offer-title">قاب لپ تاپ</h3>
@@ -421,12 +422,12 @@
 
         <div
           class="special-offer-item"
-          style="background-image: url('../src/images/landing/cloth-image.jpg')"
+          style="background-image: url('/static/images/landing/cloth-image.jpg')"
         >
           <div class="offer-image">
             <img
               class="offer-tag"
-              src="../src/images/landing/offer-tag-2.png"
+              src="{% static 'images/landing/offer-tag-2.png' %}"
               alt="offer-tag-2"
             />
             <h3 class="offer-title">ماگ سرامیکی</h3>
@@ -435,12 +436,12 @@
 
         <div
           class="special-offer-item"
-          style="background-image: url('../src/images/landing/cloth-image.jpg')"
+          style="background-image: url('/static/images/landing/cloth-image.jpg')"
         >
           <div class="offer-image">
             <img
               class="offer-tag"
-              src="../src/images/landing/offer-tag-2.png"
+              src="{% static 'images/landing/offer-tag-2.png' %}"
               alt="offer-tag-2"
             />
             <h3 class="offer-title">تیشرت طرح دار</h3>
@@ -449,12 +450,12 @@
 
         <div
           class="special-offer-item"
-          style="background-image: url('../src/images/landing/cloth-image.jpg')"
+          style="background-image: url('/static/images/landing/cloth-image.jpg')"
         >
           <div class="offer-image">
             <img
               class="offer-tag"
-              src="../src/images/landing/offer-tag-2.png"
+              src="{% static 'images/landing/offer-tag-2.png' %}"
               alt="offer-tag-2"
             />
             <h3 class="offer-title">کیف لپ تاپ</h3>
@@ -465,7 +466,7 @@
 
     <div class="seperator">
       <div class="icon-with-text">
-        <img src="../src/images/landing/medal-star.svg" alt="medal-star" />
+        <img src="{% static 'images/landing/medal-star.svg' %}" alt="medal-star" />
         <h3>طرح های پرطرفدار</h3>
       </div>
       <div class="line"></div>
@@ -475,7 +476,7 @@
     <div class="most-wanted-designs">
       <div class="designs-item">
         <img
-          src="../src/images/landing/designpart.svg"
+          src="{% static 'images/landing/designpart.svg' %}"
           alt="image of most purchased item"
         />
 
@@ -484,7 +485,7 @@
             <h4 class="item-name">استیکر</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -493,7 +494,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/gallery-add.svg"
+              src="{% static 'images/landing/gallery-add.svg' %}"
               alt="gallery image"
             />
             <p>افزودن به گالری</p>
@@ -502,7 +503,7 @@
       </div>
       <div class="designs-item">
         <img
-          src="../src/images/landing/designpart.svg"
+          src="{% static 'images/landing/designpart.svg' %}"
           alt="image of most purchased item"
         />
 
@@ -511,7 +512,7 @@
             <h4 class="item-name">استیکر</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -520,35 +521,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/gallery-add.svg"
-              alt="gallery image"
-            />
-            <p>افزودن به گالری</p>
-          </button>
-        </div>
-      </div>
-
-      <div class="designs-item">
-        <img
-          src="../src/images/landing/designpart.svg"
-          alt="image of most purchased item"
-        />
-
-        <div class="item-info">
-          <div class="item-name-and-like">
-            <h4 class="item-name">استیکر</h4>
-            <img
-              class="like-icon"
-              src="../src/images/landing/like.svg"
-              alt="Like"
-            />
-          </div>
-          <p class="description">قابل طراحی و چاپ بر روی انواع محصولات</p>
-        </div>
-        <div class="button-container">
-          <button class="button">
-            <img
-              src="../src/images/landing/gallery-add.svg"
+              src="{% static 'images/landing/gallery-add.svg' %}"
               alt="gallery image"
             />
             <p>افزودن به گالری</p>
@@ -558,7 +531,7 @@
 
       <div class="designs-item">
         <img
-          src="../src/images/landing/designpart.svg"
+          src="{% static 'images/landing/designpart.svg' %}"
           alt="image of most purchased item"
         />
 
@@ -567,7 +540,7 @@
             <h4 class="item-name">استیکر</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -576,7 +549,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/gallery-add.svg"
+              src="{% static 'images/landing/gallery-add.svg' %}"
               alt="gallery image"
             />
             <p>افزودن به گالری</p>
@@ -586,7 +559,7 @@
 
       <div class="designs-item">
         <img
-          src="../src/images/landing/designpart.svg"
+          src="{% static 'images/landing/designpart.svg' %}"
           alt="image of most purchased item"
         />
 
@@ -595,7 +568,7 @@
             <h4 class="item-name">استیکر</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -604,7 +577,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/gallery-add.svg"
+              src="{% static 'images/landing/gallery-add.svg' %}"
               alt="gallery image"
             />
             <p>افزودن به گالری</p>
@@ -614,7 +587,7 @@
 
       <div class="designs-item">
         <img
-          src="../src/images/landing/designpart.svg"
+          src="{% static 'images/landing/designpart.svg' %}"
           alt="image of most purchased item"
         />
 
@@ -623,7 +596,7 @@
             <h4 class="item-name">استیکر</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -632,7 +605,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/gallery-add.svg"
+              src="{% static 'images/landing/gallery-add.svg' %}"
               alt="gallery image"
             />
             <p>افزودن به گالری</p>
@@ -642,7 +615,7 @@
 
       <div class="designs-item">
         <img
-          src="../src/images/landing/designpart.svg"
+          src="{% static 'images/landing/designpart.svg' %}"
           alt="image of most purchased item"
         />
 
@@ -651,7 +624,7 @@
             <h4 class="item-name">استیکر</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -660,7 +633,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/gallery-add.svg"
+              src="{% static 'images/landing/gallery-add.svg' %}"
               alt="gallery image"
             />
             <p>افزودن به گالری</p>
@@ -670,7 +643,7 @@
 
       <div class="designs-item">
         <img
-          src="../src/images/landing/designpart.svg"
+          src="{% static 'images/landing/designpart.svg' %}"
           alt="image of most purchased item"
         />
 
@@ -679,7 +652,7 @@
             <h4 class="item-name">استیکر</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -688,7 +661,35 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/gallery-add.svg"
+              src="{% static 'images/landing/gallery-add.svg' %}"
+              alt="gallery image"
+            />
+            <p>افزودن به گالری</p>
+          </button>
+        </div>
+      </div>
+
+      <div class="designs-item">
+        <img
+          src="{% static 'images/landing/designpart.svg' %}"
+          alt="image of most purchased item"
+        />
+
+        <div class="item-info">
+          <div class="item-name-and-like">
+            <h4 class="item-name">استیکر</h4>
+            <img
+              class="like-icon"
+              src="{% static 'images/landing/like.svg' %}"
+              alt="Like"
+            />
+          </div>
+          <p class="description">قابل طراحی و چاپ بر روی انواع محصولات</p>
+        </div>
+        <div class="button-container">
+          <button class="button">
+            <img
+              src="{% static 'images/landing/gallery-add.svg' %}"
               alt="gallery image"
             />
             <p>افزودن به گالری</p>
@@ -699,7 +700,7 @@
 
     <div class="seperator">
       <div class="icon-with-text">
-        <img src="../src/images/landing/star.svg" alt="star" />
+        <img src="{% static 'images/landing/star.svg' %}" alt="star" />
         <h3>طراحان برتر</h3>
       </div>
       <div class="line"></div>
@@ -711,7 +712,7 @@
           <div class="light-red-box"></div>
           <img
             class="designer-image"
-            src="../src/images/landing/designer-image.svg"
+            src="{% static 'images/landing/designer-image.svg' %}"
             alt="designer-image"
           />
         </div>
@@ -732,15 +733,15 @@
 
         <div class="designer-photos-container">
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
         </div>
@@ -748,7 +749,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/profile-add.svg"
+              src="{% static 'images/landing/profile-add.svg' %}"
               alt="profile-icon"
             />
             <p>دنبال کردن</p>
@@ -761,7 +762,7 @@
           <div class="light-red-box"></div>
           <img
             class="designer-image"
-            src="../src/images/landing/designer-image.svg"
+            src="{% static 'images/landing/designer-image.svg' %}"
             alt="designer-image"
           />
         </div>
@@ -782,15 +783,15 @@
 
         <div class="designer-photos-container">
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
         </div>
@@ -798,7 +799,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/profile-add.svg"
+              src="{% static 'images/landing/profile-add.svg' %}"
               alt="profile-icon"
             />
             <p>دنبال کردن</p>
@@ -811,7 +812,7 @@
           <div class="light-red-box"></div>
           <img
             class="designer-image"
-            src="../src/images/landing/designer-image.svg"
+            src="{% static 'images/landing/designer-image.svg' %}"
             alt="designer-image"
           />
         </div>
@@ -832,15 +833,15 @@
 
         <div class="designer-photos-container">
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
         </div>
@@ -848,7 +849,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/profile-add.svg"
+              src="{% static 'images/landing/profile-add.svg' %}"
               alt="profile-icon"
             />
             <p>دنبال کردن</p>
@@ -861,7 +862,7 @@
           <div class="light-red-box"></div>
           <img
             class="designer-image"
-            src="../src/images/landing/designer-image.svg"
+            src="{% static 'images/landing/designer-image.svg' %}"
             alt="designer-image"
           />
         </div>
@@ -882,15 +883,15 @@
 
         <div class="designer-photos-container">
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
         </div>
@@ -898,7 +899,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/profile-add.svg"
+              src="{% static 'images/landing/profile-add.svg' %}"
               alt="profile-icon"
             />
             <p>دنبال کردن</p>
@@ -911,7 +912,7 @@
           <div class="light-red-box"></div>
           <img
             class="designer-image"
-            src="../src/images/landing/designer-image.svg"
+            src="{% static 'images/landing/designer-image.svg' %}"
             alt="designer-image"
           />
         </div>
@@ -932,15 +933,15 @@
 
         <div class="designer-photos-container">
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
         </div>
@@ -948,7 +949,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/profile-add.svg"
+              src="{% static 'images/landing/profile-add.svg' %}"
               alt="profile-icon"
             />
             <p>دنبال کردن</p>
@@ -961,7 +962,7 @@
           <div class="light-red-box"></div>
           <img
             class="designer-image"
-            src="../src/images/landing/designer-image.svg"
+            src="{% static 'images/landing/designer-image.svg' %}"
             alt="designer-image"
           />
         </div>
@@ -982,15 +983,15 @@
 
         <div class="designer-photos-container">
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
         </div>
@@ -998,7 +999,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/profile-add.svg"
+              src="{% static 'images/landing/profile-add.svg' %}"
               alt="profile-icon"
             />
             <p>دنبال کردن</p>
@@ -1011,7 +1012,7 @@
           <div class="light-red-box"></div>
           <img
             class="designer-image"
-            src="../src/images/landing/designer-image.svg"
+            src="{% static 'images/landing/designer-image.svg' %}"
             alt="designer-image"
           />
         </div>
@@ -1032,15 +1033,15 @@
 
         <div class="designer-photos-container">
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
         </div>
@@ -1048,7 +1049,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/profile-add.svg"
+              src="{% static 'images/landing/profile-add.svg' %}"
               alt="profile-icon"
             />
             <p>دنبال کردن</p>
@@ -1061,7 +1062,7 @@
           <div class="light-red-box"></div>
           <img
             class="designer-image"
-            src="../src/images/landing/designer-image.svg"
+            src="{% static 'images/landing/designer-image.svg' %}"
             alt="designer-image"
           />
         </div>
@@ -1082,15 +1083,15 @@
 
         <div class="designer-photos-container">
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
           <img
-            src="../src/images/landing/designer-photos.svg"
+            src="{% static 'images/landing/designer-photos.svg' %}"
             alt="designer-photos"
           />
         </div>
@@ -1098,7 +1099,7 @@
         <div class="button-container">
           <button class="button">
             <img
-              src="../src/images/landing/profile-add.svg"
+              src="{% static 'images/landing/profile-add.svg' %}"
               alt="profile-icon"
             />
             <p>دنبال کردن</p>
@@ -1113,7 +1114,7 @@
           <h4>محصولات مناسب هدیه دادن به خانم ها</h4>
           <button class="banner-button">دیدن محصولات</button>
         </div>
-        <img src="../src/images/landing/banner.svg" alt="banner-image" />
+        <img src="{% static 'images/landing/banner.svg' %}" alt="banner-image" />
       </div>
 
       <div class="banner-item">
@@ -1121,13 +1122,13 @@
           <h4>محصولات مناسب هدیه دادن به خانم ها</h4>
           <button class="banner-button">دیدن محصولات</button>
         </div>
-        <img src="../src/images/landing/banner.svg" alt="banner-image" />
+        <img src="{% static 'images/landing/banner.svg' %}" alt="banner-image" />
       </div>
     </div>
 
     <div class="seperator">
       <div class="icon-with-text">
-        <img src="../src/images/landing/brush.svg" alt="brush-icon" />
+        <img src="{% static 'images/landing/brush.svg' %}" alt="brush-icon" />
         <h3>جدیدترین طرح های هفته</h3>
       </div>
       <div class="line"></div>
@@ -1143,12 +1144,12 @@
         <div class="bag-images">
           <img
             id="small-bag"
-            src="../src/images/landing/bag-image.svg"
+            src="{% static 'images/landing/bag-image.svg' %}"
             alt="bag-small"
           />
           <img
             id="big-bag"
-            src="../src/images/landing/bag-image.svg"
+            src="{% static 'images/landing/bag-image.svg' %}"
             alt="bag-big"
           />
         </div>
@@ -1156,7 +1157,7 @@
 
       <div class="newest-designs-item">
         <img
-          src="../src/images/landing/mug-image.svg"
+          src="{% static 'images/landing/mug-image.svg' %}"
           alt="image of newst item of the week"
         />
         <div class="item-info">
@@ -1164,7 +1165,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -1175,7 +1176,7 @@
 
       <div class="newest-designs-item">
         <img
-          src="../src/images/landing/mug-image.svg"
+          src="{% static 'images/landing/mug-image.svg' %}"
           alt="image of newst item of the week"
         />
         <div class="item-info">
@@ -1183,7 +1184,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -1194,7 +1195,7 @@
 
       <div class="newest-designs-item">
         <img
-          src="../src/images/landing/mug-image.svg"
+          src="{% static 'images/landing/mug-image.svg' %}"
           alt="image of newst item of the week"
         />
         <div class="item-info">
@@ -1202,7 +1203,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -1213,7 +1214,7 @@
 
       <div class="newest-designs-item">
         <img
-          src="../src/images/landing/mug-image.svg"
+          src="{% static 'images/landing/mug-image.svg' %}"
           alt="image of newst item of the week"
         />
         <div class="item-info">
@@ -1221,7 +1222,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -1232,7 +1233,7 @@
 
       <div class="newest-designs-item">
         <img
-          src="../src/images/landing/mug-image.svg"
+          src="{% static 'images/landing/mug-image.svg' %}"
           alt="image of newst item of the week"
         />
         <div class="item-info">
@@ -1240,7 +1241,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -1251,7 +1252,7 @@
 
       <div class="newest-designs-item">
         <img
-          src="../src/images/landing/mug-image.svg"
+          src="{% static 'images/landing/mug-image.svg' %}"
           alt="image of newst item of the week"
         />
         <div class="item-info">
@@ -1259,7 +1260,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -1270,7 +1271,7 @@
 
       <div class="newest-designs-item">
         <img
-          src="../src/images/landing/mug-image.svg"
+          src="{% static 'images/landing/mug-image.svg' %}"
           alt="image of newst item of the week"
         />
         <div class="item-info">
@@ -1278,7 +1279,7 @@
             <h4 class="item-name">قاب موبایل آیفون</h4>
             <img
               class="like-icon"
-              src="../src/images/landing/like.svg"
+              src="{% static 'images/landing/like.svg' %}"
               alt="Like"
             />
           </div>
@@ -1290,33 +1291,33 @@
 
     <div class="wedding-card-container">
       <div class="wedding-card-images">
-        <img src="../src/images/landing/bride.svg" alt="wedding-card-image" />
+        <img src="{% static 'images/landing/bride.svg' %}" alt="wedding-card-image" />
         <div class="half-wed-images">
           <img
-            src="../src/images/landing/Frame flower.svg"
+            src="{% static 'images/landing/Frame flower.svg' %}"
             alt="wedding-card-image"
           />
           <img
-            src="../src/images/landing/Frame flower.svg"
+            src="{% static 'images/landing/Frame flower.svg' %}"
             alt="wedding-card-image"
           />
         </div>
         <div class="half-wed-images">
           <img
-            src="../src/images/landing/Frame flower.svg"
+            src="{% static 'images/landing/Frame flower.svg' %}"
             alt="wedding-card-image"
           />
           <img
-            src="../src/images/landing/Frame flower.svg"
+            src="{% static 'images/landing/Frame flower.svg' %}"
             alt="wedding-card-image"
           />
         </div>
-        <img src="../src/images/landing/bride.svg" alt="wedding-card-image" />
+        <img src="{% static 'images/landing/bride.svg' %}" alt="wedding-card-image" />
       </div>
       <h4>کارت دعوت عروسی رو خودتون طراحی کنید</h4>
       <button class="wedding-card-button">
         <img
-          src="../src/images/landing/white-brush.svg"
+          src="{% static 'images/landing/white-brush.svg' %}"
           alt="brush-icon"
           style="width: 1.5rem; height: 1.5rem"
         />
@@ -1326,7 +1327,7 @@
 
     <div class="seperator">
       <div class="icon-with-text">
-        <img src="../src/images/landing/like-in-a-box.svg" alt="like icon" />
+        <img src="{% static 'images/landing/like-in-a-box.svg' %}" alt="like icon" />
         <h3>علاقمندی ها</h3>
       </div>
       <div class="line"></div>
@@ -1336,7 +1337,7 @@
       <div class="favorites-container">
         <div class="favorites-item">
           <img
-            src="../src/images/landing/T-shirt.svg"
+            src="{% static 'images/landing/T-shirt.svg' %}"
             alt="image of most purchased item"
           />
           <div class="item-info">
@@ -1344,7 +1345,7 @@
               <h4 class="item-name">تیشرت مردانه</h4>
               <img
                 class="like-icon"
-                src="../src/images/landing/filled-heart.svg"
+                src="{% static 'images/landing/filled-heart.svg' %}"
                 alt="Like"
               />
             </div>
@@ -1355,7 +1356,7 @@
 
         <div class="favorites-item">
           <img
-            src="../src/images/landing/T-shirt.svg"
+            src="{% static 'images/landing/T-shirt.svg' %}"
             alt="image of most purchased item"
           />
           <div class="item-info">
@@ -1363,7 +1364,7 @@
               <h4 class="item-name">تیشرت مردانه</h4>
               <img
                 class="like-icon"
-                src="../src/images/landing/filled-heart.svg"
+                src="{% static 'images/landing/filled-heart.svg' %}"
                 alt="Like"
               />
             </div>
@@ -1374,7 +1375,7 @@
 
         <div class="favorites-item">
           <img
-            src="../src/images/landing/T-shirt.svg"
+            src="{% static 'images/landing/T-shirt.svg' %}"
             alt="image of most purchased item"
           />
           <div class="item-info">
@@ -1382,7 +1383,7 @@
               <h4 class="item-name">تیشرت مردانه</h4>
               <img
                 class="like-icon"
-                src="../src/images/landing/filled-heart.svg"
+                src="{% static 'images/landing/filled-heart.svg' %}"
                 alt="Like"
               />
             </div>
@@ -1393,7 +1394,7 @@
 
         <div class="favorites-item">
           <img
-            src="../src/images/landing/T-shirt.svg"
+            src="{% static 'images/landing/T-shirt.svg' %}"
             alt="image of most purchased item"
           />
           <div class="item-info">
@@ -1401,7 +1402,7 @@
               <h4 class="item-name">تیشرت مردانه</h4>
               <img
                 class="like-icon"
-                src="../src/images/landing/filled-heart.svg"
+                src="{% static 'images/landing/filled-heart.svg' %}"
                 alt="Like"
               />
             </div>
@@ -1414,7 +1415,7 @@
       <img
         class="carosel-flash"
         id="arrow-left"
-        src="../src/images/landing/arrow-left.svg"
+        src="{% static 'images/landing/arrow-left.svg' %}"
         alt="left arrow"
       />
     </div>
@@ -1442,21 +1443,21 @@
           <div class="social-media">
             <a href="#"
               ><img
-                src="../src/images/landing/YouTube_light_icon_(2017).svg"
+                src="{% static 'images/landing/YouTube_light_icon_(2017).svg' %}"
                 alt="Youtube"
             /></a>
 
             <a href="#"
-              ><img src="../src/images/landing/Pinterest.svg" alt="Pinterest"
+              ><img src="{% static 'images/landing/Pinterest.svg' %}" alt="Pinterest"
             /></a>
 
             <a href="#"
-              ><img src="../src/images/landing/facebook.svg" alt="facebook"
+              ><img src="{% static 'images/landing/facebook.svg' %}" alt="facebook"
             /></a>
 
             <div>
               <a href="#"
-                ><img src="../src/images/landing/Instagram.svg" alt="Instagram"
+                ><img src="{% static 'images/landing/Instagram.svg' %}" alt="Instagram"
               /></a>
             </div>
           </div>
@@ -1506,17 +1507,17 @@
             <div class="nemad-logos-container">
               <a href="%"
                 ><img
-                  src="../src/images/landing/nemad-image.svg"
+                  src="{% static 'images/landing/nemad-image.svg' %}"
                   alt="nemad-image"
               /></a>
               <a href="%"
                 ><img
-                  src="../src/images/landing/nemad-image.svg"
+                  src="{% static 'images/landing/nemad-image.svg' %}"
                   alt="nemad-image"
               /></a>
               <a href="%"
                 ><img
-                  src="../src/images/landing/nemad-image.svg"
+                  src="{% static 'images/landing/nemad-image.svg' %}"
                   alt="nemad-image"
               /></a>
             </div>

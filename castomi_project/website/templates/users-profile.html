@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,29 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>users-profile</title>
 
-    <link href="../src/style/users-profile.css" rel="stylesheet" />
-    <link href="../src/style/base.css" rel="stylesheet" />
-    <script src="../src/js/user-profile.js" defer></script>
+    <link href="{% static 'style/users-profile.css' %}" rel="stylesheet" />
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/user-profile.js' %}" defer></script>
   </head>
   <body>
       <!-- ////searchbar -->
       <div class="search-bar">
         <div class="logo">
-          <img class="logo-image" src="../src/images/landing/LogoFrame.svg" />
+          <img class="logo-image" src="{% static 'images/landing/LogoFrame.svg' %}" />
         </div>
         <div class="search-space">
           <input type="text" name="q" placeholder="جستجو....">
           <button type="submit">
-            <img src="../src/images/landing/search-normal.svg" />
+            <img src="{% static 'images/landing/search-normal.svg' %}" />
           </button>
         </div>
         <div class="sabad-vorod">
           <a href=user-signup.html class="login">
-            <img src="../src/images/landing/Login.svg" />
+            <img src="{% static 'images/landing/Login.svg' %}" />
             <p>ورود | ثبت نام</p>
           </a>
           <a href="../pages/Order-history.html" class="sabad">
-            <img src="../src/images/landing/shopping-cart.svg" />
+            <img src="{% static 'images/landing/shopping-cart.svg' %}" />
             <p>سبد خرید</p>
           </a>
         </div>
@@ -38,7 +39,7 @@
   <!-- ///main menu///////////////////// -->
       <div class="main-menu">
         <button class="self-design">
-          <img src="../src/images/landing/magicpen.svg" id="magic-pen" />
+          <img src="{% static 'images/landing/magicpen.svg' %}" id="magic-pen" />
           <p>خودت طراحیش کن !</p>
         </button>
         <div class="items">
@@ -62,8 +63,8 @@
         <div class="profile-insider-container">
           <div class="img-emil-container">
             <div class="image">
-              <img class="rectangle" src="../src/images/user-profile-images/user-profile/profile-img.svg" />
-              <a href="" class="camera"><img src="../src/images/user-profile-images/user-profile/camera.svg"></a>
+              <img class="rectangle" src="{% static 'images/user-profile-images/user-profile/profile-img.svg' %}" />
+              <a href="" class="camera"><img src="{% static 'images/user-profile-images/user-profile/camera.svg' %}"></a>
             </div>
             <div class="profile-info">
               <p class="body-01">نگار زمانی</h4>
@@ -75,7 +76,7 @@
             <div class="info-row">
               <div class="credit-and-icon">
                 <div class="right-text"><p class="body-01">اعتبار خرید</p></div>
-                <img class="icon" src="../src/images/user-profile-images/user-profile/plus.svg" alt="plus icon"/>
+                <img class="icon" src="{% static 'images/user-profile-images/user-profile/plus.svg' %}" alt="plus icon"/>
               </div>
               <div class="left-text"><p class="body-01">۱۰۰,۰۰۰ تومان</p></div>
             </div>
@@ -93,31 +94,31 @@
 
           <div class="dashboard">
             <button id="dashboard-button" class="dashboard-items red-dashboard-items">
-              <img class="dash-icon" src="../src/images/user-profile-images/user-profile/dashboard-hoous.svg" alt=" icon">
+              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/dashboard-hoous.svg' %}" alt=" icon">
               <p class="body-01 red-text">داشبورد</p>
             </button>
             <button id="order-history-button" class="dashboard-items">
-              <img class="dash-icon" src="../src/images/user-profile-images/user-profile/tarikh.svg" alt=" icon">
+              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/tarikh.svg' %}" alt=" icon">
               <p class="body-01">تاریخچه سفارشات</p>
             </button>
             <button id="gallery-button" class="dashboard-items">
-              <img class="dash-icon" src="../src/images/user-profile-images/user-profile/gallery.svg" alt=" icon">
+              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/gallery.svg' %}" alt=" icon">
               <p class="body-01">گالری</p>
             </button>
             <button id="addresses-button" class="dashboard-items">
-              <img class="dash-icon" src="../src/images/user-profile-images/user-profile/location-minus.svg" alt=" icon">
+              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/location-minus.svg' %}" alt=" icon">
               <p class="body-01">آدرس ها</p>
             </button>
             <button id="followers-button" class="dashboard-items">
-              <img class="dash-icon" src="../src/images/user-profile-images/user-profile/profile-gomboli.svg" alt=" icon">
+              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/profile-gomboli.svg' %}" alt=" icon">
               <p class="body-01">دنبال شوندگان</p>
             </button>
             <button id="account-info-button" class="dashboard-items">
-              <img class="dash-icon" src="../src/images/user-profile-images/user-profile/profilekhali.svg" alt=" icon">
+              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/profilekhali.svg' %}" alt=" icon">
               <p class="body-01">اطلاعات حساب کاربری</p>
             </button>
             <button id="logout-button" class="dashboard-items">
-              <img class="dash-icon" src="../src/images/user-profile-images/user-profile/logout.svg" alt=" icon">
+              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/logout.svg' %}" alt=" icon">
               <p class="body-01">خروج</p>
             </button>
           </div>
@@ -130,7 +131,7 @@
         <div class="my-orders">
           <div class="my-orders-column">
             <div class="order-infos">
-              <img class="orders-icons" src="../src/images/user-profile-images/user-profile/more-in-circle.svg" alt="more icon" />
+              <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/more-in-circle.svg' %}" alt="more icon" />
               <div class="text-infos">
                 <p class="body-2">۴۵ سفارش</p>
                 <p class="body-5">جاری</p>
@@ -138,7 +139,7 @@
             </div>
 
             <div class="order-infos">
-              <img class="orders-icons" src="../src/images/user-profile-images/user-profile/messages-2.svg" alt="more icon" />
+              <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/messages-2.svg' %}" alt="more icon" />
               <div class="text-infos">
                 <p class="body-2">۵۴ نظر</p>
                 <p class="body-5">ثبت شده</p>
@@ -149,7 +150,7 @@
           
           <div class="my-orders-column">
             <div class="order-infos">
-              <img class="orders-icons" src="../src/images/user-profile-images/user-profile/more-in-circle.svg" alt="more icon" />
+              <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/more-in-circle.svg' %}" alt="more icon" />
               <div class="text-infos">
                 <p class="body-2">۴۵ سفارش</p>
                 <p class="body-5">ارسال شده</p>
@@ -157,7 +158,7 @@
             </div>
 
             <div class="order-infos">
-              <img class="orders-icons" src="../src/images/user-profile-images/user-profile/messages-2.svg" alt="more icon" />
+              <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/messages-2.svg' %}" alt="more icon" />
               <div class="text-infos">
                 <p class="body-2">۲۱۵ سفارش</p>
                 <p class="body-5">لغو شده</p>
@@ -169,7 +170,7 @@
           
           <div class="my-orders-column">
             <div class="order-infos">
-              <img class="orders-icons" src="../src/images/user-profile-images/user-profile/gallery.svg" alt="more icon" />
+              <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/gallery.svg' %}" alt="more icon" />
               <div class="text-infos">
                 <p class="body-2">۱۰ محصول </p>
                 <p class="body-5">در گالری</p>
@@ -177,7 +178,7 @@
             </div>
 
             <div class="order-infos">
-              <img class="orders-icons" src="../src/images/user-profile-images/user-profile/messages-2.svg" alt="more icon" />
+              <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/messages-2.svg' %}" alt="more icon" />
               <div class="text-infos">
                 <p class="body-2">۲۸ محصول </p>
                 <p class="body-5">فیزیکی</p>
@@ -199,7 +200,7 @@
           <div class="favorites-container">
             <div class="favorites-item">
               <img
-                src="../src/images/landing/T-shirt.svg"
+                src="{% static 'images/landing/T-shirt.svg' %}"
                 alt="image of most purchased item"
               />
               <div class="item-info">
@@ -207,7 +208,7 @@
                   <h4 class="item-name">تیشرت مردانه</h4>
                   <img
                     class="like-icon"
-                    src="../src/images/landing/filled-heart.svg"
+                    src="{% static 'images/landing/filled-heart.svg' %}"
                     alt="Like"
                   />
                 </div>
@@ -218,20 +219,20 @@
     
             <div class="designs-item">
             <img
-              src="../src/images/landing/designpart.svg"
+              src="{% static 'images/landing/designpart.svg' %}"
               alt="image of most purchased item"
             />
     
             <div class="item-info">
               <div class="item-name-and-like">
                 <h4 class="item-name">استیکر</h4>
-                <img class="like-icon" src="../src/images/landing/filled-heart.svg" alt="Like" />
+                <img class="like-icon" src="{% static 'images/landing/filled-heart.svg' %}" alt="Like" />
               </div>
               <p class="description">قابل طراحی و چاپ بر روی انواع محصولات</p>
             </div>
             <div class="button-container">
               <button class="button">
-                <img src="../src/images/landing/gallery-add.svg" alt="gallery image" />
+                <img src="{% static 'images/landing/gallery-add.svg' %}" alt="gallery image" />
                 <p>افزودن به گالری</p>
               </button>
             </div>
@@ -240,7 +241,7 @@
     
             <div class="favorites-item">
               <img
-                src="../src/images/landing/T-shirt.svg"
+                src="{% static 'images/landing/T-shirt.svg' %}"
                 alt="image of most purchased item"
               />
               <div class="item-info">
@@ -248,7 +249,7 @@
                   <h4 class="item-name">تیشرت مردانه</h4>
                   <img
                     class="like-icon"
-                    src="../src/images/landing/filled-heart.svg"
+                    src="{% static 'images/landing/filled-heart.svg' %}"
                     alt="Like"
                   />
                 </div>
@@ -261,7 +262,7 @@
           <div class="carosel-flash">
             <img
               id="arrow-left"
-              src="../src/images/landing/arrow-left.svg"
+              src="{% static 'images/landing/arrow-left.svg' %}"
               alt="left arrow"
             />
           </div>
@@ -279,7 +280,7 @@
           <div class="favorites-container">
             <div class="favorites-item">
               <img
-                src="../src/images/landing/T-shirt.svg"
+                src="{% static 'images/landing/T-shirt.svg' %}"
                 alt="image of most purchased item"
               />
               <div class="item-info">
@@ -287,7 +288,7 @@
                   <h4 class="item-name">تیشرت مردانه</h4>
                   <img
                     class="like-icon"
-                    src="../src/images/landing/like.svg"
+                    src="{% static 'images/landing/like.svg' %}"
                     alt="Like"
                   />
                 </div>
@@ -298,7 +299,7 @@
     
             <div class="favorites-item">
               <img
-                src="../src/images/landing/T-shirt.svg"
+                src="{% static 'images/landing/T-shirt.svg' %}"
                 alt="image of most purchased item"
               />
               <div class="item-info">
@@ -306,7 +307,7 @@
                   <h4 class="item-name">تیشرت مردانه</h4>
                   <img
                     class="like-icon"
-                    src="../src/images/landing/like.svg"
+                    src="{% static 'images/landing/like.svg' %}"
                     alt="Like"
                   />
                 </div>
@@ -317,7 +318,7 @@
     
             <div class="favorites-item">
               <img
-                src="../src/images/landing/T-shirt.svg"
+                src="{% static 'images/landing/T-shirt.svg' %}"
                 alt="image of most purchased item"
               />
               <div class="item-info">
@@ -325,7 +326,7 @@
                   <h4 class="item-name">تیشرت مردانه</h4>
                   <img
                     class="like-icon"
-                    src="../src/images/landing/filled-heart.svg"
+                    src="{% static 'images/landing/filled-heart.svg' %}"
                     alt="Like"
                   />
                 </div>
@@ -338,7 +339,7 @@
           <div class="carosel-flash">
             <img
               id="arrow-left"
-              src="../src/images/landing/arrow-left.svg"
+              src="{% static 'images/landing/arrow-left.svg' %}"
               alt="left arrow"
             />
           </div>
@@ -358,20 +359,20 @@
           <div class="favorites-container">
             <div class="designs-item">
               <img
-                src="../src/images/user-profile-images/user-profile/hendoneh-image.svg"
+                src="{% static 'images/user-profile-images/user-profile/hendoneh-image.svg' %}"
                 alt="image of most purchased item"
               />
       
               <div class="item-info">
                 <div class="item-name-and-like">
                   <h4 class="item-name">استیکر</h4>
-                  <img class="like-icon" src="../src/images/landing/Like.svg" alt="Like" />
+                  <img class="like-icon" src="{% static 'images/landing/Like.svg' %}" alt="Like" />
                 </div>
                 <p class="description">قابل طراحی و چاپ بر روی انواع محصولات</p>
               </div>
               <div class="button-container">
                 <button class="button">
-                  <img src="../src/images/landing/gallery-add.svg" alt="gallery image" />
+                  <img src="{% static 'images/landing/gallery-add.svg' %}" alt="gallery image" />
                   <p>افزودن به گالری</p>
                 </button>
               </div>
@@ -380,20 +381,20 @@
     
               <div class="designs-item">
                 <img
-                  src="../src/images/user-profile-images/user-profile/hendoneh-image.svg"
+                  src="{% static 'images/user-profile-images/user-profile/hendoneh-image.svg' %}"
                   alt="image of most purchased item"
                 />
         
                 <div class="item-info">
                   <div class="item-name-and-like">
                     <h4 class="item-name">استیکر</h4>
-                    <img class="like-icon" src="../src/images/landing/Like.svg" alt="Like" />
+                    <img class="like-icon" src="{% static 'images/landing/Like.svg' %}" alt="Like" />
                   </div>
                   <p class="description">قابل طراحی و چاپ بر روی انواع محصولات</p>
                 </div>
                 <div class="button-container">
                   <button class="button">
-                    <img src="../src/images/landing/gallery-add.svg" alt="gallery image" />
+                    <img src="{% static 'images/landing/gallery-add.svg' %}" alt="gallery image" />
                     <p>افزودن به گالری</p>
                   </button>
                 </div>
@@ -402,20 +403,20 @@
     
                 <div class="designs-item">
                   <img
-                    src="../src/images/user-profile-images/user-profile/hendoneh-image.svg"
+                    src="{% static 'images/user-profile-images/user-profile/hendoneh-image.svg' %}"
                     alt="image of most purchased item"
                   />
           
                   <div class="item-info">
                     <div class="item-name-and-like">
                       <h4 class="item-name">استیکر</h4>
-                      <img class="like-icon" src="../src/images/landing/filled-heart.svg" alt="Like" />
+                      <img class="like-icon" src="{% static 'images/landing/filled-heart.svg' %}" alt="Like" />
                     </div>
                     <p class="description">قابل طراحی و چاپ بر روی انواع محصولات</p>
                   </div>
                   <div class="button-container">
                     <button class="button">
-                      <img src="../src/images/landing/gallery-add.svg" alt="gallery image" />
+                      <img src="{% static 'images/landing/gallery-add.svg' %}" alt="gallery image" />
                       <p>افزودن به گالری</p>
                     </button>
                   </div>
@@ -426,7 +427,7 @@
           <!-- <div class="carosel-flash"> -->
           <img class="carosel-flash"
             id="arrow-left"
-            src="../src/images/user-profile-images/user-profile/Carousel.svg"
+            src="{% static 'images/user-profile-images/user-profile/Carousel.svg' %}"
             alt="left arrow"
             />
           <!-- </div> -->
@@ -459,21 +460,21 @@
           <div class="social-media">
             <a href="#"
               ><img
-                src="../src/images/landing/YouTube_light_icon_(2017).svg"
+                src="{% static 'images/landing/YouTube_light_icon_(2017).svg' %}"
                 alt="Youtube"
             /></a>
 
             <a href="#"
-              ><img src="../src/images/landing/Pinterest.svg" alt="Pinterest"
+              ><img src="{% static 'images/landing/Pinterest.svg' %}" alt="Pinterest"
             /></a>
 
             <a href="#"
-              ><img src="../src/images/landing/facebook.svg" alt="facebook"
+              ><img src="{% static 'images/landing/facebook.svg' %}" alt="facebook"
             /></a>
 
             <div>
               <a href="#"
-                ><img src="../src/images/landing/Instagram.svg" alt="Instagram"
+                ><img src="{% static 'images/landing/Instagram.svg' %}" alt="Instagram"
               /></a>
             </div>
           </div>
@@ -523,17 +524,17 @@
             <div class="nemad-logos-container">
               <a href="%"
                 ><img
-                  src="../src/images/landing/nemad-image.svg"
+                  src="{% static 'images/landing/nemad-image.svg' %}"
                   alt="nemad-image"
               /></a>
               <a href="%"
                 ><img
-                  src="../src/images/landing/nemad-image.svg"
+                  src="{% static 'images/landing/nemad-image.svg' %}"
                   alt="nemad-image"
               /></a>
               <a href="%"
                 ><img
-                  src="../src/images/landing/nemad-image.svg"
+                  src="{% static 'images/landing/nemad-image.svg' %}"
                   alt="nemad-image"
               /></a>
             </div>
