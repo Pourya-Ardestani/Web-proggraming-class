@@ -1,0 +1,255 @@
+
+/* /////base-container */
+
+.filter-box {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  height: fit-content;
+  width: 17.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+}
+.filter-box h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+.remove-filters {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.dropdown {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
+}
+.toggle-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  right: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #4caf50;
+}
+input:checked + .slider:before {
+  transform: translateX(-18px);
+}
+
+/* ////base-container /////////////////////////////*/
+.two-base-column-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 2rem;
+  height: 2rem;
+  margin: 1rem 0rem 3rem;
+  align-self: start;
+  padding: 0rem 2rem;
+}
+.tb-item{
+    height: 2rem;
+}
+.red-stroke {
+  border-bottom: 0.2rem solid #a72f3b;
+}
+.red-text {
+  color: #a72f3b;
+}
+
+/* page-numbers */
+.page-numbers {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.pagination {
+  background-color: bisque;
+  border: 1px solid white;
+  border-radius: 30px;
+  padding: 10px 15px;
+  display: flex;
+  gap: 12px;
+}
+
+.page-btn {
+  background-color: white;
+  color: black;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+.page-btn:hover {
+  background-color: #ddd;
+}
+
+.active {
+  background-color: #c28b8b;
+}
+/* ////////////// */
+.other-products-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.product-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.product-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.product-description {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.product-price {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #333;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.color-variants {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.color-variant {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.heart-item-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.heart-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* /////////page-number-and-arrow  */
+.page-number-and-arrows {
+  display: flex;
+  width: 100%;
+  max-width: 76.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
