@@ -193,7 +193,7 @@
 
 @font-face {
     font-family: 'IRANyekan';
-    src: url('/src/font/IRANyekan.ttf') format('truetype');
+    src: url('/static/font/IRANyekan.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
