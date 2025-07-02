@@ -14,7 +14,6 @@
     <link href="{% static 'style/homepage.css' %}" rel="stylesheet" />
     <link href="{% static 'style/base.css' %}" rel="stylesheet" />
     <script src="{% static 'js/landingPage.js' %}" defer></script>
-
   </head>
 
   <body>
@@ -24,7 +23,10 @@
 
     <div class="search-bar">
       <div class="logo">
-        <img class="logo-image" src="{% static 'images/landing/LogoFrame.svg' %}" />
+        <img
+          class="logo-image"
+          src="{% static 'images/landing/LogoFrame.svg' %}"
+        />
       </div>
       <div class="search-space">
         <input type="text" name="q" placeholder="جستجو...." />
@@ -33,11 +35,11 @@
         </button>
       </div>
       <div class="sabad-vorod">
-        <a href="user-signup.html" class="login">
+        <a href="{% url 'user_signup' %}" class="login">
           <img src="{% static 'images/landing/Login.svg' %}" />
           <p>ورود | ثبت نام</p>
         </a>
-        <a href="../pages/Order-history.html" class="sabad">
+        <a href="{% url 'order_history' %}" class="sabad">
           <img src="{% static 'images/landing/shopping-cart.svg' %}" />
           <p>سبد خرید</p>
         </a>
@@ -56,45 +58,72 @@
         <button class="item">پوشاک</button>
         <button class="item">لوازم خانه</button>
 
-        <button class="item" id="mobile-frame" onclick="openWindow(event)">قاب موبایل
+        <button class="item" id="mobile-frame" onclick="openWindow(event)">
+          قاب موبایل
           <div id="overlay-container">
             <div class="iphon-card">
-              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
+              <img
+                src="{% static 'images/landing/iphon-img-phase-2.svg' %}"
+                alt="iphone image"
+              />
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
+              <img
+                src="{% static 'images/landing/iphon-img-phase-2.svg' %}"
+                alt="iphone image"
+              />
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
+              <img
+                src="{% static 'images/landing/iphon-img-phase-2.svg' %}"
+                alt="iphone image"
+              />
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
+              <img
+                src="{% static 'images/landing/iphon-img-phase-2.svg' %}"
+                alt="iphone image"
+              />
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
+              <img
+                src="{% static 'images/landing/iphon-img-phase-2.svg' %}"
+                alt="iphone image"
+              />
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
+              <img
+                src="{% static 'images/landing/iphon-img-phase-2.svg' %}"
+                alt="iphone image"
+              />
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
+              <img
+                src="{% static 'images/landing/iphon-img-phase-2.svg' %}"
+                alt="iphone image"
+              />
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
+              <img
+                src="{% static 'images/landing/iphon-img-phase-2.svg' %}"
+                alt="iphone image"
+              />
               <p class="body-5">آیفون</p>
             </div>
             <div class="iphon-card">
-              <img src="{% static 'images/landing/iphon-img-phase-2.svg' %}" alt="iphone image">
+              <img
+                src="{% static 'images/landing/iphon-img-phase-2.svg' %}"
+                alt="iphone image"
+              />
               <p class="body-5">آیفون</p>
             </div>
-            
           </div>
         </button>
 
@@ -118,12 +147,18 @@
             <div class="overlap-group-2">
               <div class="rectangle"></div>
               <div class="rectangle-2"></div>
-              <img class="goll" src="{% static 'images/landing/hero/gol-rast.png' %}" />
+              <img
+                class="goll"
+                src="{% static 'images/landing/hero/gol-rast.png' %}"
+              />
               <img
                 class="element-girls"
                 src="{% static 'images/landing/hero/3-girls-1.png' %}"
               />
-              <img class="img" src="{% static 'images/landing/hero/goll4-1.png' %}" />
+              <img
+                class="img"
+                src="{% static 'images/landing/hero/goll4-1.png' %}"
+              />
               <img
                 class="goll-2"
                 src="{% static 'images/landing/hero/goll4-1.png' %}"
@@ -149,14 +184,20 @@
         </div>
         <button class="button-2">
           <div class="text-wrapper-3">شروع طراحی</div>
-          <img class="vuesax-outline-brush" src="{% static 'images/landing/brush.svg' %}" />
+          <img
+            class="vuesax-outline-brush"
+            src="{% static 'images/landing/brush.svg' %}"
+          />
         </button>
       </div>
     </div>
 
     <div class="seperator">
       <div class="icon-with-text">
-        <img src="{% static 'images/landing/medal-star.svg' %}" alt="medal-star" />
+        <img
+          src="{% static 'images/landing/medal-star.svg' %}"
+          alt="medal-star"
+        />
         <h3>دسته بندی محصولات</h3>
       </div>
       <div class="line"></div>
@@ -214,7 +255,10 @@
 
     <div class="seperator">
       <div class="icon-with-text">
-        <img src="{% static 'images/landing/medal-star.svg' %}" alt="medal-star" />
+        <img
+          src="{% static 'images/landing/medal-star.svg' %}"
+          alt="medal-star"
+        />
         <h3>پرفروش ترین ها</h3>
       </div>
       <div class="line"></div>
@@ -376,7 +420,10 @@
 
     <div class="seperator">
       <div class="icon-with-text">
-        <img src="{% static 'images/landing/discount-shape.svg' %}" alt="medal-star" />
+        <img
+          src="{% static 'images/landing/discount-shape.svg' %}"
+          alt="medal-star"
+        />
         <h3>فروش ویژه</h3>
       </div>
       <div class="line"></div>
@@ -422,7 +469,9 @@
 
         <div
           class="special-offer-item"
-          style="background-image: url('/static/images/landing/cloth-image.jpg')"
+          style="
+            background-image: url('/static/images/landing/cloth-image.jpg');
+          "
         >
           <div class="offer-image">
             <img
@@ -436,7 +485,9 @@
 
         <div
           class="special-offer-item"
-          style="background-image: url('/static/images/landing/cloth-image.jpg')"
+          style="
+            background-image: url('/static/images/landing/cloth-image.jpg');
+          "
         >
           <div class="offer-image">
             <img
@@ -450,7 +501,9 @@
 
         <div
           class="special-offer-item"
-          style="background-image: url('/static/images/landing/cloth-image.jpg')"
+          style="
+            background-image: url('/static/images/landing/cloth-image.jpg');
+          "
         >
           <div class="offer-image">
             <img
@@ -466,7 +519,10 @@
 
     <div class="seperator">
       <div class="icon-with-text">
-        <img src="{% static 'images/landing/medal-star.svg' %}" alt="medal-star" />
+        <img
+          src="{% static 'images/landing/medal-star.svg' %}"
+          alt="medal-star"
+        />
         <h3>طرح های پرطرفدار</h3>
       </div>
       <div class="line"></div>
@@ -1114,7 +1170,10 @@
           <h4>محصولات مناسب هدیه دادن به خانم ها</h4>
           <button class="banner-button">دیدن محصولات</button>
         </div>
-        <img src="{% static 'images/landing/banner.svg' %}" alt="banner-image" />
+        <img
+          src="{% static 'images/landing/banner.svg' %}"
+          alt="banner-image"
+        />
       </div>
 
       <div class="banner-item">
@@ -1122,7 +1181,10 @@
           <h4>محصولات مناسب هدیه دادن به خانم ها</h4>
           <button class="banner-button">دیدن محصولات</button>
         </div>
-        <img src="{% static 'images/landing/banner.svg' %}" alt="banner-image" />
+        <img
+          src="{% static 'images/landing/banner.svg' %}"
+          alt="banner-image"
+        />
       </div>
     </div>
 
@@ -1291,7 +1353,10 @@
 
     <div class="wedding-card-container">
       <div class="wedding-card-images">
-        <img src="{% static 'images/landing/bride.svg' %}" alt="wedding-card-image" />
+        <img
+          src="{% static 'images/landing/bride.svg' %}"
+          alt="wedding-card-image"
+        />
         <div class="half-wed-images">
           <img
             src="{% static 'images/landing/Frame flower.svg' %}"
@@ -1312,7 +1377,10 @@
             alt="wedding-card-image"
           />
         </div>
-        <img src="{% static 'images/landing/bride.svg' %}" alt="wedding-card-image" />
+        <img
+          src="{% static 'images/landing/bride.svg' %}"
+          alt="wedding-card-image"
+        />
       </div>
       <h4>کارت دعوت عروسی رو خودتون طراحی کنید</h4>
       <button class="wedding-card-button">
@@ -1327,7 +1395,10 @@
 
     <div class="seperator">
       <div class="icon-with-text">
-        <img src="{% static 'images/landing/like-in-a-box.svg' %}" alt="like icon" />
+        <img
+          src="{% static 'images/landing/like-in-a-box.svg' %}"
+          alt="like icon"
+        />
         <h3>علاقمندی ها</h3>
       </div>
       <div class="line"></div>
@@ -1420,7 +1491,6 @@
       />
     </div>
 
-    
     <!-- foooter /////////////////////////////// -->
     <div class="footer">
       <div class="footer-upper">
@@ -1448,16 +1518,22 @@
             /></a>
 
             <a href="#"
-              ><img src="{% static 'images/landing/Pinterest.svg' %}" alt="Pinterest"
+              ><img
+                src="{% static 'images/landing/Pinterest.svg' %}"
+                alt="Pinterest"
             /></a>
 
             <a href="#"
-              ><img src="{% static 'images/landing/facebook.svg' %}" alt="facebook"
+              ><img
+                src="{% static 'images/landing/facebook.svg' %}"
+                alt="facebook"
             /></a>
 
             <div>
               <a href="#"
-                ><img src="{% static 'images/landing/Instagram.svg' %}" alt="Instagram"
+                ><img
+                  src="{% static 'images/landing/Instagram.svg' %}"
+                  alt="Instagram"
               /></a>
             </div>
           </div>
@@ -1484,7 +1560,7 @@
               <a href="$" class="paragraph-texts">سوالات متداول</a>
               <a href="$" class="paragraph-texts">حریم خصوصی</a>
               <a href="$" class="paragraph-texts">ثبت شکایت</a>
-              <a href="$" class="paragraph-texts">ضمانت نامه  محصولات</a>
+              <a href="$" class="paragraph-texts">ضمانت نامه محصولات</a>
             </div>
 
             <div class="text-column">

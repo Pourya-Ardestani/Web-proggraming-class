@@ -13,7 +13,10 @@
   <body>
     <div class="search-bar">
       <div class="logo">
-        <img class="logo-image" src="{% static 'images/landing/LogoFrame.svg' %}" />
+        <img
+          class="logo-image"
+          src="{% static 'images/landing/LogoFrame.svg' %}"
+        />
       </div>
       <div class="search-space">
         <input type="text" name="q" placeholder="جستجو...." />
@@ -22,11 +25,11 @@
         </button>
       </div>
       <div class="sabad-vorod">
-        <a href="user-signup.html" class="login">
+        <a href="{% url 'user_signup' %}" class="login">
           <img src="{% static 'images/landing/Login.svg' %}" />
           <p>ورود | ثبت نام</p>
         </a>
-        <a href="../pages/Order-history.html" class="sabad">
+        <a href="{% url 'order_history' %}" class="sabad">
           <img src="{% static 'images/landing/shopping-cart.svg' %}" />
           <p>سبد خرید</p>
         </a>
@@ -197,13 +200,18 @@
             </div>
           </div>
           <p class="body-4">نظر خود را ثبت کنید</p>
-          <button class="submit-review" onclick="openWindow()">ثبت دیدگاه</button>
+          <button class="submit-review" onclick="openWindow()">
+            ثبت دیدگاه
+          </button>
         </div>
       </div>
 
       <div class="reviews-section">
         <div class="satisfaction-banner">
-          <img src="{% static 'images/selected-product/like.svg' %}" alt="like-icon" />
+          <img
+            src="{% static 'images/selected-product/like.svg' %}"
+            alt="like-icon"
+          />
           <p class="body-2">۷۰٪ (۱۲۰ نفر) از خرید این محصول رضایت داشته اند</p>
         </div>
 
@@ -399,7 +407,7 @@
     </div>
 
     <!-- ////////////////////////////////فاز دو -->
-     <div id="comment-window">
+    <div id="comment-window">
       <h2>نظر خود را با ما در میان بگذارید</h2>
       <p class="body-3">در مورد تیشرت ساده سفید</p>
       <img
@@ -475,7 +483,6 @@
       </form>
     </div>
 
-
     <!-- foooter /////////////////////////////// -->
     <div class="footer">
       <div class="footer-upper">
@@ -503,16 +510,22 @@
             /></a>
 
             <a href="#"
-              ><img src="{% static 'images/landing/Pinterest.svg' %}" alt="Pinterest"
+              ><img
+                src="{% static 'images/landing/Pinterest.svg' %}"
+                alt="Pinterest"
             /></a>
 
             <a href="#"
-              ><img src="{% static 'images/landing/facebook.svg' %}" alt="facebook"
+              ><img
+                src="{% static 'images/landing/facebook.svg' %}"
+                alt="facebook"
             /></a>
 
             <div>
               <a href="#"
-                ><img src="{% static 'images/landing/Instagram.svg' %}" alt="Instagram"
+                ><img
+                  src="{% static 'images/landing/Instagram.svg' %}"
+                  alt="Instagram"
               /></a>
             </div>
           </div>

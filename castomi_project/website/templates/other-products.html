@@ -13,7 +13,10 @@
     <!-- ////searchbar -->
     <div class="search-bar">
       <div class="logo">
-        <img class="logo-image" src="{% static 'images/landing/LogoFrame.svg' %}" />
+        <img
+          class="logo-image"
+          src="{% static 'images/landing/LogoFrame.svg' %}"
+        />
       </div>
       <div class="search-space">
         <input type="text" name="q" placeholder="جستجو...." />
@@ -22,11 +25,11 @@
         </button>
       </div>
       <div class="sabad-vorod">
-        <a href="user-signup.html" class="login">
+        <a href="{% url 'user_signup' %}" class="login">
           <img src="{% static 'images/landing/Login.svg' %}" />
           <p>ورود | ثبت نام</p>
         </a>
-        <a href="../pages/Order-history.html" class="sabad">
+        <a href="{% url 'order_history' %}" class="sabad">
           <img src="{% static 'images/landing/shopping-cart.svg' %}" />
           <p>سبد خرید</p>
         </a>
@@ -316,7 +319,6 @@
       </div>
     </div>
 
-    
     <!-- foooter /////////////////////////////// -->
     <div class="footer">
       <div class="footer-upper">
@@ -344,16 +346,22 @@
             /></a>
 
             <a href="#"
-              ><img src="{% static 'images/landing/Pinterest.svg' %}" alt="Pinterest"
+              ><img
+                src="{% static 'images/landing/Pinterest.svg' %}"
+                alt="Pinterest"
             /></a>
 
             <a href="#"
-              ><img src="{% static 'images/landing/facebook.svg' %}" alt="facebook"
+              ><img
+                src="{% static 'images/landing/facebook.svg' %}"
+                alt="facebook"
             /></a>
 
             <div>
               <a href="#"
-                ><img src="{% static 'images/landing/Instagram.svg' %}" alt="Instagram"
+                ><img
+                  src="{% static 'images/landing/Instagram.svg' %}"
+                  alt="Instagram"
               /></a>
             </div>
           </div>
@@ -380,7 +388,7 @@
               <a href="$" class="paragraph-texts">سوالات متداول</a>
               <a href="$" class="paragraph-texts">حریم خصوصی</a>
               <a href="$" class="paragraph-texts">ثبت شکایت</a>
-              <a href="$" class="paragraph-texts">ضمانت نامه  محصولات</a>
+              <a href="$" class="paragraph-texts">ضمانت نامه محصولات</a>
             </div>
 
             <div class="text-column">

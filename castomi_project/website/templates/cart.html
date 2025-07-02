@@ -21,11 +21,11 @@
         </button>
       </div>
       <div class="sabad-vorod">
-        <a href="user-signup.html" class="login">
+       <a href="{% url 'user_signup' %}" class="login">
           <img src="{% static 'images/landing/Login.svg' %}"/>
           <p>ورود | ثبت نام</p>
         </a>
-        <a href="../pages/Order-history.html" class="sabad">
+       <a href="{% url 'order_history' %}" class="sabad">
           <img src="{% static 'images/landing/shopping-cart.svg' %}"/>
           <p>سبد خرید</p>
         </a>
