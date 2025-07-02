@@ -1,5 +1,5 @@
-const fillSrc = "../src/images/selected-product/star-filled.svg";
-const emptySrc = "../src/images/selected-product/star-empty.svg";
+const fillSrc = "/static/images/selected-product/star-filled.svg";
+const emptySrc = "/static/images/selected-product/star-empty.svg";
 const children = document.body.children;
 function changeStar(img) {
   if (img.src.includes("star-filled.svg")) {

@@ -53,7 +53,7 @@ function change(button) {
       tabCache[tabName] = `
         <div class="no-order" id="no-order-yet">
   <p class="body-2">سفارش جاری وجود ندارد.</p>
-  <img src="../src/images/user-profile-images/order-history/Illustration.svg" alt="404img"/>
+  <img src="/static/images/user-profile-images/order-history/Illustration.svg" alt="404img"/>
 </div>
       `;
     } else if (tabName === "مرجوع شده ۴") {
@@ -69,7 +69,7 @@ function change(button) {
           <div class="reject-card">
             <div class="reject-card-header">
               <img
-                src="../src/images/user-profile-images/order-history/reject-icon.svg"
+                src="/static/images/user-profile-images/order-history/reject-icon.svg"
                 alt="آیکن بستن"
                 class="reject-icon-close"
               />
@@ -77,7 +77,7 @@ function change(button) {
             </div>
             <div class="reject-card-body">
               <img
-                src="../src/images/user-profile-images/order-history/rejected-img.svg"
+                src="/static/images/user-profile-images/order-history/rejected-img.svg"
                 alt="تصویر قاب گوشی"
                 class="reject-product-image"
               />
@@ -85,7 +85,7 @@ function change(button) {
                 <p class="reject-product-title">قاب گوشی گربه ای</p>
                 <p class="reject-product-desc">
                   <img
-                    src="../src/images/user-profile-images/order-history/info.svg"
+                    src="/static/images/user-profile-images/order-history/info.svg"
                     alt="آیکن هشدار"
                     class="reject-icon-warning"
                   />
@@ -97,7 +97,7 @@ function change(button) {
         </div>
         <div class="reject-back-button">
           <img
-            src="../src/images/user-profile-images/order-history/arrow-left.svg"
+            src="/static/images/user-profile-images/order-history/arrow-left.svg"
             alt="آیکن بازگشت"
           />
         </div>
@@ -114,7 +114,7 @@ function change(button) {
           <div class="reject-card">
             <div class="reject-card-header">
               <img
-                src="../src/images/user-profile-images/order-history/reject-icon.svg"
+                src="/static/images/user-profile-images/order-history/reject-icon.svg"
                 alt="آیکن بستن"
                 class="reject-icon-close"
               />
@@ -122,7 +122,7 @@ function change(button) {
             </div>
             <div class="reject-card-body">
               <img
-                src="../src/images/user-profile-images/order-history/rejected-img.svg"
+                src="/static/images/user-profile-images/order-history/rejected-img.svg"
                 alt="تصویر قاب گوشی"
                 class="reject-product-image"
               />
@@ -130,7 +130,7 @@ function change(button) {
                 <p class="reject-product-title">قاب گوشی گربه ای</p>
                 <p class="reject-product-desc">
                   <img
-                    src="../src/images/user-profile-images/order-history/info.svg"
+                    src="/static/images/user-profile-images/order-history/info.svg"
                     alt="آیکن هشدار"
                     class="reject-icon-warning"
                   />
@@ -142,7 +142,7 @@ function change(button) {
         </div>
         <div class="reject-back-button">
           <img
-            src="../src/images/user-profile-images/order-history/arrow-left.svg"
+            src="/static/images/user-profile-images/order-history/arrow-left.svg"
             alt="آیکن بازگشت"
           />
         </div>
@@ -159,7 +159,7 @@ function change(button) {
           <div class="reject-card">
             <div class="reject-card-header">
               <img
-                src="../src/images/user-profile-images/order-history/reject-icon.svg"
+                src="/static/images/user-profile-images/order-history/reject-icon.svg"
                 alt="آیکن بستن"
                 class="reject-icon-close"
               />
@@ -167,7 +167,7 @@ function change(button) {
             </div>
             <div class="reject-card-body">
               <img
-                src="../src/images/user-profile-images/order-history/rejected-img.svg"
+                src="/static/images/user-profile-images/order-history/rejected-img.svg"
                 alt="تصویر قاب گوشی"
                 class="reject-product-image"
               />
@@ -175,7 +175,7 @@ function change(button) {
                 <p class="reject-product-title">قاب گوشی گربه ای</p>
                 <p class="reject-product-desc">
                   <img
-                    src="../src/images/user-profile-images/order-history/info.svg"
+                    src="/static/images/user-profile-images/order-history/info.svg"
                     alt="آیکن هشدار"
                     class="reject-icon-warning"
                   />
@@ -187,7 +187,7 @@ function change(button) {
         </div>
         <div class="reject-back-button">
           <img
-            src="../src/images/user-profile-images/order-history/arrow-left.svg"
+            src="/static/images/user-profile-images/order-history/arrow-left.svg"
             alt="آیکن بازگشت"
           />
         </div>
@@ -204,7 +204,7 @@ function change(button) {
           <div class="reject-card">
             <div class="reject-card-header">
               <img
-                src="../src/images/user-profile-images/order-history/reject-icon.svg"
+                src="/static/images/user-profile-images/order-history/reject-icon.svg"
                 alt="آیکن بستن"
                 class="reject-icon-close"
               />
@@ -212,7 +212,7 @@ function change(button) {
             </div>
             <div class="reject-card-body">
               <img
-                src="../src/images/user-profile-images/order-history/rejected-img.svg"
+                src="/static/images/user-profile-images/order-history/rejected-img.svg"
                 alt="تصویر قاب گوشی"
                 class="reject-product-image"
               />
@@ -220,7 +220,7 @@ function change(button) {
                 <p class="reject-product-title">قاب گوشی گربه ای</p>
                 <p class="reject-product-desc">
                   <img
-                    src="../src/images/user-profile-images/order-history/info.svg"
+                    src="/static/images/user-profile-images/order-history/info.svg"
                     alt="آیکن هشدار"
                     class="reject-icon-warning"
                   />
@@ -232,7 +232,7 @@ function change(button) {
         </div>
         <div class="reject-back-button">
           <img
-            src="../src/images/user-profile-images/order-history/arrow-left.svg"
+            src="/static/images/user-profile-images/order-history/arrow-left.svg"
             alt="آیکن بازگشت"
           />
         </div>
@@ -249,7 +249,7 @@ function change(button) {
           <div class="reject-card">
             <div class="reject-card-header">
               <img
-                src="../src/images/user-profile-images/order-history/reject-icon.svg"
+                src="/static/images/user-profile-images/order-history/reject-icon.svg"
                 alt="آیکن بستن"
                 class="reject-icon-close"
               />
@@ -257,7 +257,7 @@ function change(button) {
             </div>
             <div class="reject-card-body">
               <img
-                src="../src/images/user-profile-images/order-history/rejected-img.svg"
+                src="/static/images/user-profile-images/order-history/rejected-img.svg"
                 alt="تصویر قاب گوشی"
                 class="reject-product-image"
               />
@@ -265,7 +265,7 @@ function change(button) {
                 <p class="reject-product-title">قاب گوشی گربه ای</p>
                 <p class="reject-product-desc">
                   <img
-                    src="../src/images/user-profile-images/order-history/info.svg"
+                    src="/static/images/user-profile-images/order-history/info.svg"
                     alt="آیکن هشدار"
                     class="reject-icon-warning"
                   />
@@ -277,7 +277,7 @@ function change(button) {
         </div>
         <div class="reject-back-button">
           <img
-            src="../src/images/user-profile-images/order-history/arrow-left.svg"
+            src="/static/images/user-profile-images/order-history/arrow-left.svg"
             alt="آیکن بازگشت"
           />
         </div>
@@ -294,7 +294,7 @@ function change(button) {
           <div class="reject-card">
             <div class="reject-card-header">
               <img
-                src="../src/images/user-profile-images/order-history/reject-icon.svg"
+                src="/static/images/user-profile-images/order-history/reject-icon.svg"
                 alt="آیکن بستن"
                 class="reject-icon-close"
               />
@@ -302,7 +302,7 @@ function change(button) {
             </div>
             <div class="reject-card-body">
               <img
-                src="../src/images/user-profile-images/order-history/rejected-img.svg"
+                src="/static/images/user-profile-images/order-history/rejected-img.svg"
                 alt="تصویر قاب گوشی"
                 class="reject-product-image"
               />
@@ -310,7 +310,7 @@ function change(button) {
                 <p class="reject-product-title">قاب گوشی گربه ای</p>
                 <p class="reject-product-desc">
                   <img
-                    src="../src/images/user-profile-images/order-history/info.svg"
+                    src="/static/images/user-profile-images/order-history/info.svg"
                     alt="آیکن هشدار"
                     class="reject-icon-warning"
                   />
@@ -322,7 +322,7 @@ function change(button) {
         </div>
         <div class="reject-back-button">
           <img
-            src="../src/images/user-profile-images/order-history/arrow-left.svg"
+            src="/static/images/user-profile-images/order-history/arrow-left.svg"
             alt="آیکن بازگشت"
           />
         </div>
@@ -341,15 +341,15 @@ function change(button) {
   container.innerHTML = tabCache[tabName];
 }
 document.getElementById('order-history-button').addEventListener('click', () => {
-  window.location.href = '../../pages/Order-history.html';
+  window.location.href = '/order-history/';
 });
 
 document.getElementById('dashboard-button').addEventListener('click', () => {
-  window.location.href = '../../pages/users-profile.html';
+  window.location.href = '/users-profile/';
 });
 
 
 
 document.getElementById('account-info-button').addEventListener('click', () => {
-  window.location.href = '../../pages/account-info.html';
+  window.location.href = '/account-info/';
 });
