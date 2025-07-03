@@ -1,3 +1,3 @@
 document.getElementById('next-signup-page').addEventListener('click', () => {
-  window.location.href = '/user-signup-2/';
+  window.location.href = '/signup-2/';
 });

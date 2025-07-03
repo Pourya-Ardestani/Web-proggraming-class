@@ -3,7 +3,7 @@ document.getElementById('order-history-button').addEventListener('click', () => 
 });
 
 document.getElementById('dashboard-button').addEventListener('click', () => {
-  window.location.href = '/users-profile/';
+  window.location.href = '/profile/';
 });
 
 
