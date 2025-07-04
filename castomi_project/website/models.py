@@ -35,7 +35,6 @@ class CustomUser(AbstractUser):
         ('retired', 'بازنشسته'),
         ('other', 'سایر'),
     ]
-    # فیلد job فقط یک بار تعریف می‌شود
     job = models.CharField(
         max_length=100,
         choices=JOB_CHOICES,
@@ -44,16 +43,53 @@ class CustomUser(AbstractUser):
         verbose_name="شغل"
     )
 
+    PROVINCE_CHOICES = [
+        ('', 'انتخاب کنید'), # گزینه پیش فرض خالی
+        ('tehran', 'تهران'),
+        ('isfahan', 'اصفهان'),
+        ('fars', 'فارس'),
+        ('khorasan_razavi', 'خراسان رضوی'),
+        ('alborz', 'البرز'),
+        # ... می توانید استان های بیشتری اضافه کنید
+    ]
+    province = models.CharField(
+        max_length=100,
+        choices=PROVINCE_CHOICES,
+        blank=True,
+        null=True,
+        verbose_name="استان"
+    )
+
+    # تعریف گزینه‌های شهر (این لیست معمولا خیلی بزرگ است و بهتر است داینامیک باشد)
+    CITY_CHOICES = [
+        ('', 'انتخاب کنید'), # گزینه پیش فرض خالی
+        ('tehran_city', 'تهران'),
+        ('karaj', 'کرج'),
+        ('mashhad', 'مشهد'),
+        ('isfahan_city', 'اصفهان'),
+        ('shiraz', 'شیراز'),
+        # ... می توانید شهرهای بیشتری اضافه کنید
+    ]
+    city = models.CharField(
+        max_length=100,
+        choices=CITY_CHOICES,
+        blank=True,
+        null=True,
+        verbose_name="شهر"
+    )
+    # فیلد job فقط یک بار تعریف می‌شود
+
     # email و password در AbstractUser وجود دارند و نیازی به تعریف مجدد نیست
     birthday = models.DateField(blank=True, null=True, verbose_name="تاریخ تولد")
 
     # فیلدهای مرحله دوم ثبت نام
     mobile_number = models.CharField(max_length=15, blank=True, null=True, verbose_name="شماره موبایل")
     phone_number = models.CharField(max_length=15, blank=True, null=True, verbose_name="شماره تلفن")
-    province = models.CharField(max_length=100, blank=True, null=True, verbose_name="استان")
-    city = models.CharField(max_length=100, blank=True, null=True, verbose_name="شهر")
+    # province = models.CharField(max_length=100, blank=True, null=True, verbose_name="استان")
+    # city = models.CharField(max_length=100, blank=True, null=True, verbose_name="شهر")
     address = models.TextField(blank=True, null=True, verbose_name="آدرس کامل پستی")
     email = models.EmailField(unique=True, blank=True, null=True, verbose_name="آدرس ایمیل")
+    postal_code = models.CharField(max_length=10, blank=True, null=True, verbose_name="کد پستی")
 
     # USERNAME_FIELD = 'email' # حالا کاربر با ایمیل لاگین می کند
     # REQUIRED_FIELDS = ['full_name', 'national_id'] # فیلدهایی که هنگام createsuperuser اجباری هستند (username دیگر اجباری نیست)
