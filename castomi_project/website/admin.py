@@ -6,4 +6,16 @@ from .models import CustomUser
 # این کلاس به شما امکان می دهد فیلدهای CustomUser را در پنل ادمین مدیریت کنید
 @admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
-    list_display = ('username', 'email', 'full_name', 'national_id', 'is_staff',  'mobile_number', 'phone_number')
+    # فیلدهایی که در لیست کاربران در پنل ادمین نمایش داده می شوند
+    list_display = ('username', 'email', 'full_name', 'national_id', 'is_staff', 'mobile_number', 'phone_number')
+
+    # فیلدهایی که در صفحه ویرایش کاربر نمایش داده می شوند
+    # UserAdmin.fieldsets شامل فیلدهای پیش فرض (username, password, permissions, etc.) است
+    fieldsets = UserAdmin.fieldsets + (
+        (('اطلاعات تکمیلی'), {'fields': ('full_name', 'national_id', 'education', 'job', 'birthday', 'mobile_number', 'phone_number', 'province', 'city', 'address', 'postal_code')}),
+    )
+
+    # اگر می خواهید فیلدهای جدید در بخش "Add user" (افزودن کاربر جدید) هم نمایش داده شوند
+    add_fieldsets = UserAdmin.add_fieldsets + (
+        (('اطلاعات تکمیلی'), {'fields': ('full_name', 'national_id', 'education', 'job', 'birthday', 'mobile_number', 'phone_number', 'province', 'city', 'address', 'postal_code')}),
+    )
