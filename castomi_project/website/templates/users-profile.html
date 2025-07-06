@@ -67,8 +67,8 @@
               <a href="" class="camera"><img src="{% static 'images/user-profile-images/user-profile/camera.svg' %}"></a>
             </div>
             <div class="profile-info">
-              <p class="body-01">نگار زمانی</h4>
-              <p class="body-01 email">xxxxxxx@Yahoo.com</p>
+              <p class="body-01">{{ user.full_name }}</h4>
+              <p class="body-01 email">{{ user.email }}</p>
             </div>
           </div>
 
@@ -78,17 +78,17 @@
                 <div class="right-text"><p class="body-01">اعتبار خرید</p></div>
                 <img class="icon" src="{% static 'images/user-profile-images/user-profile/plus.svg' %}" alt="plus icon"/>
               </div>
-              <div class="left-text"><p class="body-01">۱۰۰,۰۰۰ تومان</p></div>
+              <div class="left-text"><p class="body-01">{{ credit_amount }}</p></div>
             </div>
 
             <div class="info-row">
-              <div class="right-text"><p class="body-01">اعتبار خرید</p></div>
-              <div class="left-text"><p class="body-01">۴۵</p></div>
+              <div class="right-text"><p class="body-01">تعداد طرح ها</p></div>
+              <div class="left-text"><p class="body-01">{{ comments_count }}</p></div>
             </div>
 
             <div class="info-row">
-              <div class="right-text"><p class="body-01">اعتبار خرید</p></div>
-              <div class="left-text"><p class="body-01">۷۰ </p></div>
+              <div class="right-text"><p class="body-01">تعداد سفارشات</p></div>
+              <div class="left-text"><p class="body-01">{{ order_count_current }} </p></div>
             </div>
           </div>
 
@@ -133,7 +133,7 @@
             <div class="order-infos">
               <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/more-in-circle.svg' %}" alt="more icon" />
               <div class="text-infos">
-                <p class="body-2">۴۵ سفارش</p>
+                <p class="body-2">{{ order_count_current }} سفارش</p>
                 <p class="body-5">جاری</p>
               </div>
             </div>
@@ -141,7 +141,7 @@
             <div class="order-infos">
               <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/messages-2.svg' %}" alt="more icon" />
               <div class="text-infos">
-                <p class="body-2">۵۴ نظر</p>
+                <p class="body-2">{{ comments_count }} نظر</p>
                 <p class="body-5">ثبت شده</p>
               </div>
             </div>
@@ -152,7 +152,7 @@
             <div class="order-infos">
               <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/more-in-circle.svg' %}" alt="more icon" />
               <div class="text-infos">
-                <p class="body-2">۴۵ سفارش</p>
+                <p class="body-2">{{ orders_sent_count }} سفارش</p>
                 <p class="body-5">ارسال شده</p>
               </div>
             </div>
@@ -160,7 +160,7 @@
             <div class="order-infos">
               <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/messages-2.svg' %}" alt="more icon" />
               <div class="text-infos">
-                <p class="body-2">۲۱۵ سفارش</p>
+                <p class="body-2">{{ orders_canceled_count }} سفارش</p>
                 <p class="body-5">لغو شده</p>
               </div>
             </div>
@@ -172,7 +172,7 @@
             <div class="order-infos">
               <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/gallery.svg' %}" alt="more icon" />
               <div class="text-infos">
-                <p class="body-2">۱۰ محصول </p>
+                <p class="body-2">{{ gallery_products_count }} محصول </p>
                 <p class="body-5">در گالری</p>
               </div>
             </div>
@@ -180,7 +180,7 @@
             <div class="order-infos">
               <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/messages-2.svg' %}" alt="more icon" />
               <div class="text-infos">
-                <p class="body-2">۲۸ محصول </p>
+                <p class="body-2">{{ physical_products_count }} محصول </p>
                 <p class="body-5">فیزیکی</p>
               </div>
             </div>
@@ -198,24 +198,25 @@
         <!-- // favorits -->
         <div class="favorites">
           <div class="favorites-container">
+            {% for favorite in favorite_products %}
             <div class="favorites-item">
-              <img
-                src="{% static 'images/landing/T-shirt.svg' %}"
-                alt="image of most purchased item"
-              />
+            <img src="{{ favorite.product.image.url }}" alt="{{ favorite.product.name }}">
               <div class="item-info">
                 <div class="item-name-and-like">
-                  <h4 class="item-name">تیشرت مردانه</h4>
+                  <h4 class="item-name"{{ favorite.product.name }}</h4>
                   <img
                     class="like-icon"
                     src="{% static 'images/landing/filled-heart.svg' %}"
                     alt="Like"
                   />
                 </div>
-                <p class="description">دارای رنگ‌‌ بندی، قابل طراحی</p>
-                <h4 class="price">۱۵۰,۰۰۰ تومان</h4>
+                 <p class="description">{{ favorite.product.description }}</p> {# توضیحات محصول از دیتابیس #}
+                 <h4 class="price">{{ favorite.product.price|floatformat:0 }} تومان</h4> {# قیمت محصول از دیتابیس #}
               </div>
             </div>
+            {% empty %}
+                 <p>شما هنوز هیچ محصولی را به علاقه مندی های خود اضافه نکرده اید.</p>
+             {% endfor %}
     
             <div class="designs-item">
             <img
@@ -544,3 +545,6 @@
     </div>
   </body>
 </html>
+
+
+    

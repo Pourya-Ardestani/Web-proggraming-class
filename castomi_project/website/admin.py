@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin # برای سفارشی سازی پنل ادمین کاربر
-from .models import CustomUser
+from .models import CustomUser, Product, Favorite
 
 # Register your models here.
 # این کلاس به شما امکان می دهد فیلدهای CustomUser را در پنل ادمین مدیریت کنید
@@ -19,3 +19,17 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = UserAdmin.add_fieldsets + (
         (('اطلاعات تکمیلی'), {'fields': ('full_name', 'national_id', 'education', 'job', 'birthday', 'mobile_number', 'phone_number', 'province', 'city', 'address', 'postal_code')}),
     )
+
+    # ثبت مدل Product در پنل ادمین
+    @admin.register(Product)
+    class ProductAdmin(admin.ModelAdmin):
+        list_display = ('name', 'price', 'is_designable', 'has_colors')
+        search_fields = ('name', 'description')
+        list_filter = ('is_designable', 'has_colors')
+
+    # ثبت مدل Favorite در پنل ادمین
+    @admin.register(Favorite)
+    class FavoriteAdmin(admin.ModelAdmin):
+        list_display = ('user', 'product', 'added_at')
+        list_filter = ('user', 'product')
+        raw_id_fields = ('user', 'product')  # برای انتخاب راحت تر کاربر و محصول در ادمین

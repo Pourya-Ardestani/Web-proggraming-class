@@ -126,3 +126,36 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.email # یا self.username یا self.full_name
+
+
+###############section 3
+
+# مدل برای محصولات (مثلاً تیشرت، استیکر)
+class Product(models.Model):
+    name = models.CharField(max_length=255, verbose_name="نام محصول")
+    description = models.TextField(blank=True, null=True, verbose_name="توضیحات")
+    price = models.DecimalField(max_digits=10, decimal_places=0, verbose_name="قیمت (تومان)")
+    image = models.ImageField(upload_to='product_images/', verbose_name="تصویر محصول")
+    is_designable = models.BooleanField(default=False, verbose_name="قابل طراحی")
+    has_colors = models.BooleanField(default=False, verbose_name="دارای رنگ بندی")
+
+    class Meta:
+        verbose_name = "محصول"
+        verbose_name_plural = "محصولات"
+
+    def __str__(self):
+        return self.name
+
+# مدل برای علاقه مندی های کاربر (Many-to-Many بین CustomUser و Product)
+class Favorite(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='favorites')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    added_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'product')
+        verbose_name = "علاقه مندی"
+        verbose_name_plural = "علاقه مندی ها"
+
+    def __str__(self):
+        return f"{self.user.username} - {self.product.name}"
