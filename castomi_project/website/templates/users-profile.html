@@ -1,229 +1,357 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>users-profile</title>
 
-    <link href="{% static 'style/users-profile.css' %}" rel="stylesheet" />
-    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
-    <script src="{% static 'js/user-profile.js' %}" defer></script>
-  </head>
-  <body>
-      <!-- ////searchbar -->
-      <div class="search-bar">
-        <div class="logo">
-          <img class="logo-image" src="{% static 'images/landing/LogoFrame.svg' %}" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>users-profile</title>
+
+  <link href="{% static 'style/users-profile.css' %}" rel="stylesheet" />
+  <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+  <script src="{% static 'js/user-profile.js' %}" defer></script>
+</head>
+
+<body>
+  <!-- ////searchbar -->
+  <div class="search-bar">
+    <div class="logo">
+      <img class="logo-image" src="{% static 'images/landing/LogoFrame.svg' %}" />
+    </div>
+    <div class="search-space">
+      <input type="text" name="q" placeholder="جستجو....">
+      <button type="submit">
+        <img src="{% static 'images/landing/search-normal.svg' %}" />
+      </button>
+    </div>
+    <div class="sabad-vorod">
+      <a href="{% url 'user_signup' %}" class="login">
+        <img src="{% static 'images/landing/Login.svg' %}" />
+        <p>ورود | ثبت نام</p>
+      </a>
+      <a href="{% url 'order_history' %}" class="sabad">
+        <img src="{% static 'images/landing/shopping-cart.svg' %}" />
+        <p>سبد خرید</p>
+      </a>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- ///main menu///////////////////// -->
+  <div class="main-menu">
+    <button class="self-design">
+      <img src="{% static 'images/landing/magicpen.svg' %}" id="magic-pen" />
+      <p>خودت طراحیش کن !</p>
+    </button>
+    <div class="items">
+      <button class="item">پوشاک</button>
+      <button class="item">لوازم خانه</button>
+      <button class="item">قاب موبایل</button>
+      <button class="item">اکسسوری</button>
+      <button class="item">مدرسه و اداره</button>
+      <button class="item">کارت و پوستر</button>
+      <button class="item">جشن و مهمانی</button>
+    </div>
+  </div>
+
+  <!-- <پروفایل///////////// -->
+  <div class="top-heading-contaier">
+    <h3 class="top-heading">پروفایل</h3>
+  </div>
+
+  <div class="base-container">
+    <div class="profile-container">
+      <div class="profile-insider-container">
+        <div class="img-emil-container">
+          <div class="image">
+            <img class="rectangle" src="{% static 'images/user-profile-images/user-profile/profile-img.svg' %}" />
+            <a href="" class="camera"><img src="{% static 'images/user-profile-images/user-profile/camera.svg' %}"></a>
+          </div>
+          <div class="profile-info">
+            <p class="body-01">{{ user.full_name }}</h4>
+            <p class="body-01 email">{{ user.email }}</p>
+          </div>
         </div>
-        <div class="search-space">
-          <input type="text" name="q" placeholder="جستجو....">
-          <button type="submit">
-            <img src="{% static 'images/landing/search-normal.svg' %}" />
+
+        <div class="prof-info">
+          <div class="info-row">
+            <div class="credit-and-icon">
+              <div class="right-text">
+                <p class="body-01">اعتبار خرید</p>
+              </div>
+              <img class="icon" src="{% static 'images/user-profile-images/user-profile/plus.svg' %}" alt="plus icon" />
+            </div>
+            <div class="left-text">
+              <p class="body-01">{{ credit_amount }}</p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="right-text">
+              <p class="body-01">تعداد طرح ها</p>
+            </div>
+            <div class="left-text">
+              <p class="body-01">{{ comments_count }}</p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="right-text">
+              <p class="body-01">تعداد سفارشات</p>
+            </div>
+            <div class="left-text">
+              <p class="body-01">{{ order_count_current }} </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard">
+          <button id="dashboard-button" class="dashboard-items red-dashboard-items">
+            <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/dashboard-hoous.svg' %}"
+              alt=" icon">
+            <p class="body-01 red-text">داشبورد</p>
+          </button>
+          <button id="order-history-button" class="dashboard-items">
+            <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/tarikh.svg' %}" alt=" icon">
+            <p class="body-01">تاریخچه سفارشات</p>
+          </button>
+          <button id="gallery-button" class="dashboard-items">
+            <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/gallery.svg' %}" alt=" icon">
+            <p class="body-01">گالری</p>
+          </button>
+          <button id="addresses-button" class="dashboard-items">
+            <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/location-minus.svg' %}"
+              alt=" icon">
+            <p class="body-01">آدرس ها</p>
+          </button>
+          <button id="followers-button" class="dashboard-items">
+            <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/profile-gomboli.svg' %}"
+              alt=" icon">
+            <p class="body-01">دنبال شوندگان</p>
+          </button>
+          <button id="account-info-button" class="dashboard-items">
+            <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/profilekhali.svg' %}"
+              alt=" icon">
+            <p class="body-01">اطلاعات حساب کاربری</p>
+          </button>
+          <button id="logout-button" class="dashboard-items">
+            <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/logout.svg' %}" alt=" icon">
+            <p class="body-01">خروج</p>
           </button>
         </div>
-        <div class="sabad-vorod">
-         <a href="{% url 'user_signup' %}" class="login">
-            <img src="{% static 'images/landing/Login.svg' %}" />
-            <p>ورود | ثبت نام</p>
-          </a>
-          <a href="{% url 'order_history' %}" class="sabad">
-            <img src="{% static 'images/landing/shopping-cart.svg' %}" />
-            <p>سبد خرید</p>
-          </a>
-        </div>
       </div>
-  
-      <hr />
-      
-  <!-- ///main menu///////////////////// -->
-      <div class="main-menu">
-        <button class="self-design">
-          <img src="{% static 'images/landing/magicpen.svg' %}" id="magic-pen" />
-          <p>خودت طراحیش کن !</p>
-        </button>
-        <div class="items">
-          <button class="item">پوشاک</button>
-          <button class="item">لوازم خانه</button>
-          <button class="item">قاب موبایل</button>
-          <button class="item">اکسسوری</button>
-          <button class="item">مدرسه و اداره</button>
-          <button class="item">کارت و پوستر</button>
-          <button class="item">جشن و مهمانی</button>
-        </div>
-      </div>
-
-    <!-- <پروفایل///////////// -->
-    <div class="top-heading-contaier">
-      <h3 class="top-heading">پروفایل</h3>
     </div>
 
-    <div class="base-container">
-      <div class="profile-container">
-        <div class="profile-insider-container">
-          <div class="img-emil-container">
-            <div class="image">
-              <img class="rectangle" src="{% static 'images/user-profile-images/user-profile/profile-img.svg' %}" />
-              <a href="" class="camera"><img src="{% static 'images/user-profile-images/user-profile/camera.svg' %}"></a>
-            </div>
-            <div class="profile-info">
-              <p class="body-01">{{ user.full_name }}</h4>
-              <p class="body-01 email">{{ user.email }}</p>
-            </div>
-          </div>
-
-          <div class="prof-info">
-            <div class="info-row">
-              <div class="credit-and-icon">
-                <div class="right-text"><p class="body-01">اعتبار خرید</p></div>
-                <img class="icon" src="{% static 'images/user-profile-images/user-profile/plus.svg' %}" alt="plus icon"/>
-              </div>
-              <div class="left-text"><p class="body-01">{{ credit_amount }}</p></div>
-            </div>
-
-            <div class="info-row">
-              <div class="right-text"><p class="body-01">تعداد طرح ها</p></div>
-              <div class="left-text"><p class="body-01">{{ comments_count }}</p></div>
-            </div>
-
-            <div class="info-row">
-              <div class="right-text"><p class="body-01">تعداد سفارشات</p></div>
-              <div class="left-text"><p class="body-01">{{ order_count_current }} </p></div>
+    <!-- سفارشات   -->
+    <div class="my-things-container">
+      <h4>سفارشات من</h4>
+      <div class="my-orders">
+        <div class="my-orders-column">
+          <div class="order-infos">
+            <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/more-in-circle.svg' %}"
+              alt="more icon" />
+            <div class="text-infos">
+              <p class="body-2">{{ order_count_current }} سفارش</p>
+              <p class="body-5">جاری</p>
             </div>
           </div>
 
-          <div class="dashboard">
-            <button id="dashboard-button" class="dashboard-items red-dashboard-items">
-              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/dashboard-hoous.svg' %}" alt=" icon">
-              <p class="body-01 red-text">داشبورد</p>
-            </button>
-            <button id="order-history-button" class="dashboard-items">
-              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/tarikh.svg' %}" alt=" icon">
-              <p class="body-01">تاریخچه سفارشات</p>
-            </button>
-            <button id="gallery-button" class="dashboard-items">
-              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/gallery.svg' %}" alt=" icon">
-              <p class="body-01">گالری</p>
-            </button>
-            <button id="addresses-button" class="dashboard-items">
-              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/location-minus.svg' %}" alt=" icon">
-              <p class="body-01">آدرس ها</p>
-            </button>
-            <button id="followers-button" class="dashboard-items">
-              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/profile-gomboli.svg' %}" alt=" icon">
-              <p class="body-01">دنبال شوندگان</p>
-            </button>
-            <button id="account-info-button" class="dashboard-items">
-              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/profilekhali.svg' %}" alt=" icon">
-              <p class="body-01">اطلاعات حساب کاربری</p>
-            </button>
-            <button id="logout-button" class="dashboard-items">
-              <img class="dash-icon" src="{% static 'images/user-profile-images/user-profile/logout.svg' %}" alt=" icon">
-              <p class="body-01">خروج</p>
-            </button>
+          <div class="order-infos">
+            <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/messages-2.svg' %}"
+              alt="more icon" />
+            <div class="text-infos">
+              <p class="body-2">{{ comments_count }} نظر</p>
+              <p class="body-5">ثبت شده</p>
+            </div>
+          </div>
+        </div>
+        <div class="vertical-seperator"></div>
+
+        <div class="my-orders-column">
+          <div class="order-infos">
+            <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/more-in-circle.svg' %}"
+              alt="more icon" />
+            <div class="text-infos">
+              <p class="body-2">{{ orders_sent_count }} سفارش</p>
+              <p class="body-5">ارسال شده</p>
+            </div>
+          </div>
+
+          <div class="order-infos">
+            <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/messages-2.svg' %}"
+              alt="more icon" />
+            <div class="text-infos">
+              <p class="body-2">{{ orders_canceled_count }} سفارش</p>
+              <p class="body-5">لغو شده</p>
+            </div>
+          </div>
+        </div>
+        <div class="vertical-seperator"></div>
+
+
+        <div class="my-orders-column">
+          <div class="order-infos">
+            <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/gallery.svg' %}"
+              alt="more icon" />
+            <div class="text-infos">
+              <p class="body-2">{{ gallery_products_count }} محصول </p>
+              <p class="body-5">در گالری</p>
+            </div>
+          </div>
+
+          <div class="order-infos">
+            <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/messages-2.svg' %}"
+              alt="more icon" />
+            <div class="text-infos">
+              <p class="body-2">{{ physical_products_count }} محصول </p>
+              <p class="body-5">فیزیکی</p>
+            </div>
           </div>
         </div>
       </div>
+      <!-- // horizontal & topic -->
+      <div class="horizontal-seperator"></div>
 
-    <!-- سفارشات   -->
-      <div class="my-things-container">
-        <h4>سفارشات من</h4>
-        <div class="my-orders">
-          <div class="my-orders-column">
-            <div class="order-infos">
-              <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/more-in-circle.svg' %}" alt="more icon" />
-              <div class="text-infos">
-                <p class="body-2">{{ order_count_current }} سفارش</p>
-                <p class="body-5">جاری</p>
-              </div>
-            </div>
+      <div class="topings">
+        <h4>علاقه مندی های من</h4>
+        <button class="see-more-button">مشاهده بیشتر</button>
+      </div>
 
-            <div class="order-infos">
-              <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/messages-2.svg' %}" alt="more icon" />
-              <div class="text-infos">
-                <p class="body-2">{{ comments_count }} نظر</p>
-                <p class="body-5">ثبت شده</p>
-              </div>
-            </div>
-          </div>
-          <div class="vertical-seperator"></div>
-          
-          <div class="my-orders-column">
-            <div class="order-infos">
-              <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/more-in-circle.svg' %}" alt="more icon" />
-              <div class="text-infos">
-                <p class="body-2">{{ orders_sent_count }} سفارش</p>
-                <p class="body-5">ارسال شده</p>
-              </div>
-            </div>
 
-            <div class="order-infos">
-              <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/messages-2.svg' %}" alt="more icon" />
-              <div class="text-infos">
-                <p class="body-2">{{ orders_canceled_count }} سفارش</p>
-                <p class="body-5">لغو شده</p>
+      <!-- // favorits -->
+      <div class="favorites">
+        <div class="favorites-container">
+          {% for favorite in favorite_products %}
+          <div class="favorites-item">
+            <img src="{{ favorite.product.image.url }}" alt="{{ favorite.product.name }}"> {# عکس محصول از دیتابیس #}
+            <div class="item-info">
+              <div class="item-name-and-like">
+                <h4 class="item-name">{{ favorite.product.name }}</h4> {# نام محصول از دیتابیس #}
+                <img class="like-icon" src="{% static 'images/landing/filled-heart.svg' %}" alt="Like">
               </div>
+              <p class="description">{{ favorite.product.description }}</p> {# توضیحات محصول از دیتابیس #}
+              <h4 class="price">{{ favorite.product.price|floatformat:0 }} تومان</h4> {# قیمت محصول از دیتابیس #}
             </div>
           </div>
-          <div class="vertical-seperator"></div>
+          {% empty %}
+          <p>شما هنوز هیچ محصولی را به علاقه مندی های خود اضافه نکرده اید.</p>
+          {% endfor %}
+        </div>
 
-          
-          <div class="my-orders-column">
-            <div class="order-infos">
-              <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/gallery.svg' %}" alt="more icon" />
-              <div class="text-infos">
-                <p class="body-2">{{ gallery_products_count }} محصول </p>
-                <p class="body-5">در گالری</p>
+        <div class="carosel-flash">
+          <img id="arrow-left" src="{% static 'images/landing/arrow-left.svg' %}" alt="left arrow">
+        </div>
+      </div>
+
+      <!-- // horizontal & topic  -->
+      <div class="horizontal-seperator"></div>
+
+      <div class="topings">
+        <h4>خرید های پرتکرار من </h4>
+        <button class="see-more-button">مشاهده بیشتر</button>
+      </div>
+
+      <div class="favorites">
+        <div class="favorites-container">
+          <div class="favorites-item">
+            <img src="{% static 'images/landing/T-shirt.svg' %}" alt="image of most purchased item" />
+            <div class="item-info">
+              <div class="item-name-and-like">
+                <h4 class="item-name">تیشرت مردانه</h4>
+                <img class="like-icon" src="{% static 'images/landing/like.svg' %}" alt="Like" />
               </div>
+              <p class="description">دارای رنگ‌‌ بندی، قابل طراحی</p>
+              <h4 class="price">۱۵۰,۰۰۰ تومان</h4>
             </div>
+          </div>
 
-            <div class="order-infos">
-              <img class="orders-icons" src="{% static 'images/user-profile-images/user-profile/messages-2.svg' %}" alt="more icon" />
-              <div class="text-infos">
-                <p class="body-2">{{ physical_products_count }} محصول </p>
-                <p class="body-5">فیزیکی</p>
+          <div class="favorites-item">
+            <img src="{% static 'images/landing/T-shirt.svg' %}" alt="image of most purchased item" />
+            <div class="item-info">
+              <div class="item-name-and-like">
+                <h4 class="item-name">تیشرت مردانه</h4>
+                <img class="like-icon" src="{% static 'images/landing/like.svg' %}" alt="Like" />
               </div>
+              <p class="description">دارای رنگ‌‌ بندی، قابل طراحی</p>
+              <h4 class="price">۱۵۰,۰۰۰ تومان</h4>
+            </div>
+          </div>
+
+          <div class="favorites-item">
+            <img src="{% static 'images/landing/T-shirt.svg' %}" alt="image of most purchased item" />
+            <div class="item-info">
+              <div class="item-name-and-like">
+                <h4 class="item-name">تیشرت مردانه</h4>
+                <img class="like-icon" src="{% static 'images/landing/filled-heart.svg' %}" alt="Like" />
+              </div>
+              <p class="description">دارای رنگ‌‌ بندی، قابل طراحی</p>
+              <h4 class="price">۱۵۰,۰۰۰ تومان</h4>
             </div>
           </div>
         </div>
-    <!-- // horizontal & topic -->
-        <div class="horizontal-seperator"></div>
 
-        <div class="topings">
-          <h4>علاقه مندی های من</h4>
-          <button class="see-more-button">مشاهده بیشتر</button>
+        <div class="carosel-flash">
+          <img id="arrow-left" src="{% static 'images/landing/arrow-left.svg' %}" alt="left arrow" />
         </div>
+      </div>
 
 
-        <!-- // favorits -->
-        <div class="favorites">
-          <div class="favorites-container">
-            {% for favorite in favorite_products %}
-            <div class="favorites-item">
-            <img src="{{ favorite.product.image.url }}" alt="{{ favorite.product.name }}">
-              <div class="item-info">
-                <div class="item-name-and-like">
-                  <h4 class="item-name"{{ favorite.product.name }}</h4>
-                  <img
-                    class="like-icon"
-                    src="{% static 'images/landing/filled-heart.svg' %}"
-                    alt="Like"
-                  />
-                </div>
-                 <p class="description">{{ favorite.product.description }}</p> {# توضیحات محصول از دیتابیس #}
-                 <h4 class="price">{{ favorite.product.price|floatformat:0 }} تومان</h4> {# قیمت محصول از دیتابیس #}
+      <!-- ///گالری من////// -->
+      <!-- // horizontal & topic  -->
+      <div class="horizontal-seperator"></div>
+
+      <div class="topings">
+        <h4>گالری من</h4>
+        <button class="see-more-button">مشاهده بیشتر</button>
+      </div>
+
+      <div class="favorites">
+        <div class="favorites-container">
+          <div class="designs-item">
+            <img src="{% static 'images/user-profile-images/user-profile/hendoneh-image.svg' %}"
+              alt="image of most purchased item" />
+
+            <div class="item-info">
+              <div class="item-name-and-like">
+                <h4 class="item-name">استیکر</h4>
+                <img class="like-icon" src="{% static 'images/landing/Like.svg' %}" alt="Like" />
               </div>
+              <p class="description">قابل طراحی و چاپ بر روی انواع محصولات</p>
             </div>
-            {% empty %}
-                 <p>شما هنوز هیچ محصولی را به علاقه مندی های خود اضافه نکرده اید.</p>
-             {% endfor %}
-    
-            <div class="designs-item">
-            <img
-              src="{% static 'images/landing/designpart.svg' %}"
-              alt="image of most purchased item"
-            />
-    
+            <div class="button-container">
+              <button class="button">
+                <img src="{% static 'images/landing/gallery-add.svg' %}" alt="gallery image" />
+                <p>افزودن به گالری</p>
+              </button>
+            </div>
+
+          </div>
+
+          <div class="designs-item">
+            <img src="{% static 'images/user-profile-images/user-profile/hendoneh-image.svg' %}"
+              alt="image of most purchased item" />
+
+            <div class="item-info">
+              <div class="item-name-and-like">
+                <h4 class="item-name">استیکر</h4>
+                <img class="like-icon" src="{% static 'images/landing/Like.svg' %}" alt="Like" />
+              </div>
+              <p class="description">قابل طراحی و چاپ بر روی انواع محصولات</p>
+            </div>
+            <div class="button-container">
+              <button class="button">
+                <img src="{% static 'images/landing/gallery-add.svg' %}" alt="gallery image" />
+                <p>افزودن به گالری</p>
+              </button>
+            </div>
+
+          </div>
+
+          <div class="designs-item">
+            <img src="{% static 'images/user-profile-images/user-profile/hendoneh-image.svg' %}"
+              alt="image of most purchased item" />
+
             <div class="item-info">
               <div class="item-name-and-like">
                 <h4 class="item-name">استیکر</h4>
@@ -238,313 +366,102 @@
               </button>
             </div>
 
-            </div>
-    
-            <div class="favorites-item">
-              <img
-                src="{% static 'images/landing/T-shirt.svg' %}"
-                alt="image of most purchased item"
-              />
-              <div class="item-info">
-                <div class="item-name-and-like">
-                  <h4 class="item-name">تیشرت مردانه</h4>
-                  <img
-                    class="like-icon"
-                    src="{% static 'images/landing/filled-heart.svg' %}"
-                    alt="Like"
-                  />
-                </div>
-                <p class="description">دارای رنگ‌‌ بندی، قابل طراحی</p>
-                <h4 class="price">۱۵۰,۰۰۰ تومان</h4>
-              </div>
-            </div>
-          </div>
-    
-          <div class="carosel-flash">
-            <img
-              id="arrow-left"
-              src="{% static 'images/landing/arrow-left.svg' %}"
-              alt="left arrow"
-            />
           </div>
         </div>
 
-    <!-- // horizontal & topic  -->
-        <div class="horizontal-seperator"></div>
-
-        <div class="topings">
-          <h4>خرید های پرتکرار من </h4>
-          <button class="see-more-button">مشاهده بیشتر</button>
-        </div>
-
-        <div class="favorites">
-          <div class="favorites-container">
-            <div class="favorites-item">
-              <img
-                src="{% static 'images/landing/T-shirt.svg' %}"
-                alt="image of most purchased item"
-              />
-              <div class="item-info">
-                <div class="item-name-and-like">
-                  <h4 class="item-name">تیشرت مردانه</h4>
-                  <img
-                    class="like-icon"
-                    src="{% static 'images/landing/like.svg' %}"
-                    alt="Like"
-                  />
-                </div>
-                <p class="description">دارای رنگ‌‌ بندی، قابل طراحی</p>
-                <h4 class="price">۱۵۰,۰۰۰ تومان</h4>
-              </div>
-            </div>
-    
-            <div class="favorites-item">
-              <img
-                src="{% static 'images/landing/T-shirt.svg' %}"
-                alt="image of most purchased item"
-              />
-              <div class="item-info">
-                <div class="item-name-and-like">
-                  <h4 class="item-name">تیشرت مردانه</h4>
-                  <img
-                    class="like-icon"
-                    src="{% static 'images/landing/like.svg' %}"
-                    alt="Like"
-                  />
-                </div>
-                <p class="description">دارای رنگ‌‌ بندی، قابل طراحی</p>
-                <h4 class="price">۱۵۰,۰۰۰ تومان</h4>
-              </div>
-            </div>
-    
-            <div class="favorites-item">
-              <img
-                src="{% static 'images/landing/T-shirt.svg' %}"
-                alt="image of most purchased item"
-              />
-              <div class="item-info">
-                <div class="item-name-and-like">
-                  <h4 class="item-name">تیشرت مردانه</h4>
-                  <img
-                    class="like-icon"
-                    src="{% static 'images/landing/filled-heart.svg' %}"
-                    alt="Like"
-                  />
-                </div>
-                <p class="description">دارای رنگ‌‌ بندی، قابل طراحی</p>
-                <h4 class="price">۱۵۰,۰۰۰ تومان</h4>
-              </div>
-            </div>
-          </div>
-    
-          <div class="carosel-flash">
-            <img
-              id="arrow-left"
-              src="{% static 'images/landing/arrow-left.svg' %}"
-              alt="left arrow"
-            />
-          </div>
-        </div>
-
-
-        <!-- ///گالری من////// -->
-         <!-- // horizontal & topic  -->
-        <div class="horizontal-seperator"></div>
-
-        <div class="topings">
-          <h4>گالری من</h4>
-          <button class="see-more-button">مشاهده بیشتر</button>
-        </div>
-
-        <div class="favorites">
-          <div class="favorites-container">
-            <div class="designs-item">
-              <img
-                src="{% static 'images/user-profile-images/user-profile/hendoneh-image.svg' %}"
-                alt="image of most purchased item"
-              />
-      
-              <div class="item-info">
-                <div class="item-name-and-like">
-                  <h4 class="item-name">استیکر</h4>
-                  <img class="like-icon" src="{% static 'images/landing/Like.svg' %}" alt="Like" />
-                </div>
-                <p class="description">قابل طراحی و چاپ بر روی انواع محصولات</p>
-              </div>
-              <div class="button-container">
-                <button class="button">
-                  <img src="{% static 'images/landing/gallery-add.svg' %}" alt="gallery image" />
-                  <p>افزودن به گالری</p>
-                </button>
-              </div>
-  
-            </div>
-    
-              <div class="designs-item">
-                <img
-                  src="{% static 'images/user-profile-images/user-profile/hendoneh-image.svg' %}"
-                  alt="image of most purchased item"
-                />
-        
-                <div class="item-info">
-                  <div class="item-name-and-like">
-                    <h4 class="item-name">استیکر</h4>
-                    <img class="like-icon" src="{% static 'images/landing/Like.svg' %}" alt="Like" />
-                  </div>
-                  <p class="description">قابل طراحی و چاپ بر روی انواع محصولات</p>
-                </div>
-                <div class="button-container">
-                  <button class="button">
-                    <img src="{% static 'images/landing/gallery-add.svg' %}" alt="gallery image" />
-                    <p>افزودن به گالری</p>
-                  </button>
-                </div>
-    
-              </div>
-    
-                <div class="designs-item">
-                  <img
-                    src="{% static 'images/user-profile-images/user-profile/hendoneh-image.svg' %}"
-                    alt="image of most purchased item"
-                  />
-          
-                  <div class="item-info">
-                    <div class="item-name-and-like">
-                      <h4 class="item-name">استیکر</h4>
-                      <img class="like-icon" src="{% static 'images/landing/filled-heart.svg' %}" alt="Like" />
-                    </div>
-                    <p class="description">قابل طراحی و چاپ بر روی انواع محصولات</p>
-                  </div>
-                  <div class="button-container">
-                    <button class="button">
-                      <img src="{% static 'images/landing/gallery-add.svg' %}" alt="gallery image" />
-                      <p>افزودن به گالری</p>
-                    </button>
-                  </div>
-      
-                </div>
-           </div>
-    
-          <!-- <div class="carosel-flash"> -->
-          <img class="carosel-flash"
-            id="arrow-left"
-            src="{% static 'images/user-profile-images/user-profile/Carousel.svg' %}"
-            alt="left arrow"
-            />
-          <!-- </div> -->
-        </div>
-
+        <!-- <div class="carosel-flash"> -->
+        <img class="carosel-flash" id="arrow-left"
+          src="{% static 'images/user-profile-images/user-profile/Carousel.svg' %}" alt="left arrow" />
+        <!-- </div> -->
       </div>
+
     </div>
+  </div>
 
 
-   
-    <!-- foooter /////////////////////////////// -->
-    <div class="footer">
-      <div class="footer-upper">
-        <div class="submit-opinion">
-          <form class="email-form">
-            <div class="email-abovetext">
-              <p class="footer-texts">
-                برای دریافت آخرین اخبار و تخفیف های جدید،ایمیل خود را وارد
-                نمایید
-              </p>
-              <input type="email" placeholder="ایمیل خود را وارد کنید" />
-            </div>
-            <button type="submit">ثبت</button>
-          </form>
-        </div>
 
-        <div class="social-media-name-and-icons">
-          <p class="body-4">ما را در شبکه های اجتماعی دنبال کنید</p>
-
-          <div class="social-media">
-            <a href="#"
-              ><img
-                src="{% static 'images/landing/YouTube_light_icon_(2017).svg' %}"
-                alt="Youtube"
-            /></a>
-
-            <a href="#"
-              ><img src="{% static 'images/landing/Pinterest.svg' %}" alt="Pinterest"
-            /></a>
-
-            <a href="#"
-              ><img src="{% static 'images/landing/facebook.svg' %}" alt="facebook"
-            /></a>
-
-            <div>
-              <a href="#"
-                ><img src="{% static 'images/landing/Instagram.svg' %}" alt="Instagram"
-              /></a>
-            </div>
+  <!-- foooter /////////////////////////////// -->
+  <div class="footer">
+    <div class="footer-upper">
+      <div class="submit-opinion">
+        <form class="email-form">
+          <div class="email-abovetext">
+            <p class="footer-texts">
+              برای دریافت آخرین اخبار و تخفیف های جدید،ایمیل خود را وارد
+              نمایید
+            </p>
+            <input type="email" placeholder="ایمیل خود را وارد کنید" />
           </div>
-        </div>
+          <button type="submit">ثبت</button>
+        </form>
       </div>
 
-      <div class="footer-lower">
-        <div class="footer-lower-container">
-          <div class="text-column-container">
-            <div class="text-column">
-              <div class="caption-container">
-                <p class="Caption/01">همراه با کاستومی</p>
-              </div>
-              <a href="$" class="paragraph-texts">نقشه سایت</a>
-              <a href="$" class="paragraph-texts">فرصت همکاری</a>
-              <a href="$" class="paragraph-texts">تماس با ما</a>
-              <a href="$" class="paragraph-texts">نقشه سایت</a>
-            </div>
+      <div class="social-media-name-and-icons">
+        <p class="body-4">ما را در شبکه های اجتماعی دنبال کنید</p>
 
-            <div class="text-column">
-              <div class="caption-container">
-                <p class="Caption/01">خدمات مشتریان</p>
-              </div>
-              <a href="$" class="paragraph-texts">سوالات متداول</a>
-              <a href="$" class="paragraph-texts">حریم خصوصی</a>
-              <a href="$" class="paragraph-texts">ثبت شکایت</a>
-              <a href="$" class="paragraph-texts">ضمانت نامه  محصولات</a>
-            </div>
+        <div class="social-media">
+          <a href="#"><img src="{% static 'images/landing/YouTube_light_icon_(2017).svg' %}" alt="Youtube" /></a>
 
-            <div class="text-column">
-              <div class="caption-container">
-                <p class="Caption/01">راهنمای خرید</p>
-              </div>
-              <a href="$" class="paragraph-texts">راهنمای ثبت سفارش</a>
-              <a href="$" class="paragraph-texts">شیوه های پرداخت</a>
-              <a href="$" class="paragraph-texts">نحوه ارسال سفارش ها</a>
-              <a href="$" class="paragraph-texts">شرایط بازگرداندن محصول</a>
-            </div>
-          </div>
+          <a href="#"><img src="{% static 'images/landing/Pinterest.svg' %}" alt="Pinterest" /></a>
 
-          <div class="nemad-credit">
-            <h6>فروشگاه اینترنتی کاستومی</h6>
-            <div class="call-info-container">
-              <p class="paragraph-5">تماس با پشتیبانی :۰۲۱-۳۴۵۶۰۰۰</p>
-              <p class="paragraph-5">پاسخگویی ۲۴ ساعته ، ۷ روز هفته</p>
-            </div>
-            <div class="nemad-logos-container">
-              <a href="%"
-                ><img
-                  src="{% static 'images/landing/nemad-image.svg' %}"
-                  alt="nemad-image"
-              /></a>
-              <a href="%"
-                ><img
-                  src="{% static 'images/landing/nemad-image.svg' %}"
-                  alt="nemad-image"
-              /></a>
-              <a href="%"
-                ><img
-                  src="{% static 'images/landing/nemad-image.svg' %}"
-                  alt="nemad-image"
-              /></a>
-            </div>
+          <a href="#"><img src="{% static 'images/landing/facebook.svg' %}" alt="facebook" /></a>
+
+          <div>
+            <a href="#"><img src="{% static 'images/landing/Instagram.svg' %}" alt="Instagram" /></a>
           </div>
         </div>
       </div>
     </div>
-  </body>
+
+    <div class="footer-lower">
+      <div class="footer-lower-container">
+        <div class="text-column-container">
+          <div class="text-column">
+            <div class="caption-container">
+              <p class="Caption/01">همراه با کاستومی</p>
+            </div>
+            <a href="$" class="paragraph-texts">نقشه سایت</a>
+            <a href="$" class="paragraph-texts">فرصت همکاری</a>
+            <a href="$" class="paragraph-texts">تماس با ما</a>
+            <a href="$" class="paragraph-texts">نقشه سایت</a>
+          </div>
+
+          <div class="text-column">
+            <div class="caption-container">
+              <p class="Caption/01">خدمات مشتریان</p>
+            </div>
+            <a href="$" class="paragraph-texts">سوالات متداول</a>
+            <a href="$" class="paragraph-texts">حریم خصوصی</a>
+            <a href="$" class="paragraph-texts">ثبت شکایت</a>
+            <a href="$" class="paragraph-texts">ضمانت نامه محصولات</a>
+          </div>
+
+          <div class="text-column">
+            <div class="caption-container">
+              <p class="Caption/01">راهنمای خرید</p>
+            </div>
+            <a href="$" class="paragraph-texts">راهنمای ثبت سفارش</a>
+            <a href="$" class="paragraph-texts">شیوه های پرداخت</a>
+            <a href="$" class="paragraph-texts">نحوه ارسال سفارش ها</a>
+            <a href="$" class="paragraph-texts">شرایط بازگرداندن محصول</a>
+          </div>
+        </div>
+
+        <div class="nemad-credit">
+          <h6>فروشگاه اینترنتی کاستومی</h6>
+          <div class="call-info-container">
+            <p class="paragraph-5">تماس با پشتیبانی :۰۲۱-۳۴۵۶۰۰۰</p>
+            <p class="paragraph-5">پاسخگویی ۲۴ ساعته ، ۷ روز هفته</p>
+          </div>
+          <div class="nemad-logos-container">
+            <a href="%"><img src="{% static 'images/landing/nemad-image.svg' %}" alt="nemad-image" /></a>
+            <a href="%"><img src="{% static 'images/landing/nemad-image.svg' %}" alt="nemad-image" /></a>
+            <a href="%"><img src="{% static 'images/landing/nemad-image.svg' %}" alt="nemad-image" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
-
-
-    

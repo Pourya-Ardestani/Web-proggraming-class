@@ -3,7 +3,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth import login
 from .forms import SignUpStep1Form, SignUpStep2Form
-from .models import CustomUser
+from .models import CustomUser, Product, Favorite 
+from django.contrib.auth.decorators import login_required 
 
 # Create your views here.
 
@@ -34,15 +35,50 @@ def selected_product_view(request):
 
 
 
-def users_profile_view(request):
-    return render(request, 'users-profile.html')
-
+# def users_profile_view(request):
+#     return render(request, 'users-profile.html')
+#
 # def user_signup_view(request):
 #     return render(request, 'user-signup.html')
 #
 #
 # def user_signup_2_view(request):
 #     return render(request, 'user-signup-2.html')
+
+@login_required # این دکوراتور تضمین می کند که کاربر لاگین کرده باشد
+def users_profile_view(request):
+    user = request.user # دسترسی به آبجکت CustomUser کاربر لاگین شده
+
+    credit_amount = "۱۰۰,۰۰۰ تومان"
+    order_count_current = "۴۵ سفارش"
+    comments_count = "۵۴ نظر"
+    orders_sent_count = "۴۵ سفارش"
+    orders_canceled_count = "۲۱۵ سفارش"
+    gallery_products_count = "۱۰ محصول"
+    physical_products_count = "۲۸ محصول"
+
+    # واکشی محصولات مورد علاقه کاربر از دیتابیس
+    favorite_products = Favorite.objects.filter(user=user).select_related('product')
+    
+    # اگر نیاز به "خرید های پرتکرار" یا "گالری من" دارید، باید مدل های مربوطه را تعریف کرده
+    # و داده ها را اینجا واکشی کنید.
+    # frequent_purchases = SomeOrderModel.objects.filter(user=user, ...).order_by('-count')[:3]
+    # gallery_items = SomeGalleryModel.objects.filter(user=user, ...).all()
+
+    context = {
+        'user': user,
+        'credit_amount': credit_amount,
+        'order_count_current': order_count_current,
+        'comments_count': comments_count,
+        'orders_sent_count': orders_sent_count,
+        'orders_canceled_count': orders_canceled_count,
+        'gallery_products_count': gallery_products_count,
+        'physical_products_count': physical_products_count,
+        'favorite_products': favorite_products, # ارسال محصولات مورد علاقه به قالب
+        # 'frequent_purchases': frequent_purchases,
+        # 'gallery_items': gallery_items,
+    }
+    return render(request, 'users-profile.html', context) # مطمئن شوید مسیر قالب صحیح است
 
 
 def user_signup_view(request):
