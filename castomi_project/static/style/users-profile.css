@@ -250,7 +250,7 @@ h4 {
 .designs-item {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 20rem;
     height: 100%;
     border-radius: 16px;
     border: 1px solid #d6d6d6;

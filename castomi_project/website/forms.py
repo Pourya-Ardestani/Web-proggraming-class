@@ -69,6 +69,7 @@ class SignUpStep2Form(forms.ModelForm):
             'phone_number',
             'province',
             'city',
+            'postal_code',
             'address'
         ]
         # email در این مرحله فقط برای نمایش است و تغییر نمی کند
@@ -80,6 +81,7 @@ class SignUpStep2Form(forms.ModelForm):
         'phone_number': forms.TextInput(attrs={'class': 'input-field left-align'}),
         'province': forms.Select(attrs={'class': 'input-field'}),
         'city': forms.Select(attrs={'class': 'input-field'}),
+        'postal_code': forms.TextInput(attrs={'class': 'input-field left-align'}),
         'address': forms.Textarea(attrs={'class': 'input-field'}), # برای Textarea
         }
 
@@ -90,4 +92,5 @@ class SignUpStep2Form(forms.ModelForm):
             self.fields['phone_number'].initial = '۰۲۱۵۵۵۵۵۵۵۵'
             self.fields['province'].initial = 'تهران'
             self.fields['city'].initial = 'تهران'
+            self.fields['postal_code'].initial = '423842-04234'
             self.fields['address'].initial = 'تهران، خیابان ولیعصر، منطقه ۱۲، بلوار کاوه، کوچه ابوذر، پلاک ۱۵'
