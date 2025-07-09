@@ -258,3 +258,48 @@
 .submit-button:hover {
   background-color: #8a2731;
 }
+
+
+/* در فایل website/static/style/account-info.css یا هر فایل CSS مرتبط */
+
+/* استایل برای پیام‌های خطا (که جنگو کلاس 'error' به آن‌ها می‌دهد) */
+.messages .error {
+    color: red; /* متن را قرمز می کند */
+    font-weight: bold; /* متن را پررنگ می کند (اختیاری) */
+    background-color: #ffe0e0; /* یک پس‌زمینه قرمز کم‌رنگ برای خطای بهتر (اختیاری) */
+    border: 1px solid red; /* یک حاشیه قرمز (اختیاری) */
+    padding: 10px; /* فاصله داخلی (اختیاری) */
+    margin-bottom: 10px; /* فاصله از پایین (اختیاری) */
+    border-radius: 5px; /* گوشه های گرد (اختیاری) */
+}
+
+/* استایل برای پیام‌های موفقیت (اختیاری، اگر میخواهید سبز باشند) */
+.messages .success {
+    color: green;
+    background-color: #e0ffe0;
+    border: 1px solid green;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* استایل کلی برای لیست پیام ها (اختیاری) */
+.messages {
+    list-style: none; /* لیست ها را بدون نقطه یا عدد می کند */
+    padding: 0;
+    margin: 0 0 20px 0; /* فاصله از پایین */
+}
+.messages li {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* استایل برای خطاهای فیلدها (اگر از div.error-message استفاده می کنید) */
+.error-message {
+    color: red;
+    font-size: 0.85em;
+    margin-top: 5px;
+    text-align: right; /* اگر میخواهید متن خطا راست چین باشد */
+}

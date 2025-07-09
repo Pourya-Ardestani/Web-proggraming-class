@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.contrib.auth import login
-from .forms import SignUpStep1Form, SignUpStep2Form
+from django.contrib.auth import login, update_session_auth_hash
+from .forms import SignUpStep1Form, SignUpStep2Form, AccountInfoForm
 from .models import CustomUser, Product, Favorite 
 from django.contrib.auth.decorators import login_required 
+
+from django.contrib import messages
 
 # Create your views here.
 
@@ -16,8 +18,8 @@ def cart_view(request):
     return render(request, 'cart.html')
 
 
-def account_info_view(request):
-    return render(request, 'account-info.html')
+# def account_info_view(request):
+#     return render(request, 'account-info.html')
 
 
 # ... continue for all your .html files ...
@@ -128,3 +130,41 @@ def user_signup_2_view(request):
         }
         form = SignUpStep2Form(instance=user, initial=initial_data)
     return render(request, 'user-signup-2.html', {'form': form, 'user': user})
+
+
+###########
+########## section4
+
+@login_required  # این View هم نیاز به لاگین کاربر دارد
+def account_info_view(request):
+    user = request.user  # کاربر لاگین شده
+
+    if request.method == 'POST':
+        form = AccountInfoForm(request.POST, instance=user)  # instance=user برای ویرایش کاربر فعلی
+        if form.is_valid():
+            form.save()  # ذخیره تغییرات در مدل CustomUser
+
+            # اگر رمز عبور تغییر کرده باشد، سشن کاربر را آپدیت می کند تا لاگ اوت نشود
+            if form.cleaned_data.get('new_password'):
+                update_session_auth_hash(request, user)
+
+            messages.success(request, 'اطلاعات حساب کاربری شما با موفقیت به روز شد.')
+            return redirect('account_info')  # به همین صفحه ریدایرکت می کند تا پیام نمایش داده شود
+        else:
+            messages.error(request, 'خطایی در به روزرسانی اطلاعات رخ داد. لطفاً فرم را بررسی کنید.')
+    else:
+        form = AccountInfoForm(instance=user)  # فرم را با اطلاعات فعلی کاربر پر می کند
+
+    # مقادیر ثابت برای نمایش در بخش پروفایل کناری (اگر از user_profile.html کپی شده باشد)
+    credit_amount = "۱۰۰,۰۰۰ تومان"
+    order_count_current = "۴۵"
+    comments_count = "۷۰"
+
+    context = {
+        'form': form,
+        'user': user,  # برای نمایش اطلاعات در بخش کناری پروفایل
+        'credit_amount': credit_amount,
+        'order_count_current': order_count_current,
+        'comments_count': comments_count,
+    }
+    return render(request, 'account-info.html', context)

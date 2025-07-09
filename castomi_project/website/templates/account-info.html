@@ -59,12 +59,12 @@
         <div class="profile-insider-container">
           <div class="img-emil-container">
             <div class="image">
-              <img class="rectangle" src="{% static '/images/user-profile-images/user-profile/profile-img.svg' %}" />
-              <div class="camera"><img src="{% static '/images/user-profile-images/user-profile/camera.svg' %}"></div>
+              <img class="rectangle" src="{% static 'images/user-profile-images/user-profile/profile-img.svg' %}" alt="عکس پروفایل" />
+              <div class="camera"><img src="{% static 'images/user-profile-images/user-profile/camera.svg' %}" alt="آیکون دوربین"></div>
             </div>
             <div class="profile-info">
-              <p class="body-01">نگار زمانی</h4>
-              <p class="body-01 email">xxxxxxx@Yahoo.com</p>
+                <p class="body-01">{{ user.full_name }}</p>
+                <p class="body-01 email">{{ user.email }}</p>
             </div>
           </div>
 
@@ -74,17 +74,17 @@
                 <div class="right-text"><p class="body-01">اعتبار خرید</p></div>
                 <img class="icon" src="{% static '/images/user-profile-images/user-profile/plus.svg' %}" alt="plus icon"/>
               </div>
-              <div class="left-text"><p class="body-01">۱۰۰,۰۰۰ تومان</p></div>
+              <div class="left-text"><p class="body-01">{{ credit_amount }}</p></div>
             </div>
 
             <div class="info-row">
               <div class="right-text"><p class="body-01">اعتبار خرید</p></div>
-              <div class="left-text"><p class="body-01">۴۵</p></div>
+              <div class="left-text"><p class="body-01">{{ order_count_current }}</p></div>
             </div>
 
             <div class="info-row">
               <div class="right-text"><p class="body-01">اعتبار خرید</p></div>
-              <div class="left-text"><p class="body-01">۷۰ </p></div>
+              <div class="left-text"><p class="body-01">{{ comments_count }} </p></div>
             </div>
           </div>
 
@@ -132,66 +132,89 @@
           <div class="account-tab">اطلاعات تماس</div>
         </div>
 
-        <form class="account-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label>نام و نام خانوادگی</label>
-              <input type="text" value="نگار زمانی" />
-            </div>
-            <div class="form-group">
-              <label>کد ملی</label>
-              <input type="text" value="**********" />
-            </div>
-          </div>
+        <form class="account-form" method="post">
+                {% csrf_token %}
+                {# نمایش پیام های جنگو (موفقیت/خطا) #}
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
 
-          <div class="form-row">
-            <div class="form-group">
-              <label>تحصیلات (اختیاری)</label>
-              <div class="select-wrapper">
-                <select>
-                  <option>انتخاب کنید</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>شغل (اختیاری)</label>
-              <div class="select-wrapper">
-                <select>
-                  <option>انتخاب کنید</option>
-                </select>
-              </div>
-            </div>
-          </div>
+                {# خطاهای کلی فرم (non-field errors) #}
+                {% if form.non_field_errors %}
+                    <div style="color: red; margin-bottom: 10px;">
+                        {% for error in form.non_field_errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
 
-          <div class="form-row">
-            <div class="form-group">
-              <label>تاریخ تولد</label>
-              <div class="date-input">
-                <input type="text" value="**********" />
-                <img src="{% static '/images/user-account-info/calendar.svg' %}" alt="calendar" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label>آدرس ایمیل</label>
-              <input type="email" value="**********" />
-            </div>
-          </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="{{ form.full_name.id_for_label }}">نام و نام خانوادگی</label>
+                        {{ form.full_name }}
+                        {% if form.full_name.errors %}<div class="error-message">{{ form.full_name.errors }}</div>{% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.national_id.id_for_label }}">کد ملی</label>
+                        {{ form.national_id }}
+                        {% if form.national_id.errors %}<div class="error-message">{{ form.national_id.errors }}</div>{% endif %}
+                    </div>
+                </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label>کلمه عبور جدید</label>
-              <input type="password" placeholder="کلمه عبور جدید خود را وارد کنید" />
-            </div>
-            <div class="form-group">
-              <label>تکرار کلمه عبور جدید</label>
-              <input type="password" placeholder="کلمه عبور جدید خود را مجددا وارد کنید" />
-            </div>
-          </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="{{ form.education.id_for_label }}">تحصیلات (اختیاری)</label>
+                        <div class="select-wrapper">
+                            {{ form.education }}
+                        </div>
+                        {% if form.education.errors %}<div class="error-message">{{ form.education.errors }}</div>{% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.job.id_for_label }}">شغل (اختیاری)</label>
+                        <div class="select-wrapper">
+                            {{ form.job }}
+                        </div>
+                        {% if form.job.errors %}<div class="error-message">{{ form.job.errors }}</div>{% endif %}
+                    </div>
+                </div>
 
-          <div class="form-submit">
-            <button type="submit" class="submit-button">ثبت اطلاعات</button>
-          </div>
-        </form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="{{ form.birthday.id_for_label }}">تاریخ تولد</label>
+                        <div class="date-input">
+                            {{ form.birthday }}
+                            <img src="{% static 'images/user-account-info/calendar.svg' %}" alt="calendar" />
+                        </div>
+                        {% if form.birthday.errors %}<div class="error-message">{{ form.birthday.errors }}</div>{% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.email.id_for_label }}">آدرس ایمیل</label>
+                        {{ form.email }}
+                        {% if form.email.errors %}<div class="error-message">{{ form.email.errors }}</div>{% endif %}
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="{{ form.new_password.id_for_label }}">کلمه عبور جدید</label>
+                        {{ form.new_password }}
+                        {% if form.new_password.errors %}<div class="error-message">{{ form.new_password.errors }}</div>{% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.new_password_confirm.id_for_label }}">تکرار کلمه عبور جدید</label>
+                        {{ form.new_password_confirm }}
+                        {% if form.new_password_confirm.errors %}<div class="error-message">{{ form.new_password_confirm.errors }}</div>{% endif %}
+                    </div>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="submit-button">ثبت اطلاعات</button>
+                </div>
+            </form>
       </div>
     </div> 
     

@@ -72,10 +72,6 @@ class SignUpStep2Form(forms.ModelForm):
             'postal_code',
             'address'
         ]
-        # email در این مرحله فقط برای نمایش است و تغییر نمی کند
-        # اگر می خواهید email را در این مرحله هم قابل ویرایش کنید، آن را در fields اضافه کنید.
-        # اگر نمی خواهید نمایش داده شود، اینجا نباشد.
-        # fields = ['mobile_number', 'phone_number', 'province', 'city', 'address', 'email']
         widgets = {
         'mobile_number': forms.TextInput(attrs={'class': 'input-field left-align'}),
         'phone_number': forms.TextInput(attrs={'class': 'input-field left-align'}),
@@ -94,3 +90,91 @@ class SignUpStep2Form(forms.ModelForm):
             self.fields['city'].initial = 'تهران'
             self.fields['postal_code'].initial = '423842-04234'
             self.fields['address'].initial = 'تهران، خیابان ولیعصر، منطقه ۱۲، بلوار کاوه، کوچه ابوذر، پلاک ۱۵'
+
+
+################
+################# adding for section 4
+
+
+# فرم برای ویرایش اطلاعات حساب کاربری
+class AccountInfoForm(forms.ModelForm):
+    new_password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'placeholder': 'کلمه عبور جدید خود را وارد کنید', 'class': 'form-control'}),
+        label="کلمه عبور جدید",
+        required=False
+    )
+    new_password_confirm = forms.CharField(
+        widget=forms.PasswordInput(attrs={'placeholder': 'کلمه عبور جدید خود را مجددا وارد کنید', 'class': 'form-control'}),
+        label="تکرار کلمه عبور جدید",
+        required=False
+    )
+
+    class Meta:
+        model = CustomUser
+        fields = [
+            'full_name',
+            'national_id',
+            'education',
+            'job',
+            'birthday',
+            'email',
+            'mobile_number',
+            'phone_number',
+            'province',
+            'city',
+            'address',
+            'postal_code',
+        ]
+        widgets = {
+            'full_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'national_id': forms.TextInput(attrs={'class': 'form-control'}),
+            'education': forms.Select(attrs={'class': 'select-wrapper'}),
+            'job': forms.Select(attrs={'class': 'select-wrapper'}),
+            'birthday': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'mobile_number': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
+            'province': forms.Select(attrs={'class': 'select-wrapper'}),
+            'city': forms.Select(attrs={'class': 'select-wrapper'}),
+            'address': forms.Textarea(attrs={'class': 'form-control'}),
+            'postal_code': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['education'].empty_label = "انتخاب کنید"
+        self.fields['job'].empty_label = "انتخاب کنید"
+        self.fields['province'].empty_label = "استان را انتخاب کنید"
+        self.fields['city'].empty_label = "شهر را انتخاب کنید"
+
+        # ایمیل را فقط برای نمایش غیرفعال کنید (اختیاری)
+        # self.fields['email'].widget.attrs['readonly'] = True
+
+    def clean(self):
+        cleaned_data = super().clean()
+        new_password = cleaned_data.get("new_password")
+        new_password_confirm = cleaned_data.get("new_password_confirm")
+
+        if new_password and not new_password_confirm:
+            self.add_error('new_password_confirm', "لطفاً تکرار کلمه عبور جدید را وارد کنید.")
+        elif new_password_confirm and not new_password:
+            self.add_error('new_password', "لطفاً کلمه عبور جدید را وارد کنید.")
+        elif new_password and new_password_confirm and new_password != new_password_confirm:
+            self.add_error('new_password_confirm', "کلمه عبور جدید و تکرار آن مطابقت ندارند.")
+
+        email = cleaned_data.get('email')
+        # این اعتبارسنجی فقط در صورتی نیاز است که فیلد ایمیل قابل ویرایش باشد
+        if email and self.instance.email != email and CustomUser.objects.filter(email=email).exists():
+            self.add_error('email', "این ایمیل قبلاً توسط کاربر دیگری ثبت شده است.")
+
+        return cleaned_data
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+
+        if self.cleaned_data.get("new_password"):
+            user.set_password(self.cleaned_data["new_password"])
+
+        if commit:
+            user.save()
+        return user
